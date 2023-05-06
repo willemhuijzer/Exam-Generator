@@ -11,19 +11,19 @@ def index():
 @app.route("/", methods=["POST"])
 def generate():
     text_input = request.form.get("text_input")
-    response = generate_response(text_input)
+    response = generate_response(text_input, simulate_response=True)
     exam_questions = response_to_question_answer_pairs(response)
 
     return render_template("result.html", exam_questions=exam_questions)
 
 
-@app.route("/results", methods=["POST"])
-def results():
-    text = request.form["text"]
-    questions = generate_questions(text)
-    return render_template("results.html", questions=questions)
+# @app.route("/results", methods=["POST"])
+# def results():
+#     text = request.form["text"]
+#     questions = generate_questions(text)
+#     return render_template("results.html", questions=questions)
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-            
+             
