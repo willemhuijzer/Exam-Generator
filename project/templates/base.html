@@ -15,7 +15,20 @@
       {% block content %}{% endblock %}
     </main>
     <footer>
-      <p>&copy; 2023 My Web Application</p>
+      <p>&copy; 2023 NLP Smart Application</p>
     </footer>
   </body>
 </html>
+
+<script>
+function showAnswers() {
+  var answerSection = document.getElementById("answer-reveal");
+  var questionsDiv = document.getElementById("questions");
+  var button = document.getElementById("reveal-button");
+
+  answerSection.style.display = "block";
+  questionsDiv.style.display = "none";
+  button.style.display = "none";
+}
+  </script>
+  
