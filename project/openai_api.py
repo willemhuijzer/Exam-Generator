@@ -1,5 +1,5 @@
 import openai
-from configuration import OPENAI_API_KEY
+from project.configuration import OPENAI_API_KEY
 
 openai.api_key = OPENAI_API_KEY
 
