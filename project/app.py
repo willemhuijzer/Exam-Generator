@@ -13,5 +13,13 @@ def generate():
     response = generate_response(text_input)
     return render_template("result.html", response=response)
 
+
+@app.route("/results", methods=["POST"])
+def results():
+    text = request.form["text"]
+    questions = generate_questions(text)
+    return render_template("results.html", questions=questions)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
