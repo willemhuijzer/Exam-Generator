@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exam helper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Exam helper</h1>
+    <form action="/" method="POST">
+      <label for="input-text">Enter some text:</label><br>
+      <textarea id="input-text" name="input-text" rows="4" cols="50"></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
