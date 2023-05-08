@@ -13,14 +13,22 @@ def index():
 
 @app.route("/", methods=["POST"])
 def generate():
-    if 'pdf_input' not in request.files:
-        return 'No file part', 400
-    pdf_file = request.files['pdf_input']
-    if pdf_file.filename == '':
-        return 'No selected file', 400
     
-    pdf_text = extract_text_from_pdf(pdf_file)
-    response = generate_response(pdf_text, simulate_response=False)
+    simulate = True
+    pdf_text = 0 # dummy value for simulation
+
+    if not simulate:
+        if 'pdf_input' not in request.files:
+            return 'No file part', 400
+        
+        # Get file from request 
+        pdf_file = request.files['pdf_input']
+        if pdf_file.filename == '':
+            return 'No selected file', 400
+    
+        pdf_text = extract_text_from_pdf(pdf_file)
+
+    response = generate_response(pdf_text, simulate_response=simulate)
     exam_questions = response_to_question_answer_pairs(response)
     # print(exam_questions)
     return render_template("questions.html", exam_questions=exam_questions)
