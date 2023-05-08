@@ -5,11 +5,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
+        <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+
     <h1>Exam helper</h1>
     <form action="/" method="POST">
-      <label for="input-text">Enter some text:</label><br>
-      <textarea id="input-text" name="input-text" rows="4" cols="50"></textarea><br>
+      <label for="text_input">Enter the content of your slides:</label><br>
+      <textarea id="text_input" name="text_input" rows="4" cols="20"></textarea><br>
       <input type="submit" value="Submit">
     </form>
+    <footer>
+      <p>&copy; 2023 NLP Smart Application</p>
+    </footer>
   </body>
 </html>
+

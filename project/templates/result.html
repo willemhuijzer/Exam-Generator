@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Generated Questions</h2>
+  <div id="questions">  
+    <ol>
+      {% for question_dict in exam_questions %}
+        <li>
+          <div class="question">{{ question_dict.question|replace('\n', '<br>')|safe }}</div>
+          <div class="options">
+            <ul>
+              {% for option in question_dict.options %}
+                <li>{{ option }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+  <button id="reveal-button" onclick="showAnswers()">Show Answers</button>
+  <div id="answer-reveal" style="display:none;">
+    <ol>
+      {% for question_dict in exam_questions %}
+        <li>
+          <div class="question_with_answer">{{ question_dict.question|replace('\n', '<br>')|safe }}</div>
+          <div class="options">
+            <ul>
+              {% for option in question_dict.options %}
+                <li>{{ option }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="answer">Answer: {{ question_dict.answer }}</div>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+{% endblock %}

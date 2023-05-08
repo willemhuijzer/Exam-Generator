@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_base.css') }}">
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <p>&copy; 2023 NLP Smart Application</p>
+    </footer>
+  </body>
+</html>
+
+<script>
+function showAnswers() {
+  var answerSection = document.getElementById("answer-reveal");
+  var questionsDiv = document.getElementById("questions");
+  var button = document.getElementById("reveal-button");
+
+  answerSection.style.display = "block";
+  questionsDiv.style.display = "none";
+  button.style.display = "none";
+}
+  </script>
+  
