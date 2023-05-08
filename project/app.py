@@ -19,7 +19,6 @@ def generate():
     if pdf_file.filename == '':
         return 'No selected file', 400
     
-    pdf_file = request.files['pdf_input']
     pdf_text = extract_text_from_pdf(pdf_file)
     response = generate_response(pdf_text, simulate_response=False)
     exam_questions = response_to_question_answer_pairs(response)

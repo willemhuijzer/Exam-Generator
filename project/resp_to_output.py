@@ -67,15 +67,7 @@ def response_to_question_answer_pairs(response:str, question_identifier:str='')-
     # Disect questions into question, options, and answer
     exam = [disect_question_options_answer(question, index) for index, question in enumerate(questions)]
 
-    # pprint(exam)
-
     return exam
-
-    # Split questions into a list of questions and answers
-    list_of_pairs = [question.split('Answer: ') for question in questions]
-
-    # Remove newline characters from evey element and return list of tuples
-    return [(pair[0].strip(), pair[1].strip()) for pair in list_of_pairs]
 
 
 if __name__ == '__main__':
