@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Results</title>
+  </head>
+  <body>
+    <h1>Results</h1>
+    <div id="score-section"></div>
+    <ol id="questions">
+    </ol>
+
+    <script>
+        var examQuestions = JSON.parse(localStorage.getItem('examQuestions'));
+
+        var score = 0;
+        var totalQuestions = examQuestions.length;
+        var questionsHtml = '';
+
+        for (var i = 0; i < totalQuestions; i++) {
+            var question = examQuestions[i].question;
+            var answer = examQuestions[i].answer;
+            var selectedAnswer = localStorage.getItem('selectedAnswer_' + i);
+            var isCorrect = answer === selectedAnswer;
+
+            if (isCorrect) {
+                score++;
+            }
+
+            questionsHtml += '<li>' + question + '<br>';
+
+            for (var j = 0; j < examQuestions[i].options.length; j++) {
+                var option = examQuestions[i].options[j];
+                var optionHtml = '<input type="radio" disabled';
+
+                if (selectedAnswer === option) {
+                if (isCorrect) {
+                    optionHtml += ' style="color: green;" checked';
+                } else {
+                    optionHtml += ' style="color: red;" checked';
+                }
+                }
+
+                optionHtml += '><label>' + option + '</label><br>';
+                questionsHtml += optionHtml;
+            }
+
+            questionsHtml += '</li>';
+        }
+
+        var scorePercent = (score / totalQuestions) * 100;
+        var scoreDisplay = 'Score: ' + score + '/' + totalQuestions + ' (' + scorePercent.toFixed(2) + '%)';
+        var scoreDiv = document.getElementById('score-section');
+        scoreDiv.innerHTML = scoreDisplay;
+
+        var questionsDiv = document.getElementById('questions');
+        questionsDiv.innerHTML = questionsHtml;
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<script>
+  window.exam_questions = {{ exam_questions|tojson|safe }};
+</script>
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Generated Questions</h2>
+  <form id="exam-form" onsubmit="submitAnswers(); return false;">
+    <div id="questions">  
+      <ol>
+
+        {% for question_answer_pair in exam_questions %}
+        {% set question_number = loop.index %}
+          <li>        
+            <div class="question">{{ question_answer_pair['question']|replace('\n', '<br>')|safe }}</div>
+            {% for option in question_answer_pair['options'] %}
+              <div class="option">
+                <input type="radio" id="q{{ question_number }}" name="q{{ question_number }}" value="{{ option }}" />
+                <label for="q{{ question_number }}">{{ option }}</label>
+              </div>
+            {% endfor %}
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+
+    <button id="submit-button" type="submit">Submit Answers</button>
+  </form>
+
+  <div id="answer-section">
+    <h2>Answers</h2>
+    <ol>
+      {% for question_answer_pair in exam_questions %}
+        <li>
+          <div class="question">{{ question_answer_pair['question']|replace('\n', '<br>')|safe }}</div>
+          <div class="'options"> {{ question_answer_pair['options']}}</div>
+          <div class="answer">Answer: {{ question_answer_pair['answer'] }}</div>
+          <div id="selected-answer-{{ loop.index0 }}"></div>
+        </li>
+      {% endfor %}
+    </ol>
+    <div id="score-section"></div>
+  </div>
+{% endblock %}
+
+
+<script>
+  // hide the answer section
+  document.getElementById("answer-section").style.display = "none";
+
+  function showScore(score, totalQuestions) {
+    var scorePercent = (score / totalQuestions) * 100;
+    var scoreDisplay = "Score: " + score + "/" + totalQuestions + " (" + scorePercent.toFixed(2) + "%)";
+    var scoreDiv = document.getElementById("score-section");
+    scoreDiv.innerHTML = scoreDisplay;
+
+    var form = document.getElementById("exam-form");
+    form.style.display = "none";
+
+    var answerSection = document.getElementById("answer-section");
+    answerSection.style.display = "block";
+
+    var submitButton = document.getElementById("submit-button");
+    submitButton.style.display = "none";
+  }
+
+</script>

@@ -67,7 +67,7 @@ def response_to_question_answer_pairs(response:str, question_identifier:str='')-
     # Disect questions into question, options, and answer
     exam = [disect_question_options_answer(question, index) for index, question in enumerate(questions)]
 
-    pprint(exam)
+    # pprint(exam)
 
     return exam
 
