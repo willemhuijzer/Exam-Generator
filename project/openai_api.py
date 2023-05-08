@@ -1,5 +1,5 @@
 import openai
-from configuration import OPENAI_API_KEY
+from configuration import *
 import pdfplumber
 
 openai.api_key = OPENAI_API_KEY
@@ -13,7 +13,7 @@ def extract_text_from_pdf(file_path):
             text += page.extract_text()
     return text
 
-def generate_response(prompt, simulate_response=False):
+def generate_response(pdf_text, simulate_response=False):
 
     if simulate_response:
         return response_simulated
@@ -21,7 +21,7 @@ def generate_response(prompt, simulate_response=False):
     messages = [
         {"role": "system", "content": "You are a helpful assistant."},
         # {"role": "user", "content": "Generate 2 exam questions about the following slides:"},
-        {"role": "user", "content": intro + pdf_text + exam_text},
+        {"role": "user", "content": INTRO + pdf_text + EXAM_TEXT},
     ]
 
     # Make an API request to generate text completion
@@ -39,9 +39,9 @@ def generate_response(prompt, simulate_response=False):
 file_path = 'input.pdf'
 pdf_text = extract_text_from_pdf(file_path)
 # print(pdf_text)
-intro = '''CONTENT OF LECTURE SLIDES:
+INTRO = '''CONTENT OF LECTURE SLIDES:
 '''
-exam_text = '''
+EXAM_TEST = '''
 
 SAMPLE QUESTIONS: Based on slides that I provide in above, generate 3 exam questions on university level in the following format:
  Question:
@@ -65,7 +65,7 @@ Question:
 Generate 5 exam questions based on the provided CONTENT OF LECTURE SLIDES above in the format of the SAMPLE QUESTIONS:
 5 QUESTIONS: 
 '''
-prompt = intro + pdf_text + exam_text
+prompt = INTRO + pdf_text + EXAM_TEST
 
 
 response_simulated = '''Based on the provided content from chapter slides and previous exam questions, here are three new exam questions:

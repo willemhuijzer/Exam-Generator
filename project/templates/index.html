@@ -1,21 +1,22 @@
+<!-- this is index.html -->
 <!DOCTYPE html>
 <html>
   <head>
     <title>Exam helper</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_base.css') }}">
   </head>
   <body>
-        <nav>
+    <nav>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
 
-    <h1>Exam helper</h1>
-    <form action="/" method="POST">
-      <label for="text_input">Enter the content of your slides:</label><br>
-      <textarea id="text_input" name="text_input" rows="4" cols="20"></textarea><br>
+    <h1>THE EXAMEN HELPER</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+      <label for="pdf_input">Upload a PDF file:</label><br>
+      <input type="file" id="pdf_input" name="pdf_input"><br>
       <input type="submit" value="Submit">
     </form>
     <footer>
