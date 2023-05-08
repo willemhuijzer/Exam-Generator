@@ -53,6 +53,15 @@
         width: 150px;
         height: auto;
       }
+      pre {
+        font-size: 14px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
     </style>
   </head>
   <body>
@@ -62,5 +71,8 @@
       <input type="file" name="file">
       <input type="submit" value="Upload">
     </form>
+    {% if text %}
+      <pre>{{ text }}</pre>
+    {% endif %} 
   </body>
 </html>
