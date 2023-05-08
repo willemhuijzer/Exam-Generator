@@ -2,26 +2,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>chatGPTeacher</title>
+    <title>GPTeacher</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  </head>
+    <link rel="icon" href="{{ url_for('static', filename='icon.png') }}" type="image/x-icon">  </head>
   <body>
+    
+    <img id="header-icon" src="{{ url_for('static', filename='icon.png') }}" alt="Website Icon">
+    <h1>GPTeacher</h1>
+
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
+        <li><a href="/summarizer">Summarizer</a></li>
       </ul>
     </nav>
 
-    <h1>chatGPTeacher</h1>
     <form action="/" method="POST" enctype="multipart/form-data">
-      <label for="pdf_input">Upload a PDF file:</label><br>
-      <input type="file" id="pdf_input" name="pdf_input"><br>
+      <label class="input-label" for="text_input">Upload the lecture slides of which you want exam questions generated. As this is a pilot version, the lecture cannot exceed 30 slides: </label><br>
+      <input class="input-field" type="file" id="pdf_input" name="pdf_input"><br>
       <input type="submit" value="Submit">
-    </form>
+    </form>  
+
     <footer>
-      <p>&copy; 2023 NLP Smart Application</p>
+      <p>&copy; 2023, Natural Language Processing Smart Application</p>
     </footer>
+
   </body>
 </html>
 
