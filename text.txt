@@ -1,0 +1,44 @@
+Question 1:
+What are the primary features used to distinguish various forms of parameter control in Evolutionary Algorithms?
+A. How the change is made and evidence/data backing up changes
+B. What component of the EA is changed and level/scope of change
+C. What component of the EA is changed and how the change is made
+D. Evidence/data backing up changes and level/scope of change
+
+Answer: C
+
+Question 2:
+Which of the following is an example of evidence used to inform parameter changes in Evolutionary Algorithms?
+A. The time or number of evaluations
+B. Absolute event triggers
+C. Population statistics
+D. All of the above
+
+Answer: D
+
+Question 3:
+Which type of parameter control changes strategy parameters without feedback from the search based on some counter?
+A. Adaptive
+B. Self-adaptive
+C. Deterministic
+D. Relative
+
+Answer: C
+
+Question 4:
+What is one of the main components of Evolutionary Algorithms that can be parameterized and controlled on-the-fly?
+A. The solution representation
+B. The evaluation function
+C. The population size
+D. All of the above
+
+Answer: D
+
+Question 5:
+Which of the following is a secondary feature used to distinguish various forms of parameter control in Evolutionary Algorithms?
+A. What component of the EA is changed
+B. How the change is made
+C. Evidence/data backing up changes
+D. Scope/level of change
+
+Answer: D

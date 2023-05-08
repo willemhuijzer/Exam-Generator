@@ -1,6 +1,7 @@
 import openai
 from configuration import *
 import pdfplumber
+from prompt_constants import *
 
 openai.api_key = OPENAI_API_KEY
 
@@ -31,6 +32,11 @@ def generate_response(pdf_text, simulate_response=False):
         n=1,
     )  
     output = response['choices'][0]['message']['content']
+    # open text.txt in write mode
+    with open("text.txt", "w") as file_object:
+        # write text to file
+        file_object.write(output)
+    
     return output
 
 

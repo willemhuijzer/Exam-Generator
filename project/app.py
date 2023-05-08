@@ -3,7 +3,7 @@ from werkzeug.utils import secure_filename
 from openai_api import generate_response
 from resp_to_output import response_to_question_answer_pairs
 from openai_api import *
-from configuration import *
+from configuration import * # doe weg
 
 app = Flask(__name__)
 
@@ -22,7 +22,7 @@ def generate():
     pdf_text = extract_text_from_pdf(pdf_file)
     response = generate_response(pdf_text, simulate_response=False)
     exam_questions = response_to_question_answer_pairs(response)
-
+    # print(exam_questions)
     return render_template("questions.html", exam_questions=exam_questions)
 
 
