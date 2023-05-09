@@ -27,7 +27,7 @@ h1 {
 
 body {
   font-family: Lato;
-  background-color: #f4f4f4;
+  background-color: #f1e6fd;
 }
 
 main {
@@ -41,7 +41,8 @@ footer {
   color: #fff;
   padding: 10px;
   text-align: center;
-  padding: 10px;
+  padding-top: 100px;
+  padding-bottom: 10px;
   width: 60%;  /* set nav width to 50% of the page */
   margin-left: 20%;  /* start nav at 25% of the page */
 }
@@ -76,10 +77,18 @@ nav a {
   text-decoration: none;
 }
 
+/* edit the hovering */
+nav a:hover {
+  color: #f1e6fd;
+  text-decoration: none;
+}
 
 form {
   box-sizing: border-box;  /* new property */
-  padding: 20px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 20px;
+  font-size: larger;
   background-color: var(--main_color);
   margin-left: 20%; /* align form with nav */
   width: 60%; /* same width as nav */
@@ -88,16 +97,14 @@ form {
 
 .input-label {
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
-.input-field {
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
+
 
 input[type="submit"] {
   background-color: #ffffff;
-  color: #8ca5ea;
+  color: var(--main_color);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -106,7 +113,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #b6c7fb;
+  background-color: #f1e6fd;
 }
 
 label {
