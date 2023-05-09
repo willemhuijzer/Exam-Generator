@@ -1,44 +1,14 @@
 Question 1:
-What is the motivation behind parameter control in Evolutionary Algorithms?
-A. To increase the population size
-B. To reduce the mutation rate
-C. To find optimal parameter values for better performance during the search
-D. To select better individuals for the offspring population
-
-Answer: C
+What are the primary features that distinguish various forms of parameter control in Evolutionary Algorithms?
 
 Question 2:
-Which of the following is NOT a secondary feature of parameter control in Evolutionary Algorithms?
-A. Evidence/data backing up changes
-B. Level/scope of change
-C. What component is controlled
-D. None of the above
-
-Answer: C
+What is the evidence used to inform changes in parameter values in an adaptive or self-adaptive control scheme?
 
 Question 3:
-What are the primary features that distinguish various forms of parameter control in Evolutionary Algorithms?
-A. Evidence and level/scope of change
-B. What component is changed and how the change is made
-C. Progress made and diversity of the population
-D. None of the above
-
-Answer: B
+What are the secondary features that can be used to classify different types of parameter control in Evolutionary Algorithms?
 
 Question 4:
-What are the three major types of parameter control in Evolutionary Algorithms?
-A. Deterministic, fixed and relative
-B. Adaptive, fixed and relative
-C. Self-adaptive, fixed and relative
-D. Deterministic, adaptive and self-adaptive
-
-Answer: D
+Which option for varying penalty weight would update the weight in each generation based on the performance of the last k champions?
 
 Question 5:
-What are the different levels at which the parameter may take effect in parameter control in Evolutionary Algorithms?
-A. Population, individual and sub-individual
-B. Mutation rate, selection pressure and crossover rate
-C. Environment, fitness function and evaluation function
-D. None of the above
-
-Answer: A
+What type of parameter control would change strategy parameters in an EA without feedback from the search, based on a predefined counter or event?
