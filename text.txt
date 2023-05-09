@@ -1,44 +1,44 @@
 Question 1:
-What are the primary features used to distinguish different forms of parameter control in Evolutionary Algorithms?
-A. What component of the EA is changed and how the change is made
-B. Evidence/data backing up changes and level/scope of change
-C. What component is controlled and how the evidence is gathered
-D. None of the above
+What is the motivation behind parameter control in Evolutionary Algorithms?
+A. To increase the population size
+B. To reduce the mutation rate
+C. To find optimal parameter values for better performance during the search
+D. To select better individuals for the offspring population
 
-Answer: A
+Answer: C
 
 Question 2:
-What is the purpose of parameter control in Evolutionary Algorithms?
-A. To delegate the problem solving task to the evolutionary process
-B. To reduce the required computing resources
-C. To increase user control over the search process
-D. To use appropriate parameter values in various stages of the search
+Which of the following is NOT a secondary feature of parameter control in Evolutionary Algorithms?
+A. Evidence/data backing up changes
+B. Level/scope of change
+C. What component is controlled
+D. None of the above
 
-Answer: D
+Answer: C
 
 Question 3:
-What are the three major types of parameter control in Evolutionary Algorithms?
-A. Deterministic, adaptive, and induced
-B. Deterministic, adaptive, and self-adaptive
-C. Adaptive, random, and self-adaptive
-D. Adaptive, self-adaptive, and induced
+What are the primary features that distinguish various forms of parameter control in Evolutionary Algorithms?
+A. Evidence and level/scope of change
+B. What component is changed and how the change is made
+C. Progress made and diversity of the population
+D. None of the above
 
 Answer: B
 
 Question 4:
-What is the difference between deterministic and adaptive parameter control in Evolutionary Algorithms?
-A. Deterministic control is based on feedback from the search progress, while adaptive control follows a predefined rule
-B. Deterministic control follows a predefined rule, while adaptive control is based on feedback from the search progress
-C. Deterministic control changes the entire population, while adaptive control only changes selected individuals
-D. Deterministic control changes the problem definition, while adaptive control changes the search strategy
+What are the three major types of parameter control in Evolutionary Algorithms?
+A. Deterministic, fixed and relative
+B. Adaptive, fixed and relative
+C. Self-adaptive, fixed and relative
+D. Deterministic, adaptive and self-adaptive
 
-Answer: B
+Answer: D
 
 Question 5:
-What is the potential disadvantage of self-adaptive parameter control in Evolutionary Algorithms?
-A. Increased user workload in parameter tuning
-B. Reduced ability to delegate parameter setting task to the evolutionary process
-C. Increased overhead due to double task of problem solving and self-calibrating
+What are the different levels at which the parameter may take effect in parameter control in Evolutionary Algorithms?
+A. Population, individual and sub-individual
+B. Mutation rate, selection pressure and crossover rate
+C. Environment, fitness function and evaluation function
 D. None of the above
 
-Answer: C
+Answer: A

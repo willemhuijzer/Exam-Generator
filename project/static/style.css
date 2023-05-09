@@ -51,6 +51,7 @@ nav {
   background-color: var(--main_color);
   color: #fff;
   display: flex;
+  font-size: 20px;
   justify-content: center;  /* center the ul within the nav */
   padding: 10px;
   width: 60%;  /* set nav width to 50% of the page */
