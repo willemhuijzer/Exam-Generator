@@ -8,19 +8,27 @@
 
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/Summarizer">Summarizer</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </nav>
-    <main>
-      {% block content %}{% endblock %}
-    </main>
-    <footer>
-      <p>&copy; 2023 NLP Smart Application</p>
-    </footer>
+    <div class="everything">
+
+      <img id="header-icon" src="{{ url_for('static', filename='icon.png') }}" alt="Website Icon">
+      <h1>GPTeacher</h1>
+
+      <div class="content">
+        <nav class="not_main_nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Summarizer">Summarizer</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+        <main>
+          {% block content %}{% endblock %}
+        </main>
+        <footer>
+          <p>&copy; 2023 NLP Smart Application</p>
+        </footer>
+      </div>  
+    </div>
   </body>
 </html>
 

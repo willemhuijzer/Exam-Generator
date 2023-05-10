@@ -5,7 +5,40 @@
 }
 
 :root {
-  --main_color: #4BC3EF;
+  --main_background: #ffffff;
+  --second_background: #ffffff;
+  --extra_background: #333;
+
+  --test: red;
+
+  --main_letter_color: #333;
+  --second_letter_color: #fff;
+  --second_letter_color_hover: #c2c2c2;
+
+  --accent: #4CAF50;
+  --accent_hover: #45a049;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--main_background);
+}
+
+
+div.everything {
+  width: 60%;
+  margin-left: 20%;
+
+  background-color: var(--main_background);
+  color: var(--main_letter_color);
+  
+  min-height: 100vh;
+
+}
+
+div.content {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
 }
 
 #header-icon {
@@ -21,41 +54,46 @@ h1 {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-family: Lato;
-  color: var(--main_color);
+  /* font-family: Lato; */
+  /* color: var(--main_color); */
 }
 
-body {
-  font-family: Lato;
-  background-color: #f1e6fd;
+h2 {
+  padding-left: 80px;
+  padding-top:  20px;
 }
+
+h2 {
+  font-size: 24;
+  /* centre */
+  text-align: center;
+}
+
+h4 {
+  margin-top: 10px;
+}
+
 
 main {
-  max-width: 800px;
+  /* max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-}
-
-footer {
-  background-color: var(--main_color);
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  padding-top: 100px;
-  padding-bottom: 10px;
-  width: 60%;  /* set nav width to 50% of the page */
-  margin-left: 20%;  /* start nav at 25% of the page */
+  padding: 20px; */
 }
 
 nav {
-  background-color: var(--main_color);
-  color: #fff;
+  background-color: var(--extra_background);
+  /* var(--main_color); */
+  color: var(--second_letter_color);
   display: flex;
-  font-size: 20px;
+  font-size: 17px;
   justify-content: center;  /* center the ul within the nav */
   padding: 10px;
-  width: 60%;  /* set nav width to 50% of the page */
-  margin-left: 20%;  /* start nav at 25% of the page */
+  /* width: 60%;  /* set nav width to 50% of the page */
+  /* margin-left: 20%;  start nav at 25% of the page */
+
+  border-top-left-radius : 5px;
+  border-top-right-radius : 5px;
+
 }
 
 nav ul {
@@ -74,67 +112,133 @@ nav li {
 }
 
 nav a {
-  color: #fff;
+  color: var(--second_letter_color);
   text-decoration: none;
 }
 
 /* edit the hovering */
 nav a:hover {
-  color: #f1e6fd;
+  color: var(--second_letter_color_hover);
   text-decoration: none;
+}
+
+label {
+  font-size: 13px;
+  /* cursor: pointer; */
 }
 
 form {
   box-sizing: border-box;  /* new property */
-  padding-left: 80px;
+  background-color: var(--second_background);
+  color: var(--main_letter_color); /* same text color as nav */
+}  
+
+form.home_page_form {
+  padding-left: 60px;
   padding-right: 80px;
   padding-top: 20px;
-  font-size: larger;
-  background-color: var(--main_color);
-  margin-left: 20%; /* align form with nav */
-  width: 60%; /* same width as nav */
-  color: #fff; /* same text color as nav */
+  padding-bottom: 20px;
 }
 
-.input-label {
-  margin-bottom: 10px;
-  font-size: 16px;
+form.exam-form{
+  padding-left: 80px;
+  padding-right: 75px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+input[type="file"] {
+  margin: 20px 0 5px 0;
+  cursor: pointer;
 }
 
 
-
-input[type="submit"] {
-  background-color: #ffffff;
-  color: var(--main_color);
+/* this is for the questions page */
+button.submit-button { 
+  background-color: var(--accent);
+  color: var(--second_letter_color);
   padding: 10px 20px;
-  margin: 10px;
+  margin: 10px 0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
 }
-
-input[type="submit"]:hover {
-  background-color: #f1e6fd;
+button.submit-button:hover {
+  background-color: var(--accent_hover);
 }
 
-label {
-  font-size: 13px;
-  /* font-weight: ; */
+/* this is for the home page */
+input[type="submit"] {
+  background-color: var(--accent);
+  color: var(--second_letter_color);
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+input[type="submit"]:hover {
+  background-color: var(--accent_hover);
+} 
+
+div.question{
+  margin-top: 12px;
+}
+
+div.option {
+  margin-top: 2px;
 }
 
 textarea {
   width: 100%;
   margin-bottom: 20px;
   padding: 10px;
-  border: 2px solid #ccc;
+  border: 2px solid var(--second_background);
   border-radius: 5px;
   resize: vertical;
 }
+   
+.input-label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
 
-answer-section {
+div.answer-section {
   display: none;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+
+score-section {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+div.score-section {
+  font-size: 20px;
+  text-align: center;
+  
+}
+
+footer {
+  /* background-color: var(--main_color); */
+  background-color: var(--extra_background);
+  color: var(--second_letter_color);
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* width: 60%;  set nav width to 50% of the page */
+  /*margin-left: 20%;  /* start nav at 25% of the page */
+
+  border-bottom-left-radius : 5px;
+  border-bottom-right-radius : 5px;
+
 }

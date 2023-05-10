@@ -1,14 +1,44 @@
 Question 1:
-What are the primary features that distinguish various forms of parameter control in Evolutionary Algorithms?
+What is the main motivation for exploring parameter control in Evolutionary Algorithms?
+A. To complicate the optimization process
+B. To set fixed parameter values for all stages of the search
+C. To find optimal parameter values that may vary throughout the search
+D. To limit the influence of the evolutionary process on parameter values
+
+Answer: C
 
 Question 2:
-What is the evidence used to inform changes in parameter values in an adaptive or self-adaptive control scheme?
+Which of the following is NOT a parameter that can be controlled using parameter control techniques in Evolutionary Algorithms?
+A. Representation
+B. Selection mechanism
+C. Environmental conditions
+D. Population size
+
+Answer: C
 
 Question 3:
-What are the secondary features that can be used to classify different types of parameter control in Evolutionary Algorithms?
+Which of the following is an example of deterministic parameter control?
+A. Assigning a personal standard deviation (σ) to each individual
+B. Updating the mutation step size after every n steps using the 1/5 success rule
+C. Setting a fixed mutation rate for the entire search
+D. Comparing the values of solutions created using different parameter values and adjusting the parameter values accordingly
+
+Answer: C
 
 Question 4:
-Which option for varying penalty weight would update the weight in each generation based on the performance of the last k champions?
+What are the types of evidence that can be used to inform parameter changes in Evolutionary Algorithms?
+A. Time or number of evaluations, population statistics, and gene distribution
+B. Population diversity, progress made, and relative fitness of individuals
+C. Absolute evidence and relative evidence
+D. Direction and magnitude of change
+
+Answer: A and B
 
 Question 5:
-What type of parameter control would change strategy parameters in an EA without feedback from the search, based on a predefined counter or event?
+What is the secondary feature that distinguishes different forms of parameter control based on the level on which the parameter takes effect?
+A. Type of evidence
+B. Scope or level
+C. Number of parameters
+D. Variance of parameter values
+
+Answer: B

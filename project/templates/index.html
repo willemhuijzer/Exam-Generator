@@ -7,27 +7,45 @@
     <link rel="icon" href="{{ url_for('static', filename='icon.png') }}" type="image/x-icon">  </head>
   <body>
     
-    <img id="header-icon" src="{{ url_for('static', filename='icon.png') }}" alt="Website Icon">
-    <h1>GPTeacher</h1>
+    <div class="everything" >
+      <img id="header-icon" src="{{ url_for('static', filename='icon.png') }}" alt="Website Icon">
+      <h1>GPTeacher</h1>
 
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/summarizer">Summarizer</a></li>
-      </ul>
-    </nav>
+      <div class="content">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/summarizer">Summarizer</a></li>
+          </ul>
+        </nav>
 
-    <form action="/" method="POST" enctype="multipart/form-data">
-      <label class="input-label" for="text_input">Upload the lecture slides of which you want exam questions generated. As this is a pilot version, the lecture cannot exceed 30 slides: </label><br>
-      <input class="input-field" type="file" id="pdf_input" name="pdf_input"><br>
-      <input type="submit" value="Submit">
-    </form>  
+        <form class="home_page_form" action="/" method="POST" enctype="multipart/form-data">
+          <h2 class="h2-welcome">Welcome to chatGPTeacher!</h2> 
+          <section>
+            <h4>Why</h4>
+            <p>We believe that effective learning starts with engaging, interactive practice. However, we know that creating or finding practice questions can be a time-consuming or difficult task for students and teachers alike.</p>
+          </section>
+          
+          <section>
+            <h4>Our solution</h4>
+            <p>With chatGPTeacher, you can upload your course materials, like lecture slides, and create a quiz that tests your knowledge of the material. Our platform provides real-time feedback on your performance, allowing you to identify areas where you may need further study. By using our website to create quizzes, you'll improve your understanding of course material and achieve better grades.</p>
+          </section>
+    
+          <section>
+            <h4>Get started</h4>
+            <p>Ready to get started? Upload your PDF file, click "Create Quiz" and start generating a customized quiz.</p>
+            <input class="input-field" type="file" id="pdf_input" name="pdf_input"><br>
+            <input type="submit" value="Create Quiz">
+          </section>
+      
+        </form>  
 
-    <footer>
-      <p>&copy; 2023, Natural Language Processing Smart Application</p>
-    </footer>
-
+        <footer>
+          <p>&copy; 2023 Natural Language Processing Smart Application</p>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>
 

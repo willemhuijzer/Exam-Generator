@@ -33,9 +33,9 @@ def generate_response(pdf_text, simulate_response=False):
     )  
     output = response['choices'][0]['message']['content']
     # open text.txt in write mode
-    with open("text.txt", "w") as file_object:
-        # write text to file
-        file_object.write(output)
+    # with open("text.txt", "w") as file_object:
+    #     # write text to file
+    #     file_object.write(output)
     
     return output
 

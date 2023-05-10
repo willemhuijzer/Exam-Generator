@@ -50,7 +50,8 @@
     // Display the score and correct answers
     var score = Math.round((correctAnswers / exam_questions.length) * 100);
     var scoreSection = document.getElementById("score-section");
-    scoreSection.innerHTML = "You scored " + score + "% (" + correctAnswers + " out of " + exam_questions.length + ")";
+    scoreSection.innerHTML = "<p>" + score + "% (" + correctAnswers + " out of " + exam_questions.length + ") </p>" ;
+    scoreSection.style.display = "block";
 
     // Show the answer section
     var answerSection = document.getElementById("answer-section");
@@ -67,26 +68,30 @@
 
 {% block content %}
   <h2>Generated Questions</h2>
-  <form id="exam-form" onsubmit="submitAnswers(); return false;">
-    <div id="questions">  
+  <form id="exam-form" class="exam-form" onsubmit="submitAnswers(); return false;">
+    <div id="questions" class="questions">  
       <ol>
 
         {% for question_answer_pair in exam_questions %}
         {% set question_number = loop.index %}
-          <li>        
-            <div class="question">{{ question_answer_pair['question']|replace('\n', '<br>')|safe }}</div>
-            {% for option in question_answer_pair['options'] %}
-              <div class="option">
-                <input type="radio" id="q{{ question_number }}" name="q{{ question_number }}" value="{{ option }}" />
-                <label for="q{{ question_number }}">{{ option }}</label>
+          <li>
+            <div class="whole-question">
+              <div class="question">{{ question_answer_pair['question']|replace('\n', '<br>')|safe }}</div>
+              <div class="all-options">
+                {% for option in question_answer_pair['options'] %}
+                  <div class="option">
+                    <input type="radio" id="q{{ question_number }}" name="q{{ question_number }}" value="{{ option }}" />
+                    <label for="q{{ question_number }}">{{ option }}</label>
+                  </div>
+                {% endfor %}
               </div>
-            {% endfor %}
+            </div>
           </li>
         {% endfor %}
       </ol>
     </div>
 
-    <button id="submit-button" type="submit">Submit Answers</button>
+    <button id="submit-button" class="submit-button" type="submit">Submit Answers</button>
   </form>
 
   <div id="answer-section">
@@ -101,6 +106,6 @@
         </li>
       {% endfor %}
     </ol> -->
-    <div id="score-section"></div>
+    <div class="score-section" id="score-section"></div>
   </div>
 {% endblock %}

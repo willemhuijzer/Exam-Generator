@@ -14,7 +14,7 @@ def index():
 @app.route("/", methods=["POST"])
 def generate():
     
-    simulate = False
+    simulate = True
     pdf_text = 0 # dummy value for simulation
 
     if not simulate:
