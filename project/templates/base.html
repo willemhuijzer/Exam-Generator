@@ -1,13 +1,17 @@
+<!-- this is base.html -->
 <!doctype html>
 <html>
   <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_base.css') }}">
+    <title>chatGPTeacher</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
   </head>
   <body>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
+        <li><a href="/Summarizer">Summarizer</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
@@ -21,14 +25,67 @@
 </html>
 
 <script>
-function showAnswers() {
-  var answerSection = document.getElementById("answer-reveal");
-  var questionsDiv = document.getElementById("questions");
-  var button = document.getElementById("reveal-button");
+  document.getElementById("answer-section").style.display = "none";
 
-  answerSection.style.display = "block";
-  questionsDiv.style.display = "none";
-  button.style.display = "none";
-}
-  </script>
-  
+</script>
+<!-- 
+
+  function showScore(score, totalQuestions) {
+    var scorePercent = (score / totalQuestions) * 100;
+    var scoreDisplay = "Score: " + score + "/" + totalQuestions + " (" + scorePercent.toFixed(2) + "%)";
+    var scoreDiv = document.getElementById("score-section");
+    scoreDiv.innerHTML = scoreDisplay;
+
+    var form = document.getElementById("exam-form");
+    form.style.display = "none";
+
+    var answerSection = document.getElementById("answer-section");
+    answerSection.style.display = "block";
+
+    var submitButton = document.getElementById("submit-button");
+    submitButton.style.display = "none";
+  }
+
+  function submitAnswers(exam_questions) {
+
+    console.log('log: submitAnswers() called');
+    console.log('log: exam_questions: ', exam_questions);
+    console.log('log: window.exam_questions: ', window.exam_questions);
+        
+    var totalQuestions = exam_questions.length;
+    var correctAnswers = 0;
+
+    // Loop through all the questions
+    for (var i = 0; i < totalQuestions; i++) {
+      var selectedAnswer = document.querySelector('input[name="q'+ i +'"]:checked');
+      var selectedAnswerIndex = exam_questions[i]['options'].indexOf(selectedAnswer.value);
+      var correctAnswerIndex = exam_questions[i]['options'].indexOf(exam_questions[i]['answer']);
+
+      // Store the selected answer in local storage
+      localStorage.setItem('selectedAnswer_' + i, selectedAnswer.value);
+
+      // Highlight the correct answer in green
+      var correctAnswerLabel = document.querySelector('label[for="q'+ i +'_'+ correctAnswerIndex +'"]');
+      correctAnswerLabel.style.color = 'green';
+
+      // If the selected answer is correct, increment the score and highlight the selected answer in green
+      if (selectedAnswerIndex === correctAnswerIndex) {
+        correctAnswers++;
+        selectedAnswer.parentElement.style.color = 'green';
+      }
+      // If the selected answer is incorrect, highlight the selected answer in red
+      else {
+        selectedAnswer.parentElement.style.color = 'red';
+      }
+    }
+
+    // Calculate and show the score
+    var score = (correctAnswers / totalQuestions) * 100;
+    showScore(score, totalQuestions);
+
+    // Prevent the default form submission behavior
+    event.preventDefault();
+  }
+
+
+</script> -->

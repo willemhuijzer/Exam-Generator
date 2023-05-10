@@ -1,9 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main_color: #4BC3EF;
+}
+
+#header-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px; /* Change this value to adjust the size of your icon */
+  height: auto;
+  margin-top: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Lato;
+  color: var(--main_color);
+}
+
+body {
+  font-family: Lato;
+  background-color: #f1e6fd;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+footer {
+  background-color: var(--main_color);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 10px;
+  width: 60%;  /* set nav width to 50% of the page */
+  margin-left: 20%;  /* start nav at 25% of the page */
+}
+
 nav {
-  background-color: #333;
+  background-color: var(--main_color);
   color: #fff;
   display: flex;
-  justify-content: space-between;
+  font-size: 20px;
+  justify-content: center;  /* center the ul within the nav */
   padding: 10px;
+  width: 60%;  /* set nav width to 50% of the page */
+  margin-left: 20%;  /* start nav at 25% of the page */
 }
 
 nav ul {
@@ -11,9 +63,13 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;  /* set ul width to 100% of the nav */
+  justify-content: space-between;  /* space li evenly within the ul */
 }
 
 nav li {
+  flex: 1;  /* distribute space evenly amongst li within the ul */
+  text-align: center;  /* center text within each li */
   margin: 0 10px;
 }
 
@@ -22,62 +78,63 @@ nav a {
   text-decoration: none;
 }
 
-body {
-    font-family: sans-serif;
-    background-color: #f2f2f2;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  form {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  label {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  textarea {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    resize: vertical;
-  }
-  
-  input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
+/* edit the hovering */
+nav a:hover {
+  color: #f1e6fd;
+  text-decoration: none;
+}
+
+form {
+  box-sizing: border-box;  /* new property */
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 20px;
+  font-size: larger;
+  background-color: var(--main_color);
+  margin-left: 20%; /* align form with nav */
+  width: 60%; /* same width as nav */
+  color: #fff; /* same text color as nav */
+}
+
+.input-label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+
+
+input[type="submit"] {
+  background-color: #ffffff;
+  color: var(--main_color);
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #f1e6fd;
+}
+
+label {
+  font-size: 13px;
+  /* font-weight: ; */
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+answer-section {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}

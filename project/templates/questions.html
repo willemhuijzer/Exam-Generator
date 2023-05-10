@@ -1,0 +1,106 @@
+<script>
+  window.exam_questions = {{ exam_questions|tojson|safe }};
+
+  // console.log('log: window.exam_questions: ', window.exam_questions);
+  // console.log('log: window.exam_questions[0]: ', window.exam_questions[0]);
+  // console.log('log: window.exam_questions[0].question: ', window.exam_questions[0].question);
+  // console.log('log: window.exam_questions[0].options: ', window.exam_questions[0].options);
+
+  function submitAnswers() {
+    var selectedAnswers = [];
+    var correctAnswers = 0;
+
+    // Get all the radio buttons and correct answers for each question
+    var questions = document.querySelectorAll("#questions li");
+    for (var i = 0; i < questions.length; i++) {
+      var question = questions[i];
+      var radios = question.querySelectorAll("input[type='radio']");
+      var correctAnswer = exam_questions[i]["answer"];
+
+      // Check if any radio button is selected for the current question
+      var selectedRadio = null;
+      for (var j = 0; j < radios.length; j++) {
+        if (radios[j].checked) {
+          selectedRadio = radios[j];
+          break;
+        }
+      }
+
+      // If a radio button is selected, compare its value with the correct answer and modify its color
+      if (selectedRadio) {
+        var selectedAnswer = selectedRadio.value[0];
+        selectedAnswers.push(selectedAnswer);
+        if (selectedAnswer === correctAnswer) {
+          selectedRadio.nextElementSibling.style.color = "green";
+          correctAnswers++;
+        } else {
+          selectedRadio.nextElementSibling.style.color = "red";
+          // Modify the color of the correct option
+          for (var j = 0; j < radios.length; j++) {
+            // console.log("log: radios[j].value: ", radios[j].value);
+            if (radios[j].value[0] === correctAnswer) {
+              radios[j].nextElementSibling.style.color = "green";
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    // Display the score and correct answers
+    var score = Math.round((correctAnswers / exam_questions.length) * 100);
+    var scoreSection = document.getElementById("score-section");
+    scoreSection.innerHTML = "You scored " + score + "% (" + correctAnswers + " out of " + exam_questions.length + ")";
+
+    // Show the answer section
+    var answerSection = document.getElementById("answer-section");
+    answerSection.style.display = "block";
+
+    // Store the selected answers in localStorage
+    for (var i = 0; i < selectedAnswers.length; i++) {
+      localStorage.setItem("selectedAnswer_" + i, selectedAnswers[i]);
+    }
+  }
+</script>
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Generated Questions</h2>
+  <form id="exam-form" onsubmit="submitAnswers(); return false;">
+    <div id="questions">  
+      <ol>
+
+        {% for question_answer_pair in exam_questions %}
+        {% set question_number = loop.index %}
+          <li>        
+            <div class="question">{{ question_answer_pair['question']|replace('\n', '<br>')|safe }}</div>
+            {% for option in question_answer_pair['options'] %}
+              <div class="option">
+                <input type="radio" id="q{{ question_number }}" name="q{{ question_number }}" value="{{ option }}" />
+                <label for="q{{ question_number }}">{{ option }}</label>
+              </div>
+            {% endfor %}
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+
+    <button id="submit-button" type="submit">Submit Answers</button>
+  </form>
+
+  <div id="answer-section">
+    <h2>Your score:</h2>
+    <!-- <ol>
+      {% for question_answer_pair in exam_questions %}
+        <li>
+          <div class="question">{{ question_answer_pair['question']|replace('\n', '<br>')|safe }}</div>
+          <div class="'options"> {{ question_answer_pair['options']}}</div>
+          <div class="answer">Answer: {{ question_answer_pair['answer'] }}</div>
+          <div id="selected-answer-{{ loop.index0 }}"></div>
+        </li>
+      {% endfor %}
+    </ol> -->
+    <div id="score-section"></div>
+  </div>
+{% endblock %}

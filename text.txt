@@ -1,0 +1,14 @@
+Question 1:
+What are the primary features that distinguish various forms of parameter control in Evolutionary Algorithms?
+
+Question 2:
+What is the evidence used to inform changes in parameter values in an adaptive or self-adaptive control scheme?
+
+Question 3:
+What are the secondary features that can be used to classify different types of parameter control in Evolutionary Algorithms?
+
+Question 4:
+Which option for varying penalty weight would update the weight in each generation based on the performance of the last k champions?
+
+Question 5:
+What type of parameter control would change strategy parameters in an EA without feedback from the search, based on a predefined counter or event?

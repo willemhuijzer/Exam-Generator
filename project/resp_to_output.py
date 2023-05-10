@@ -14,7 +14,7 @@ def split_questions(response, question_identifier):
         return []
 
 
-def disect_question_options_answer(exam_question:str)->dict:
+def disect_question_options_answer(exam_question:str, question_id)->dict:
     """Splits question into question, options, and answer.
     
     Args:
@@ -36,10 +36,10 @@ def disect_question_options_answer(exam_question:str)->dict:
     # identify answer
     answer = exam_question.split('Answer: ')[1].strip()
 
-    return {'question': question, 'options': options, 'answer': answer}
+    return {'question_id': question_id, 'question': question, 'options': options, 'answer': answer}
 
 
-def response_to_question_answer_pairs(response:str, question_identifier:str='')->list:
+def response_to_question_answer_pairs(response:str, question_identifier:str='')->list[dict]:
     """Splits response into a list of questions.    
     Args:
         response (str): Response from the GPT API.
@@ -65,17 +65,9 @@ def response_to_question_answer_pairs(response:str, question_identifier:str='')-
         return []
 
     # Disect questions into question, options, and answer
-    exam = [disect_question_options_answer(question) for question in questions]
-
-    pprint(exam)
+    exam = [disect_question_options_answer(question, index) for index, question in enumerate(questions)]
 
     return exam
-
-    # Split questions into a list of questions and answers
-    list_of_pairs = [question.split('Answer: ') for question in questions]
-
-    # Remove newline characters from evey element and return list of tuples
-    return [(pair[0].strip(), pair[1].strip()) for pair in list_of_pairs]
 
 
 if __name__ == '__main__':
