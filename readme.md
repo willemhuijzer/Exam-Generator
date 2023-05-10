@@ -24,9 +24,10 @@ Open your browser and go to http://localhost:5000
 💡 How to Use the App
 
 Upload your slide deck using the file input on the main page
-Click the "Convert" button to generate the questions
+Click the button you see to generate the questions
 The app will display the questions on the "Results" page
 Select your answers and submit
+- as a sample use the input file give here "input.pdf". Mostly works!
 The app will display your score on the "Questions" page
 🔑 API Keys
 
