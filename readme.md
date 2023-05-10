@@ -3,6 +3,7 @@
 This is a Flask web application that takes uploaded slide decks and converts them into a practice exam UI. The application uses OpenAI's GPT to generate questions based on the content of the slides.
 
 📁 File Structure
+All the main files are under the project folder.
 
 - app.py : Runs the Flask code
 - openai_api.py: Gets the GPT output
