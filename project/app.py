@@ -34,6 +34,14 @@ def generate():
     # print(exam_questions)
     return render_template("questions.html", exam_questions=exam_questions)
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/summarizer")
+def summarizer():
+    return render_template("about.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
