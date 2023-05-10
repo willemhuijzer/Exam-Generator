@@ -32,6 +32,9 @@ The app will display your score on the "Questions" page
 🔑 API Keys
 
 This application requires an OpenAI API key. Please refer to the OpenAI documentation on how to obtain an API key.
+- create a configuration.py file 
+- add the key there with variable named as OPENAI_KEY
+- ex: OPENAI_KEY = "asghh...."
 
 📌 Note
 
