@@ -25,7 +25,7 @@ def disect_question_options_answer(exam_question:str, question_id)->dict:
     """
 
     # identify question
-    question = exam_question.split('\nA. ')[0].strip()
+    question = exam_question.split('A. ')[0].strip()
 
     # identify options
     options = "A. " + exam_question.split('A. ')[1].split('Answer: ')[0].strip()
