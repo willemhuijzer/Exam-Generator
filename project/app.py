@@ -27,6 +27,7 @@ def generate():
             return 'No selected file', 400
     
         pdf_text = extract_text_from_pdf(pdf_file)
+        input_questions = request.form.get("text_input", "") # get the text from the text area
 
     response = generate_response(pdf_text, simulate_response=simulate)
     exam_questions = response_to_question_answer_pairs(response)

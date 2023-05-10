@@ -7,16 +7,24 @@
 :root {
   --main_background: #ffffff;
   --second_background: #ffffff;
-  --extra_background: #333;
+  --extra_background: #333333;
 
   --test: red;
-
   --main_letter_color: #333;
   --second_letter_color: #fff;
   --second_letter_color_hover: #c2c2c2;
 
   --accent: #4CAF50;
   --accent_hover: #45a049;
+}
+
+.text-field {
+  width: 100%;
+  height: 150px;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
 }
 
 body {
@@ -148,7 +156,7 @@ form.exam-form{
 }
 
 input[type="file"] {
-  margin: 20px 0 5px 0;
+  margin: 0px 0 5px 0;
   cursor: pointer;
 }
 
