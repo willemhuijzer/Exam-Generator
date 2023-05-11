@@ -1,0 +1,44 @@
+Question 1:
+ What are the primary features that distinguish various forms of parameter control in Evolutionary Algorithms?
+    A. The level/scope of change
+    B. What component of the EA is changed
+    C. Evidence/data backing up changes
+    D. All of the above
+
+    Answer: B
+
+Question 2:
+ What is the purpose of parameter control in Evolutionary Algorithms?
+    A. To facilitate the use of inappropriate parameter values in various stages of the search
+    B. To delegate parameter setting task to the evolutionary process
+    C. To eliminate all required computing resources
+    D. None of the above
+
+    Answer: B
+
+Question 3:
+How is varying mutation step size achieved in Evolutionary Algorithms?
+    A. By replacing the population with new individuals based on fitness
+    B. By assigning a personal mutation step size to each variable in each individual
+    C. By comparing values through solutions created with them
+    D. By using absolute evidence to trigger a change in mutation step size
+
+    Answer: B
+
+Question 4:
+What are the secondary features that distinguish various forms of parameter control in Evolutionary Algorithms?
+    A. The level/scope of change
+    B. Evidence/data backing up changes
+    C. What component of the EA is changed
+    D. Level of mathematical complexity in the algorithm
+
+    Answer: B
+
+Question 5:
+Which of the following is NOT a possible combination of types and evidences in parameter control in Evolutionary Algorithms?
+    A. Adaptive + time
+    B. Deterministic + relative evidence
+    C. Self-adaptive + absolute evidence
+    D. Adaptive + constraint satisfaction
+
+    Answer: D

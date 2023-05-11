@@ -2,6 +2,7 @@ import openai
 from configuration import *
 import pdfplumber
 from prompt_constants import *
+import time
 
 openai.api_key = OPENAI_API_KEY
 
@@ -14,10 +15,22 @@ def extract_text_from_pdf(file_path):
             text += page.extract_text()
     return text
 
-def generate_response(pdf_text, simulate_response=False):
+def generate_response(pdf_text, simulate_response=False, log_response=False):
+    """Generates a response based on the provided text.
+
+    Args:
+        pdf_text (str): Text to generate a response from.
+        simulate_response (bool, optional): Whether to simulate the response. Defaults to False.
+        
+    Returns:
+        str: Response from the GPT API.
+    """
 
     if simulate_response:
         return response_simulated
+    
+    #find current time
+    time_of_api_call = time.strftime("%m%d-%H:%M:%S")
     
     messages = [
         {"role": "system", "content": "You are a helpful assistant."},
@@ -32,10 +45,12 @@ def generate_response(pdf_text, simulate_response=False):
         n=1,
     )  
     output = response['choices'][0]['message']['content']
-    # open text.txt in write mode
-    # with open("text.txt", "w") as file_object:
-    #     # write text to file
-    #     file_object.write(output)
+
+    if log_response:
+        # open text.txt in write mode
+        with open(f"project/response_logger/{time_of_api_call}.txt", "w") as file_object:
+            # write text to file
+            file_object.write(output)
     
     return output
 

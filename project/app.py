@@ -15,6 +15,8 @@ def index():
 def generate():
     
     simulate = False
+    log_response = True
+
     pdf_text = 0 # dummy value for simulation
 
     if not simulate:
@@ -29,7 +31,7 @@ def generate():
         pdf_text = extract_text_from_pdf(pdf_file)
         input_questions = request.form.get("text_input", "") # get the text from the text area
 
-    response = generate_response(pdf_text, simulate_response=simulate)
+    response = generate_response(pdf_text, simulate_response=simulate, log_response=log_response)
     exam_questions = response_to_question_answer_pairs(response)
     # print(exam_questions)
     return render_template("questions.html", exam_questions=exam_questions)
