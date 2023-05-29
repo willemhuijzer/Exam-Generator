@@ -7,19 +7,24 @@ from configuration import * # doe weg
 
 app = Flask(__name__)
 
+
+SIMULATE = False        # set to True to simulate the response (skip the open ai API call)
+LOG_RESPONSE = True     # set to True to store the prompt, output and response object
+USE_TEXT_ONLY = True    # set to True to skip the pdf input and use the text input instead (to paste text)
+
 @app.route("/")
 def index():
     return render_template("index.html")
 
 @app.route("/", methods=["POST"])
 def generate():
-    
-    simulate = False
-    log_response = True
 
-    pdf_text = 0 # dummy value for simulation
+    content_to_exam_on = 0 # dummy value for simulation
 
-    if not simulate:
+    if USE_TEXT_ONLY:
+        content_to_exam_on = request.form.get("text_input", "")
+
+    elif not SIMULATE:
         if 'pdf_input' not in request.files:
             return 'No file part', 400
         
@@ -28,12 +33,12 @@ def generate():
         if pdf_file.filename == '':
             return 'No selected file', 400
     
-        pdf_text = extract_text_from_pdf(pdf_file)
-        input_questions = request.form.get("text_input", "") # get the text from the text area
+        content_to_exam_on = extract_text_from_pdf(pdf_file)
+        input_questions = request.form.get("text_input", "") # get the text from the text area    
 
-    response = generate_response(pdf_text, simulate_response=simulate, log_response=log_response)
+    response = generate_response(content_to_exam_on, simulate_response=SIMULATE, log_response=LOG_RESPONSE)
     exam_questions = response_to_question_answer_pairs(response)
-    # print(exam_questions)
+
     return render_template("questions.html", exam_questions=exam_questions)
 
 @app.route("/about")

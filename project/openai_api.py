@@ -1,8 +1,8 @@
 import openai
 from configuration import *
 import pdfplumber
-from prompt_constants import *
-import time
+from prompt_elements import *
+import time, os
 
 openai.api_key = OPENAI_API_KEY
 
@@ -15,12 +15,14 @@ def extract_text_from_pdf(file_path):
             text += page.extract_text()
     return text
 
-def generate_response(pdf_text, simulate_response=False, log_response=False):
+def generate_response(content_to_exam_on, content_nature='slides', simulate_response=False, log_response=False):
     """Generates a response based on the provided text.
 
     Args:
-        pdf_text (str): Text to generate a response from.
-        simulate_response (bool, optional): Whether to simulate the response. Defaults to False.
+        `content_to_exam_on` (str): Text to generate a response from.\n
+        `content_nature` (str, optional): Description of the content the users whats to be examed on. Defaults to 'slides'.\n
+        `simulate_response` (bool, optional): Whether to simulate the response. Defaults to False.\n
+        `log_response` (bool, optional): Whether the openai response should be logged as a textfile.\n
         
     Returns:
         str: Response from the GPT API.
@@ -30,11 +32,20 @@ def generate_response(pdf_text, simulate_response=False, log_response=False):
         return response_simulated
     
     #find current time
-    time_of_api_call = time.strftime("%m%d-%H:%M:%S")
+    time_of_api_call = time.strftime("%y|%m|%d-%H:%M:%S")
     
+    # Generate prompt
+    prompt = prompt_preface(content_nature=content_nature) \
+                + content_to_exam_on \
+                + prompt_instruction(
+                    num_of_questions=5,
+                    example_questions=EXAMPLE_QUESTIONS,
+                    content_nature=content_nature,
+                    difficulty_level='university')
+
     messages = [
         {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": INTRO + pdf_text + EXAM_TEXT},
+        {"role": "user", "content": prompt},
     ]
 
     # Make an API request to generate text completion
@@ -47,10 +58,18 @@ def generate_response(pdf_text, simulate_response=False, log_response=False):
     output = response['choices'][0]['message']['content']
 
     if log_response:
-        # open text.txt in write mode
-        with open(f"project/response_logger/{time_of_api_call}.txt", "w") as file_object:
-            # write text to file
+        #create a folder for this response
+        log_path = f"project/response_logger/{time_of_api_call}"
+        os.mkdir(log_path)
+        # store the prompt
+        with open(f"{log_path}/prompt.txt", "w") as file_object:
+            file_object.write(prompt)
+        # store the output
+        with open(f"{log_path}/output.txt", "w") as file_object:
             file_object.write(output)
+        # store the whole response object 
+        with open(f"{log_path}/response_full.txt", "w") as file_object:
+            file_object.write(str(response))
     
     return output
 

@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is Natural Language Processing (NLP)?\nA. The process of converting natural language to binary code\nB. The process of processing human language in the form of text or voice data and to \u2018understand\u2019 its full meaning, complete with the speaker or writer\u2019s intent and sentiment\nC. The process of translating language from one language to another\nD. The process of learning a new language\n\nAnswer: B\n\nQuestion 2:\nWhich of the following is NOT a characteristic of natural language?\nA. Compositional\nB. Arbitrary\nC. Stable\nD. Displaced\n\nAnswer: C\n\nQuestion 3:\nWhat is one reason why NLP is hard?\nA. Natural language is always spoken and never written\nB. Natural language is very predictable and consistent\nC. There is never enough data available about any particular phenomenon\nD. Natural language is often ambiguous and context-dependent\n\nAnswer: D\n\nQuestion 4:\nWhat is Zipf's Law?\nA. A law that states that the frequency of a word is directly proportional to its rank in the sorted list of frequencies\nB. A law that states that the frequency of a word is inversely proportional to its rank in the sorted list of frequencies\nC. A law that states that frequent words are more important than infrequent words\nD. A law that states that the rank of a word is directly proportional to its length\n\nAnswer: B\n\nQuestion 5:\nWhat is the main challenge of context dependence in natural language processing?\nA. Capturing and understanding the context\nB. Finding enough data about the particular phenomenon\nC. Dealing with sparse data due to Zipf's Law\nD. Incorporating world knowledge into the processing of language\n\nAnswer: A",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685382680,
+  "id": "chatcmpl-7LbJYJ2sg9UzEZ8BuRP27fl4B9UTD",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 358,
+    "prompt_tokens": 766,
+    "total_tokens": 1124
+  }
+}

@@ -1,0 +1,44 @@
+Question 1:
+What is Natural Language Processing (NLP)?
+A. The process of converting natural language to binary code
+B. The process of processing human language in the form of text or voice data and to ‘understand’ its full meaning, complete with the speaker or writer’s intent and sentiment
+C. The process of translating language from one language to another
+D. The process of learning a new language
+
+Answer: B
+
+Question 2:
+Which of the following is NOT a characteristic of natural language?
+A. Compositional
+B. Arbitrary
+C. Stable
+D. Displaced
+
+Answer: C
+
+Question 3:
+What is one reason why NLP is hard?
+A. Natural language is always spoken and never written
+B. Natural language is very predictable and consistent
+C. There is never enough data available about any particular phenomenon
+D. Natural language is often ambiguous and context-dependent
+
+Answer: D
+
+Question 4:
+What is Zipf's Law?
+A. A law that states that the frequency of a word is directly proportional to its rank in the sorted list of frequencies
+B. A law that states that the frequency of a word is inversely proportional to its rank in the sorted list of frequencies
+C. A law that states that frequent words are more important than infrequent words
+D. A law that states that the rank of a word is directly proportional to its length
+
+Answer: B
+
+Question 5:
+What is the main challenge of context dependence in natural language processing?
+A. Capturing and understanding the context
+B. Finding enough data about the particular phenomenon
+C. Dealing with sparse data due to Zipf's Law
+D. Incorporating world knowledge into the processing of language
+
+Answer: A
