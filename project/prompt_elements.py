@@ -20,34 +20,95 @@ Answer: C
 '''
 
 SIMULATED_RESPONSE = '''
-Based on the provided content from chapter slides and previous exam questions, here are three new exam questions:
-
 Question 1:
-Which of the following is NOT a major type of parameter control in Evolutionary Algorithms?
-A. Deterministic
-B. Adaptive
-C. Self-adaptive
-D. Randomized
+What is Natural Language Processing (NLP)?
+A. The branch of computer science concerned with giving computers the ability to understand images and videos.
+B. The branch of artificial intelligence concerned with giving computers the ability to perform complex mathematical computations.
+C. The branch of computer science concerned with giving computers the ability to understand text and spoken words in much the same way human beings can.
+D. The branch of computer science concerned with developing algorithms that can learn from data.
 
-Answer: D
+Answer: C
 
 Question 2:
-What is the main advantage of adaptive and self-adaptive parameter control in Evolutionary Algorithms?
-A. Increased user control
-B. Reduction in required computing resources
-C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
-D. Improved predictability of parameter values
+What are the different technologies combined in NLP?
+A. Computational linguistics, machine learning, and deep learning models.
+B. Robotics, computer vision, and natural language modeling.
+C. Computer graphics, computer vision, and machine learning models.
+D. None of the above.
 
-Answer: C
+Answer: A
 
 Question 3:
-In the context of varying mutation step size, which option assigns a personal σ to each individual and incorporates this σ into the chromosome?
-A. Option 1
-B. Option 2
-C. Option 3
-D. Option 4
+What is meant by the compositional property of natural language?
+A. The choice of words to describe someone is quite arbitrary.
+B. The meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together.
+C. New words are created all the time.
+D. None of the above.
+
+Answer: B
+
+Question 4:
+What is meant by the displaced property of natural language?
+A. The ability to talk about things that are not here or do not exist.
+B. The choice of words to describe someone is quite arbitrary.
+C. New words are created all the time.
+D. None of the above.
+
+Answer: A
+
+Question 5:
+What is meant by the ambiguity property of natural language?
+A. Certain words can mean a lot of things.
+B. The choice of words to describe someone is quite arbitrary.
+C. New words are created all the time.
+D. None of the above.
+
+Answer: A
+
+Question 6:
+What is Zipf's law?
+A. The rank-frequency distribution of words is an inverse relation.
+B. The frequency of a word is directly proportional to the rank of that word.
+C. All words follow a normal distribution.
+D. None of the above.
+
+Answer: A
+
+Question 7:
+Why is handling variation in language difficult for NLP?
+A. Because one form can have different meanings.
+B. Because the same meaning can be expressed with different forms.
+C. Because different types of language use require different models.
+D. All of the above.
 
 Answer: C
+
+Question 8:
+What is the context-dependence property of natural language?
+A. The correct interpretation is context-dependent and often requires world knowledge.
+B. The frequency of a word is directly proportional to the rank of that word.
+C. All words follow a normal distribution.
+D. None of the above.
+
+Answer: A
+
+Question 9:
+What is one issue with natural language being often spoken and grounded?
+A. It is too easy for computers to understand spoken language.
+B. It requires a lot of computing resources to understand spoken language.
+C. It is difficult to represent spoken language in a computational system.
+D. None of the above.
+
+Answer: C
+
+Question 10:
+What technologies enable computers to process human language in the form of text and voice data?
+A. Computational linguistics, machine learning, and deep learning models.
+B. Robotics, computer vision, and natural language modeling.
+C. Computer graphics, computer vision, and machine learning models.
+D. None of the above.
+
+Answer: A
 '''
 
 def prompt_preface(content_nature:str='slides'):

@@ -31,7 +31,7 @@ def generate_response(content_to_exam_on, content_nature='slides', simulate_resp
     """
 
     if simulate_response:
-        return response_simulated
+        return SIMULATED_RESPONSE
     
     #find current time
     time_of_api_call = time.strftime("%y|%m|%d-%H:%M:%S")
