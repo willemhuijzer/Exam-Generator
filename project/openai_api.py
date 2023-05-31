@@ -7,6 +7,7 @@ import time, os
 openai.api_key = OPENAI_API_KEY
 
 NUM_OF_QUESTIONS = 10
+DIFFICULTY_LEVEL = 'challenging university'
 
 def extract_text_from_pdf(file_path):
     with pdfplumber.open(file_path) as pdf:
@@ -43,7 +44,7 @@ def generate_response(content_to_exam_on, content_nature='slides', simulate_resp
                     num_of_questions=NUM_OF_QUESTIONS,
                     example_questions=EXAMPLE_QUESTIONS,
                     content_nature=content_nature,
-                    difficulty_level='university')
+                    difficulty_level=DIFFICULTY_LEVEL)
 
     messages = [
         {"role": "system", "content": "You are a helpful assistant."},
