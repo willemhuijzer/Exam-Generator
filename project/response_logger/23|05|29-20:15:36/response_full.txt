@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is NLP?\nA. The study of computer languages\nB. The study of human language and its computer processing\nC. The study of natural disasters\nD. The study of national languages\n\nAnswer: B\n\nQuestion 2:\nWhat is Zipf's law?\nA. The law that governs the processing of human language in computers\nB. The law that governs the generation of new words in natural language\nC. The law that governs the distribution of word frequencies in natural language\nD. The law that governs the use of syntax in natural language\n\nAnswer: C\n\nQuestion 3:\nWhich of the following is not a characteristic of natural language?\nA. Creative\nB. Compositional\nC. Probabilistic\nD. Arbitrary\n\nAnswer: C\n\nQuestion 4:\nWhat is the main challenge in processing natural language?\nA. Ambiguity\nB. Basic syntax\nC. Common language use\nD. Over-abundance of data\n\nAnswer: A\n\nQuestion 5:\nWhy is NLP context-dependent?\nA. Because natural language is usually spoken and grounded\nB. Because computers have difficulty processing syntax\nC. Because words have different meanings depending on their context\nD. Because it requires large amounts of data for processing\n\nAnswer: C",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685384137,
+  "id": "chatcmpl-7Lbh3BSkgpDwDJF9lLPmY9P0q2ICE",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 267,
+    "prompt_tokens": 766,
+    "total_tokens": 1033
+  }
+}

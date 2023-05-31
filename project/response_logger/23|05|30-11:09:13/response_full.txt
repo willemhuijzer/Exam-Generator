@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is descriptive linguistics?\nA. The study of how language should be used\nB. The study of how language is actually used\nC. The study of how language has evolved over time\nD. The study of how language is learned by children\n\nAnswer: B\n\nQuestion 2:\nWhat is the purpose of grammar rules?\nA. To limit the possibilities of language\nB. To make language more complex\nC. To give us expressivity in language\nD. To make language more difficult to learn\n\nAnswer: C\n\nQuestion 3:\nWhat are probes in NLP?\nA. Small, supervised models trained to extract linguistic information from another model\u2019s output\nB. Models of neural networks used in NLP\nC. Data structures used to represent linguistic information\nD. Algorithms for computing syntactic and semantic structure\n\nAnswer: A\n\nQuestion 4:\nWhat is structural generalization?\nA. Novel combinations of old structures\nB. A special syntactic way of dealing with objects in language\nC. The use of idioms and metaphors in language\nD. A feature of grammar that marks less plausible things more prominently\n\nAnswer: A\n\nQuestion 5:\nWhat is differential object marking?\nA. A feature of grammar that marks less plausible things more prominently\nB. A special syntactic way of dealing with objects in language\nC. A method for testing a model\u2019s latent space to see if it encodes structural information\nD. A way of representing syntax trees in NLP models\u2019 latent space\n\nAnswer: B\n\nQuestion 6:\nWhich of the following is an example of non-compositional meaning in language?\nA. \u201cDon\u2019t count your chickens before they hatch\u201d\nB. \u201cHe won\u2019t X, let alone Y\u201d\nC. \u201cThe chef chopped the onion\u201d\nD. \u201cThe mother gave the daughter the candle\u201d\n\nAnswer: A\n\nQuestion 7:\nWhat is the role of meaning in linguistic structure?\nA. Meaning has no role in linguistic structure\nB. Meaning plays a small role in linguistic structure\nC. Meaning plays a very large role in linguistic structure\nD. Meaning plays a role only in certain languages\n\nAnswer: C\n\nQuestion 8:\nWhat are the three types of phrases in language structure?\nA. Noun, verb, and pronoun phrases\nB. Prepositional, adverbial, and adjectival phrases\nC. Noun, verbal, and prepositional phrases\nD. Subject, verb, and object phrases\n\nAnswer: C\n\nQuestion 9:\nWhat is the difference between descriptive and prescriptive linguistics?\nA. Descriptive linguistics describes how language should be used, while prescriptive linguistics describes how language is actually used\nB. Descriptive linguistics describes how language is actually used, while prescriptive linguistics describes how language should be used\nC. Descriptive linguistics studies only the syntax of language, while prescriptive linguistics studies only the meaning of language\nD. Descriptive linguistics studies the origin of language, while prescriptive linguistics studies the evolution of language over time\n\nAnswer: B\n\nQuestion 10:\nWhat is the advantage of testing a model\u2019s latent space in NLP?\nA. It can be used to introduce new words to the model\nB. It provides a way to simplify models of neural networks\nC. It allows us to precisely control the values of model parameters\nD. It helps us understand whether the model encodes structural information\n\nAnswer: D",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685437754,
+  "id": "chatcmpl-7LpdqlnQblH2C465uINPWYcIb9u8n",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 715,
+    "prompt_tokens": 996,
+    "total_tokens": 1711
+  }
+}

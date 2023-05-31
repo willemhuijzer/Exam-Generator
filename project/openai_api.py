@@ -6,6 +6,8 @@ import time, os
 
 openai.api_key = OPENAI_API_KEY
 
+NUM_OF_QUESTIONS = 10
+
 def extract_text_from_pdf(file_path):
     with pdfplumber.open(file_path) as pdf:
         num_pages = len(pdf.pages)
@@ -38,7 +40,7 @@ def generate_response(content_to_exam_on, content_nature='slides', simulate_resp
     prompt = prompt_preface(content_nature=content_nature) \
                 + content_to_exam_on \
                 + prompt_instruction(
-                    num_of_questions=5,
+                    num_of_questions=NUM_OF_QUESTIONS,
                     example_questions=EXAMPLE_QUESTIONS,
                     content_nature=content_nature,
                     difficulty_level='university')
@@ -72,33 +74,3 @@ def generate_response(content_to_exam_on, content_nature='slides', simulate_resp
             file_object.write(str(response))
     
     return output
-
-
-response_simulated = '''Based on the provided content from chapter slides and previous exam questions, here are three new exam questions:
-
-Question 1:
-Which of the following is NOT a major type of parameter control in Evolutionary Algorithms?
-A. Deterministic
-B. Adaptive
-C. Self-adaptive
-D. Randomized
-
-Answer: D
-
-Question 2:
-What is the main advantage of adaptive and self-adaptive parameter control in Evolutionary Algorithms?
-A. Increased user control
-B. Reduction in required computing resources
-C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
-D. Improved predictability of parameter values
-
-Answer: C
-
-Question 3:
-In the context of varying mutation step size, which option assigns a personal σ to each individual and incorporates this σ into the chromosome?
-A. Option 1
-B. Option 2
-C. Option 3
-D. Option 4
-
-Answer: C'''

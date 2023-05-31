@@ -1,0 +1,79 @@
+Question 1: Natural language processing (NLP) is a branch of which of the following fields?
+A. Computer science
+B. Biology
+C. Physics
+D. Mathematics
+
+Answer: A
+
+Question 2: What is the meaning of the term "compositional" when referring to natural language?
+A. The meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together
+B. The choice of words to describe someone are quite arbitrary
+C. New words are created at all times
+D. We can talk about things that are not here or do not exist
+
+Answer: A
+
+Question 3: Which of the following models is NOT combined in NLP to enable computers to understand human language?
+A. Statistical models
+B. Computational linguistics
+C. Deep learning models
+D. Quantum computing models
+
+Answer: D
+
+Question 4: What is the main challenge with non-probabilistic methods in NLP?
+A. They are too complex
+B. They are too slow
+C. They return all possible analyses, making it difficult to identify the best possible analysis
+D. They are not accurate
+
+Answer: C
+
+Question 5: What is Zipf's law?
+A. A law that explains how computers understand human language
+B. A law that explains how robots learn
+C. A law that explains how humans create language
+D. A law that explains the frequency of words in a language
+
+Answer: D
+
+Question 6: Which of the following best describes the concept of "variation" in NLP?
+A. The fact that one form can have different meanings
+B. The fact that NLP requires lots of data about any particular phenomenon
+C. The fact that correct interpretation is context-dependent and often requires world knowledge
+D. The fact that new words are created at all times
+
+Answer: A
+
+Question 7: What is the main challenge with estimating probabilities for rare or unseen words in NLP?
+A. The need for more computing resources
+B. The need for more time
+C. Sparse data due to Zipf's law
+D. Context dependence
+
+Answer: C
+
+Question 8: Why is it important to use different speech taggers for different types of language use?
+A. Because it increases user control
+B. Because it improves predictability of parameter values
+C. Because variation is a challenge in NLP
+D. Because the language use is way too different
+
+Answer: D
+
+Question 9: How is natural language often used?
+A. In written form only
+B. In spoken form only
+C. As a combination of both spoken and written forms
+D. None of the above
+
+Answer: C
+
+Question 10: What is the main challenge with capturing context dependence in NLP?
+A. The need for more computing resources
+B. The need for more time
+C. It requires world knowledge
+D. Sparse data due to Zipf's law
+
+Answer: C

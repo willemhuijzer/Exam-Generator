@@ -1,0 +1,89 @@
+Question 1:
+Natural Language Processing (NLP) is a branch of:
+A. Computer Science
+B. Mathematics
+C. Psychology
+D. Philosophy
+
+Answer: A
+
+Question 2:
+Which of the following models is not used in NLP?
+A. Deep Learning
+B. Reinforcement Learning
+C. Machine Learning
+D. Bayesian Modeling
+
+Answer: B
+
+Question 3:
+What is the main objective of NLP?
+A. To develop computers that can think like humans
+B. To create more efficient computer algorithms
+C. To enable computers to understand and use human language
+D. To create computer-generated language
+
+Answer: C
+
+Question 4:
+Which of the following is not a characteristic of natural language?
+A. Compositional
+B. Arbitrary
+C. Static
+D. Creative
+
+Answer: C
+
+Question 5:
+Why is ambiguity a challenge in NLP?
+A. Because certain words can have multiple meanings
+B. Because nouns are hard to identify
+C. Because language use is too different across platforms
+D. Because computers cannot process spoken language
+
+Answer: A
+
+Question 6:
+Which of the following is not a challenge in NLP?
+A. Ambiguity
+B. Expressivity
+C. Probabilistic analysis
+D. Variation
+
+Answer: C
+
+Question 7:
+What is the relevance of "Zipf's law" in NLP?
+A. It explains the variation in language use across different platforms
+B. It highlights how certain words can have multiple meanings
+C. It helps explain the challenge of dealing with rare words
+D. It explains the challenge of identifying nouns
+
+Answer: C
+
+Question 8:
+Why does context dependence make NLP difficult?
+A. Because language use is too different across platforms
+B. Because computers cannot process spoken language
+C. Because correct interpretation is often context-dependent and requires world knowledge
+D. Because NLP aims to create computer-generated language
+
+Answer: C
+
+Question 9:
+Why is unknown representation a challenge in NLP?
+A. Because certain words can have multiple meanings
+B. Because computers cannot process spoken language
+C. Because natural language is often spoken and grounded
+D. Because correct interpretation is often context-dependent
+
+Answer: C
+
+Question 10:
+What is the main objective of NLP?
+A. To enable computers to understand and use human language
+B. To create more efficient computer algorithms
+C. To develop computers that can think like humans
+D. To create computer-generated language
+
+Answer: A

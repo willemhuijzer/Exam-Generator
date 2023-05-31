@@ -1,0 +1,50 @@
+CONTENT OF LECTURE SLIDES:
+NLP combines computational linguistics—rule-based modeling of human language—with statistical, machine learning, and deep learning models.
+Together, these technologies enable computers to process human language in the form of text or voice data and to ‘understand’ its full meaning, complete with the speaker or writer’s intent and sentiment.
+
+What is Natural language?
+	Compositional. The meaning of a whole expression (semantics) is a function of the meaning of its parts and the manner in which they are put together (syntax).
+	Arbitrary. The choice of words to describe someone are quite arbitrary.
+	Creative. New words are created at all times, it’s constantly changing, young people are the forces of change for language.
+	Displaced. We can talk about things that are not here: “I’m so excited that we have a fun weekend” or that do not exist, or can’t exist.
+
+
+Why is NLP hard?
+	Ambiguity. Certain words can mean a lot of things (“bank”) or a sentence like: “I saw a man with a telescope”. Did you see the man with your telescope, or did you see a man that has a telescope?
+	Non-probabilistic methods return all possible analyses, compared to probabilistic models and algorithms returning the best possible analysis. Where do the probabilities for “best” analysis come from? 
+	Relevant statistics and probabilities are learned from data
+	Normally requires lots of data about any particular phenomenon
+	Typically more robust than earlier rule-based methods
+	Sparse data due to Zipf’s law. Zipf’s law is f x r ≈k, with f being the frequency of a word, r the rank of a word (if sorted by frequency) and k a constant. More frequent words have a lower rank (e.g., “the” has rank 1). Rank-frequency distribution is thus an inverse relation. 
+Regardless of how large our corpus is, there will be a lot of infrequent (and zero-frequency!) words. In fact, the same holds for many other levels of linguistic structure. This means we need to find clever ways to estimate probabilities for things we have rarely or never seen.
+	Variation. You cannot use a speech tagger trained on the Wall Street Journal for social media. The language use is way too different.
+	Expressivity. One form can have different meanings (ambiguity), but the same meaning can also be expressed with different forms.
+	“She gave the book to Tom” versus “She gave Tom the book”
+	“Some kids popped by” versus “A few children visited”
+	“Is that window still open” versus “Please close the window”
+	Context dependence. Example above shows that correct interpretation is context-dependent and often requires world knowledge. Difficult to capture. 
+	Unknown representation.
+	Natural language is often spoken and grounded.
+
+SAMPLE QUESTIONS: Based on the slides that I provide in above, generate 5 multiple choice exam questions on university level in the following format:
+
+Question 1:
+EA parameters are rigid (values constant during a run).
+A. True
+B. False
+
+Answer: B
+
+Question 2:
+What is the main advantage of adaptive and self-adaptive parameter control in Evolutionary Algorithms?
+A. Increased user control
+B. Reduction in required computing resources
+C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
+D. Improved predictability of parameter values
+
+Answer: C
+
+
+
+Generate 5 exam questions based on the provided CONTENT OF THE LECTURE SLIDES above in the format of the SAMPLE QUESTIONS:
+5 QUESTIONS: 

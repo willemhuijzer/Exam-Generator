@@ -1,0 +1,84 @@
+CONTENT OF LECTURE SLIDES:
+Structure dictates how we can use language:
+The mother and her daughter ate sandwiches in the park.
+
+
+
+
+
+
+
+
+
+
+
+
+NP = noun phrase; VP = verbal phrase; PP = prepositional phrase; S = sentence.
+
+You can replace “The mother and her daughter” by “They” or “The women”.
+You can replace “ate sandwiches” by “watched a movie” or “did so”.
+You can replace “in the park” by “by the sea” or “together”. 
+
+Descriptive linguistics differs from prescriptive linguistics: how a language is actually used versus how it should be used.
+
+Grammar is an attempt to describe the implicit rules that are shared among a community of speakers. All the utterances we can generate from these rules are grammatical. If we cannot produce an utterance using these rules, it’s ungrammatical. 
+Example:
+-	Subject, Verb, and Object appear in SVO order.
+-	Subject pronouns (I/she/he/they) have to be subjects, object pronouns (me/her/him/them) have to be objects. 
+But people don’t fully agree: everyone has their own idiolect; grammaticality is graded. 
+Grammaticality rules accept useless utterances and block out perfectly communicative utterances. If we ignore the rules because we know what was probably intended (“Me cupcake ate”), we are actually limiting possibilities. Rules give us expressivity. 
+
+Probing: probes are small, supervised models trained to extract linguistic information from another model’s output. 
+
+NLP works better than it ever has before – and we’re not constraining our systems to know any syntax. 
+We can test a model’s latent space to see if it encodes structural information. Because entire syntax trees can be represented in models’ latent space, this works when we introduce new words. 
+
+In English, the syntax of word order gives us the “who did what to whom” meaning.
+“A verbed B”  A is the do-er, B is the patient.
+This can be tested in language models.  
+For semantic interpretation, training and test sets have distinct words and structures in different roles. Testing structure: lexical generalization, novel words in old structures.
+ 
+Structural generalization: novel combinations of old structures.
+
+There is a lot of rich information in words that affects the final structure of language. The rich semantics of words is always playing a role in forming and applying the rules of language. Meaning thus plays a role in linguistic structure.
+
+Example 1: Differential object marking. Structurally anything can be an object, but many languages have a special syntactic way of dealing with this. Language models are also aware of these gradations.
+5.	“The chef chopped the onion” versus “The onion chopped the chef”. 
+
+
+
+
+Example 2: Maybe not all structure-word combinations are possible. In many cases, if something seems too outlandish, we assume the more plausible interpretation.
+6.	“The mother gave the daughter the candle.”, “The mother gave the candle to the daughter.”
+7.	“The mother gave the candle the daughter.”
+Marking less plausible things more prominently is a pervasive feature of grammar. 
+
+Meaning is not always compositional. Language is full of idioms and metaphors (“Don’t count your chickens before they hatch”). We’re constantly using constructions that we couldn’t get from just a syntactic + semantic parse (“I wouldn’t put it past him”, “That won’t go down well with the boss”), and even mixed constructions that can compositionally take arguments (“He won’t X, let alone Y”). 
+
+The meaning of words is sensitive and influenced by context (“break”).
+
+Language is characterized by the fact that it’s an amazingly abstract system and we want our models to capture that, but meaning is so rich and multifaceted. High-dimensional spaces are much better at capturing these specificities subtleties than any rules we could come up with.
+
+
+SAMPLE QUESTIONS: Based on the slides that I provide in above, generate 10 multiple choice exam questions on university level in the following format:
+
+Question 1:
+EA parameters are rigid (values constant during a run).
+A. True
+B. False
+
+Answer: B
+
+Question 2:
+What is the main advantage of adaptive and self-adaptive parameter control in Evolutionary Algorithms?
+A. Increased user control
+B. Reduction in required computing resources
+C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
+D. Improved predictability of parameter values
+
+Answer: C
+
+
+
+Generate 10 exam questions based on the provided CONTENT OF THE LECTURE SLIDES above in the format of the SAMPLE QUESTIONS:
+10 QUESTIONS: 

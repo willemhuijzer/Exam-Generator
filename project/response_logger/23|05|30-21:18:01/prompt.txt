@@ -1,0 +1,138 @@
+CONTENT OF LECTURE SLIDES:
+Human language is very productive and creative. Computers are not very good at understanding this (randomness). If we reduce the variations of a word in the raw text, there will be fewer input variables for our model  increase efficiency and avoid false negatives. Text normalization also reduces the dimensionality of the input for structures like BOW, word embeddings.
+There are two things that we are interested in normalizing the most:
+	Sentence structure: should it always end with a punctuation? Can there be repeated punctuation signals? Should we even remove all punctuation? Also, more specific structure can be used (like just attaining to subject verb object), but is harder to achieve.
+	Vocabulary: most of the times, we want our vocabulary to be as small as possible. The reason is that, in NLP, words are our key features, and when we have less variation in these, we can achieve our objectives better.
+
+Sentences can be saved as a variable.
+Contractions can be expanded with a dictionary: e.g., we’ll  we will (use regex to update text).
+Tokenization: segment running text into words and sequences.
+(Remove) Punctuation: optional, but useful to work with “clean” text.
+Stemming: reduce words to word stem or root form. Related words then share a stem: e.g., collection, collectively  collect.
+Lemmatization: reduce words to base word (lemma). Reduces inflectional morphology but ensures word still exists in language. Provides some knowledge of context.
+
+For the classification function that we want to learn we need to know the representation of the data. As mentioned before, this could be only certain words in lexicon, only words in isolation (bag of words), but also conjunctions of words. 
+The latter attempts to learn some kind of “underlying” word representation relative to its context/surrounding words, e.g.: 
+	Continuous BOW: distributed representations of surrounding words (context) used to predict target word.
+	Skip-gram: given a target word, try to predict its neighboring words (context) in a certain window size.
+
+It is very difficult to know the true probability of an arbitrary sequence of words. Our language models can give us good approximations or estimates. How do we make these estimates? 
+	We want to know the probability of word sequence w ⃗=w_1…w_n occurring in English.
+	Assume we have some training data: large corpus of general English text.
+	We can use this data to estimate the probability of  w ⃗ (even if we have never seen it in the corpus!).
+
+An intuitive way to estimate discrete probabilities:
+P_RF (x)=(C(x))/N
+Where C(x) is the count of x in a large dataset, and N is the total number of items in the dataset.
+This method is the maximum likelihood estimation (MLE). It is a method that determines values for the parameters of a model, where values maximize the likelihood that the process described by the model produced the data that was actually observed. 
+Can we use MLE to estimate the probability of w ⃗ as a sentence of English? 
+P_MLE (S=w ⃗ )=(C(w ⃗))/N
+If a sentence never occurred in a corpus, C(w ⃗ )=0 so MLE assigns both zero probability. It thinks that anything that hasn’t occurred will never occur (sparse data, Zipf’s law). 
+In addition to that, MLE cannot distinguish between grammatical and ungrammatical sentences. 
+
+One way to try to fix the problem is to estimate P(w ⃗) by combining the probabilities of smaller parts of the sentence, which will occur more frequently. This is the intuition behind n-gram language models.
+
+Intuitively, a trigram model captures more context than a bigram model, so it should be a “better” model. That is, it should more accurately predict the probabilities of sentences. But how can we measure this? 
+	Extrinsic: measure performance on a downstream application. Most reliable, but time-consuming and of course, we still need an evaluation measure for the downstream system. 
+	Intrinsic: design a measure that is inherent to the current task. Can be much quicker/easier during development cycle, but not always easy to figure out what the right measure is.
+
+Intrinsic evaluation measures:
+	Entropy: a measure of uncertainty/disorder. Given the start of a text, can we guess the next word. 
+	Cross-entropy (for n-gram models). A good model assigns high probability to sequences that actually have high probability so our model should have low uncertainty (entropy) about which word comes next. A lower cross-entropy means a model is better at predicting the next word.
+	Perplexity. Language model performance is often reported as perplexity rather than cross-entropy. Perplexity is simply 2^(cross-entropy). The average branching factor at each decision point, if our distribution were uniform.
+
+Lexical semantics: the meanings of individual words. 
+Sentential semantics: how word meanings combine.
+
+What is hard in lexical semantics? 
+	Words may have different meanings (senses) and we need to be able to disambiguate between them. 
+	Words may have the same meaning (synonyms) and we need to be able to match them.
+	Words can refer to a subset (hyponym) or superset (hypernym) of the concept referred to by another word. We need to have database of such A is-a B relationships, called an ontology.
+	Words may be related in other ways, including similarity and gradation and we need to be able to recognize these to give appropriate responses. 
+Some of these problems can be solved with a good ontology, e.g., WordNet.
+However, word sense ambiguity cannot be solved by WordNet alone:
+	Two completely different words can be spelled the same (homonyms), e.g., bank.
+	More generally, words can have multiple (related or unrelated) senses (polysemes).
+
+Synsets (“synonym sets”, effectively senses) are the basic unit of organization in WordNet. 
+	Each synset is specific to nouns, verbs, adjectives or adverbs.
+	Synonymous words belong to the same synset.
+	Polysemous words belong to multiple synsets. Numbered roughly in descending order of frequency.
+Synsets are organized into a network by several kinds of relations, including:
+	Hypernymy (Is-A): hyponym {ambulance} is a kind of hypernym car1
+	Meronymy (Part-Whole): meronym {air bag} is a part of holonym car1
+
+Problems with resources like WordNet:
+	It’s missing nuance: e.g., proficient is listed as a synonym for good, but this is only correct in some contexts.
+	Also, WordNet lists offensive synonyms in some synonym sets without any coverage of the connotations or appropriateness of words.
+	Missing new meanings of words, it is impossible to keep up-to-date.
+	Subjective.
+	Requires human labor to create and adapt.
+	Can’t be used to accurately compute word similarity.
+
+One can represent discrete symbols for words by one-hot vectors. The vector dimension is then the number of words in the vocabulary. 
+Example: in web search, if a user searches for “Seattle motel”, we would like to match documents containing “Seattle hotel”. But, 
+
+These two vectors are orthogonal. There is no natural notion of similarity for one-hot vectors. Solution: learn to encode similarity in the vectors themselves.
+
+What drives semantic similarity?
+	Meaning. The two concepts are close in terms of meaning: e.g., inadvertent and accidental.
+	World knowledge. The two concepts have similar properties, often occur together, or occur in similar contexts: e.g., spinach and kale, or UPS and FedEx.
+	Psychology. The two concepts fit together within an over-arching psychological schema or framework: e.g., money and bank, or millennial and avocado.
+
+Distributional semantics: a word’s meaning is given by the words that frequently appear close-by. When a word w appears in a text, its context is the set of words that appear nearby (within a fixed-size window). We use the many contexts of w to build up a representation of w.
+We will build a dense vector for each word, chosen so that it is similar to vectors of words that appear in similar contexts, measuring similarity as the vector dot (scalar) product. 
+Note: word vectors are also called (word) embeddings or (neural) word representations. They are a distributed representation.
+
+Semantic similarity boils down to computing some measure of spatial similarity between context vectors in vector space.
+In two dimensions one can use Euclidean distance, but this can be oversensitive to extreme values.
+Cosine similarity is typically better than Euclidean distance for vector space semantics. 
+
+Co-occurrence based context vectors tend to be very long and very sparse. Short and dense context vectors are usually preferable since they are easier to include as features in machine learning systems, they have fewer parameters (better generalization and less over-fitting) and are better at capturing synonymy. There are two main methods of producing short, dense vectors:
+	Dimensionality reduction
+	Neural language models
+
+Dense word embeddings encode semantic and syntactic relationships. It can probe relations between words using vector arithmetic. 
+
+The most popular family of neural network embeddings: Word2Vec, a framework for learning word vectors. Idea:
+	We have a large corpus of text: a long list of words.
+	Every word in a fixed vocabulary is represented by a vector.
+	Go through each position t in the text, which has a center word c and context (“outside”) words o.
+	Use the similarity of word vectors for c and o to calculate the probability of o given c (or vice versa).
+	Keep adjusting the word vectors to maximize this probability.
+
+Skip-gram algorithm: first, randomly initialize the vector for each word in the vocabulary. Next, go through each position t and we will define the center word at that position as c and its context word as o. To identify the context words, we will define a window of size j which means our model will look at words in position t – j to t + j as the context.
+Example windows and process for computing P(w_(t+j) |w_t):
+
+
+
+
+
+
+
+
+The objective function in Word2Vec is the (average) negative log likelihood. It tries to maximize the likelihood of the context words given the center word. Taking the log makes multiplication become summation, which is easier to minimize. Minimizing objective function is the same as maximizing predictive accuracy.
+
+
+SAMPLE QUESTIONS: Based on the slides that I provide in above, generate 10 multiple choice exam questions on university level in the following format:
+
+Question 1:
+EA parameters are rigid (values constant during a run).
+A. True
+B. False
+
+Answer: B
+
+Question 2:
+What is the main advantage of adaptive and self-adaptive parameter control in Evolutionary Algorithms?
+A. Increased user control
+B. Reduction in required computing resources
+C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
+D. Improved predictability of parameter values
+
+Answer: C
+
+
+
+Generate 10 exam questions based on the provided CONTENT OF THE LECTURE SLIDES above in the format of the SAMPLE QUESTIONS:
+10 QUESTIONS: 

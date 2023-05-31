@@ -1,0 +1,44 @@
+Question 1:
+What is NLP?
+A. The study of computer languages
+B. The study of human language and its computer processing
+C. The study of natural disasters
+D. The study of national languages
+
+Answer: B
+
+Question 2:
+What is Zipf's law?
+A. The law that governs the processing of human language in computers
+B. The law that governs the generation of new words in natural language
+C. The law that governs the distribution of word frequencies in natural language
+D. The law that governs the use of syntax in natural language
+
+Answer: C
+
+Question 3:
+Which of the following is not a characteristic of natural language?
+A. Creative
+B. Compositional
+C. Probabilistic
+D. Arbitrary
+
+Answer: C
+
+Question 4:
+What is the main challenge in processing natural language?
+A. Ambiguity
+B. Basic syntax
+C. Common language use
+D. Over-abundance of data
+
+Answer: A
+
+Question 5:
+Why is NLP context-dependent?
+A. Because natural language is usually spoken and grounded
+B. Because computers have difficulty processing syntax
+C. Because words have different meanings depending on their context
+D. Because it requires large amounts of data for processing
+
+Answer: C

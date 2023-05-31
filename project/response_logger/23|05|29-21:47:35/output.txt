@@ -1,0 +1,44 @@
+Question 1:
+What is Natural Language Processing (NLP)?
+A. The branch of computer science concerned with building robots
+B. The branch of computer science concerned with giving computers the ability to understand text and spoken words
+C. The branch of computer science concerned with developing social media platforms
+D. The branch of computer science concerned with designing computer games
+
+Answer: B
+
+Question 2:
+What is compositional in natural language?
+A. The way we use language to express ourselves
+B. The fact that language is always changing
+C. The way in which meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together
+D. The arbitrariness of the choice words to describe someone
+
+Answer: C
+
+Question 3:
+What is the main reason why NLP is hard?
+A. Ambiguity
+B. Non-probabilistic methods
+C. Zipf's law
+D. Variation
+
+Answer: A
+
+Question 4:
+Why is estimating probabilities difficult in NLP?
+A. There is sparse data due to Zipf's law
+B. The language use varies across different domains
+C. Expressivity of forms
+D. Context dependence
+
+Answer: A
+
+Question 5:
+What is the main challenge for representing natural language?
+A. The fact that language is always changing
+B. The context dependence of language use
+C. The fact that language is often spoken and grounded
+D. The unknown representation of natural language
+
+Answer: C

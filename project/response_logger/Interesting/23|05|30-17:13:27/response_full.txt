@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is the goal of sentiment analysis?\nA. To predict the author's identity\nB. To classify the language used in the text\nC. To determine the age of the author\nD. To predict the sentiment expressed in a piece of text\n\nAnswer: D\n\nQuestion 2:\nWhat are some challenges in sentiment analysis?\nA. Sentiment is a measure of a speaker's invisible state\nB. Words are not always a good indicator of sentiment\nC. Sentiment requires contextual knowledge\nD. All of the above\n\nAnswer: D\n\nQuestion 3:\nWhat is the simplest measure for evaluating a sentiment analyzer?\nA. F1-measure\nB. Accuracy\nC. Precision\nD. Recall\n\nAnswer: B\n\nQuestion 4:\nWhy is data-driven evaluation important?\nA. It requires controlled experimentation\nB. It provides good engineering benchmarks\nC. Our intuitions about typical inputs are often incorrect\nD. All of the above\n\nAnswer: D\n\nQuestion 5:\nWhat is the main problem with using a sentiment lexicon to count positive and negative words in sentiment analysis?\nA. Sense ambiguity\nB. Irony and sarcasm\nC. Mention of opposing viewpoints\nD. All of the above\n\nAnswer: D\n\nQuestion 6:\nWhich of the following is NOT a representation used for sentiment analysis?\nA. Only positive/negative words in MPQA\nB. Higher-order linguistic structure\nC. Only words in isolation (bag of words)\nD. Only adjectives and adverbs\n\nAnswer: D\n\nQuestion 7:\nWhat is the main advantage of using an n-gram language model for predicting upcoming words?\nA. It provides a true probability of an arbitrary sequence of words\nB. It allows for analysis of semantics and syntax\nC. It prevents sense ambiguity\nD. It combines the probability of smaller parts of a sentence, which will occur more frequently\n\nAnswer: D\n\nQuestion 8:\nWhat is the independence assumption made in a bigram language model?\nA. The probability of a word only depends on the previous word\nB. The probability of a word only depends on a fixed number of previous words\nC. The probability of a word only depends on the next word\nD. The probability of a word only depends on the words surrounding it\n\nAnswer: A\n\nQuestion 9:\nWhat is the difference between rule-based and learning-based NLP systems?\nA. Rule-based systems rely on machine learning techniques\nB. Learning-based systems rely on databases and manual rules\nC. Rule-based systems rely on collecting statistics or patterns automatically from corpora\nD. Learning-based systems are governed solely by manual rules or databases\n\nAnswer: D\n\nQuestion 10:\nWhat is the difference between precision and recall in sentiment analysis evaluation?\nA. Precision is how many of the ironic tweets are found, whereas recall is how often the prediction is correct\nB. Precision is how often the prediction is correct, whereas recall is how many of the ironic tweets are found\nC. Precision is how many true positives there are, whereas recall is how many false positives there are\nD. Precision is how many true positives there are, whereas recall is how many true negatives there are\n\nAnswer: B",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685459608,
+  "id": "chatcmpl-7LvKKzHRTMN2K1QGlHsA2A9zrNjqn",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 660,
+    "prompt_tokens": 2140,
+    "total_tokens": 2800
+  }
+}

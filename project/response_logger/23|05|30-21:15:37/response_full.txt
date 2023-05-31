@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is the purpose of text normalization?\nA. To reduce the effectiveness of NLP models\nB. To increase the number of input variables for NLP models\nC. To reduce the dimensionality of the input for NLP models\nD. To introduce more variations in the words used in the raw text\n\nAnswer: C\n\nQuestion 2:\nWhich of the following is a component of text normalization?\nA. Punctuation addition\nB. Contractions reduction\nC. Tokenization expansion\nD. Stemming removal\n\nAnswer: B\n\nQuestion 3:\nWhat is the advantage of reducing the vocabulary size in NLP?\nA. To make the language more difficult to understand\nB. To make it easier to identify word variations\nC. To minimize the number of features for NLP models\nD. To increase the dimensionality of input for NLP models\n\nAnswer: C\n\nQuestion 4:\nWhich of the following is used to segment running text into words and sequences?\nA. Stemming\nB. Tokenization\nC. Punctuation addition\nD. Contractions reduction\n\nAnswer: B\n\nQuestion 5:\nWhat is the purpose of lemmatization?\nA. To reduce a word to its stem or root form\nB. To segment text into words and sequences\nC. To remove all punctuation in the text\nD. To expand contractions\n\nAnswer: A\n\nQuestion 6:\nWhat is entropy in intrinsic evaluation measures of language models?\nA. A measure of uncertainty\nB. A measure of similarity\nC. A measure of frequency\nD. A measure of perplexity\n\nAnswer: A\n\nQuestion 7:\nWhich of the following is a way to measure the performance of n-gram language models in predicting the probabilities of sentences?\nA. Intrinsic evaluation measures\nB. Extrinsic evaluation measures\nC. Stemming-based evaluation measures\nD. Tokenization-based evaluation measures\n\nAnswer: A\n\nQuestion 8:\nWhat is the purpose of WordNet in lexical semantics?\nA. To solve word sense ambiguity\nB. To remove offensive words\nC. To provide a list of synonyms for each word\nD. To classify relationships between words\n\nAnswer: D\n\nQuestion 9:\nWhat is the main advantage of dense word embeddings?\nA. They have fewer parameters\nB. They are better at capturing synonymy\nC. They are easier to include as features in machine learning systems\nD. All of the above\n\nAnswer: D\n\nQuestion 10:\nWhat is the objective function in Word2Vec?\nA. To maximize the likelihood of the center word given the context words\nB. To maximize the entropy of the center word\nC. To minimize the sum of squared errors\nD. To minimize the log likelihood of the context words given the center word\n\nAnswer: D",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685474138,
+  "id": "chatcmpl-7Lz6gvwNCmTlJj1So0PfyXWBxz9pH",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 576,
+    "prompt_tokens": 2389,
+    "total_tokens": 2965
+  }
+}

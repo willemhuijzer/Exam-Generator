@@ -19,6 +19,37 @@ D. Improved predictability of parameter values
 Answer: C
 '''
 
+SIMULATED_RESPONSE = '''
+Based on the provided content from chapter slides and previous exam questions, here are three new exam questions:
+
+Question 1:
+Which of the following is NOT a major type of parameter control in Evolutionary Algorithms?
+A. Deterministic
+B. Adaptive
+C. Self-adaptive
+D. Randomized
+
+Answer: D
+
+Question 2:
+What is the main advantage of adaptive and self-adaptive parameter control in Evolutionary Algorithms?
+A. Increased user control
+B. Reduction in required computing resources
+C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
+D. Improved predictability of parameter values
+
+Answer: C
+
+Question 3:
+In the context of varying mutation step size, which option assigns a personal σ to each individual and incorporates this σ into the chromosome?
+A. Option 1
+B. Option 2
+C. Option 3
+D. Option 4
+
+Answer: C
+'''
+
 def prompt_preface(content_nature:str='slides'):
     if content_nature == 'slides':
         return SLIDES_PREFACE

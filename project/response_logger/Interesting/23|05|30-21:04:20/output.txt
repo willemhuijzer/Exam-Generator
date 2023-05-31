@@ -1,0 +1,89 @@
+Question 1:
+Why do we need text normalization?
+A. To increase the variations of a word in raw text
+B. To decrease the variations of a word in raw text and increase efficiency
+C. To eliminate all punctuation from the text
+D. To increase the dimensionality of input in structures like BOW and word embeddings
+
+Answer: B
+
+Question 2:
+Which of the following is NOT a part of text normalization?
+A. Tokenization
+B. Sentence structure normalization
+C. Punctuation normalization
+D. Tone analysis
+
+Answer: D
+
+Question 3:
+What is the purpose of stemming in NLP?
+A. To increase the variations of words in raw text
+B. To reduce words to their root form or stem
+C. To remove all punctuation from the text
+D. To generate context-dependent paraphrases
+
+Answer: B
+
+Question 4:
+Which of the following models attempts to learn the underlying word representation relative to its context/surrounding words?
+A. Bag of Words
+B. Continuous BOW
+C. Word2Vec
+D. Naive Bayes
+
+Answer: B
+
+Question 5:
+What is the maximum likelihood estimation (MLE) method used for in NLP?
+A. To determine values for the parameters of a model
+B. To classify text data
+C. To reduce the dimensionality of the input for structures like BOW and word embeddings
+D. To eliminate all variance in the raw text
+
+Answer: A
+
+Question 6:
+What is an intrinsic evaluation measure for language models?
+A. Cross-entropy
+B. Perplexity
+C. Entropy
+D. Cosine similarity
+
+Answer: B
+
+Question 7:
+What is WordNet?
+A. A software for vector arithmetic
+B. A long list of words in a fixed vocabulary
+C. A database of A is-a B relationships
+D. A neural network embedding method
+
+Answer: C
+
+Question 8:
+What is the primary advantage of dense word embeddings?
+A. They are easier to include as features in machine learning systems
+B. They have fewer parameters, better generalization and less overfitting
+C. They are better at capturing synonymy
+D. All of the above
+
+Answer: D
+
+Question 9:
+What is the most popular family of neural network embeddings?
+A. GloVe
+B. FastText
+C. Word2Vec
+D. ELMo
+
+Answer: C
+
+Question 10:
+What is the objective function in Word2Vec?
+A. To maximize the predictive accuracy of center words given their context
+B. To minimize the dimensionality of input for BOW and word embeddings
+C. To eliminate ambiguity in word sense
+D. To generate context-dependent paraphrases
+
+Answer: A

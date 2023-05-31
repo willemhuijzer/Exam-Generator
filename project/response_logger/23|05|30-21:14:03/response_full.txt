@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is the main goal of text normalization?\nA. To increase randomness in human language\nB. To reduce the dimensionality of input for structures like BOW\nC. To create more variability in words in the raw text\nD. To avoid false positives in natural language processing\n\nAnswer: B\n\nQuestion 2:\nWhat is the difference between stemming and lemmatization?\nA. Stemming reduces words to base word, while lemmatization reduces words to word stem or root form.\nB. Stemming ensures that related words share a stem, while lemmatization reduces inflectional morphology but preserves context.\nC. Stemming is a more advanced technique than lemmatization.\nD. Stemming and lemmatization are synonyms for the same process.\n\nAnswer: B\n\nQuestion 3:\nWhat is the intuition behind n-gram language models?\nA. To estimate the probability of a sentence by combining the probabilities of smaller parts of the sentence\nB. To estimate the probability of a word sequence by using training data, even if the sequence has never occurred before\nC. To distinguish between grammatical and ungrammatical sentences\nD. To measure the performance of a classification function on a downstream application\n\nAnswer: A\n\nQuestion 4:\nWhat are synsets in WordNet?\nA. The numerical values assigned to each word in a vocabulary\nB. The basic units of organization in WordNet that represent different senses of a word\nC. The context words that appear nearby a given word in a text\nD. The distributional semantics of a word based on its surrounding words\n\nAnswer: B\n\nQuestion 5:\nWhat are the problems with resources like WordNet?\nA. They are objective and based on hard data\nB. They are reliable and up-to-date\nC. They are subjective and missing nuance\nD. They can accurately compute word similarity\n\nAnswer: C\n\nQuestion 6:\nWhat is the intuition behind dense word embeddings?\nA. To capture semantic and syntactic relationships between words\nB. To separate words based on their discrete symbols\nC. To use co-occurrence counts to define context vectors\nD. To train a neural network to predict surrounding words\n\nAnswer: A\n\nQuestion 7:\nWhat is the objective function in Word2Vec?\nA. To minimize the likelihood of the center word given the context words\nB. To maximize the likelihood of the center word given the context words\nC. To minimize the squared differences between center words and context words\nD. To maximize the cosine similarity between center words and context words\n\nAnswer: B\n\nQuestion 8:\nWhat is the benefit of using cosine similarity over Euclidean distance in vector space semantics?\nA. It can handle extreme values better\nB. It is more sensitive to word frequency\nC. It is better at capturing synonymy\nD. It is less computationally expensive\n\nAnswer: D\n\nQuestion 9:\nWhat is skip-gram algorithm in Word2Vec?\nA. A method of randomly initializing word vectors in a fixed vocabulary\nB. A technique for identifying the context words for each center word in a text\nC. An objective function that tries to minimize the negative log likelihood\nD. A process of adjusting word vectors to maximize the probability of context words given a center word\n\nAnswer: D\n\nQuestion 10:\nWhat is the purpose of intrinsic evaluation measures in natural language processing?\nA. To evaluate the performance of a classification function on a downstream application\nB. To design a measure that is inherent to the current task\nC. To evaluate the performance of a language model based on the uncertainty or disorder of words\nD. To compute the probabilities of words in a large corpus given a fixed vocabulary and dataset\n\nAnswer: B",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685474043,
+  "id": "chatcmpl-7Lz59NN77yQ1hrpghWPH5lVLirf5F",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 769,
+    "prompt_tokens": 2389,
+    "total_tokens": 3158
+  }
+}

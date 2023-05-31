@@ -1,0 +1,89 @@
+Question 1:
+What is the difference between descriptive linguistics and prescriptive linguistics?
+A. Descriptive linguistics focuses on how language should be used, while prescriptive linguistics focuses on how it is actually used.
+B. Prescriptive linguistics focuses on how language should be used, while descriptive linguistics focuses on how it is actually used.
+C. There is no difference between descriptive and prescriptive linguistics.
+D. Descriptive linguistics and prescriptive linguistics are both concerned with how language is actually used.
+
+Answer: B
+
+Question 2:
+What is the purpose of grammar in linguistics?
+A. To provide a set of rules that all speakers must follow.
+B. To describe the implicit rules that are shared among a community of speakers.
+C. To limit possibilities in language production.
+D. To give us expressivity in language.
+
+Answer: B
+
+Question 3:
+What is a probe in NLP?
+A. A small, supervised model trained to extract linguistic information from another model’s output.
+B. A set of rules that tell a model how to generate language.
+C. An algorithm that allows us to test a model’s latent space.
+D. A type of neural network used to generate language.
+
+Answer: A
+
+Question 4:
+What is the role of meaning in linguistic structure?
+A. Meaning has no role in linguistic structure.
+B. Meaning is only relevant for idioms and metaphors.
+C. Meaning plays a role in forming and applying the rules of language.
+D. Meaning can sometimes override syntactic rules.
+
+Answer: C 
+
+Question 5:
+What is the “who did what to whom” meaning in English syntax?
+A. The patient is the do-er.
+B. The subject is the do-er.
+C. The object is the do-er.
+D. The verb is the do-er.
+
+Answer: B 
+
+Question 6:
+What is structural generalization in language?
+A. Novel words in old structures.
+B. Novel combinations of old structures.
+C. Distinct words and structures in different roles.
+D. The syntactic way of dealing with objects in many languages.
+
+Answer: B 
+
+Question 7:
+What is differential object marking?
+A. A way of dealing with objects in many languages.
+B. A pervasive feature of grammar.
+C. An example of compositional meaning.
+D. A special syntactic way of dealing with objects in many languages.
+
+Answer: D 
+
+Question 8:
+What is the limitation of using rules to capture the meaning of words in language?
+A. Rules cannot capture idioms and metaphors.
+B. Rules are too rigid to capture the subtleties of meaning.
+C. Rules cannot account for the fact that meaning is influenced by context.
+D. All of the above.
+
+Answer: D 
+
+Question 9:
+What is the advantage of testing a model’s latent space?
+A. It allows us to introduce new words into the model.
+B. It allows us to test a model’s sensitivity to structural information.
+C. It allows us to see if a model encodes syntactic structure.
+D. It allows us to see if a model can generate useful utterances.
+
+Answer: C 
+
+Question 10:
+Why are grammaticality rules important in language?
+A. They allow us to generate useless utterances.
+B. They block out perfectly communicative utterances.
+C. They give us expressivity.
+D. All of the above.
+
+Answer: C

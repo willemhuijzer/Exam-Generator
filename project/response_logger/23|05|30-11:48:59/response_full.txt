@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is the difference between descriptive linguistics and prescriptive linguistics?\nA. Descriptive linguistics focuses on how language should be used, while prescriptive linguistics focuses on how it is actually used.\nB. Prescriptive linguistics focuses on how language should be used, while descriptive linguistics focuses on how it is actually used.\nC. There is no difference between descriptive and prescriptive linguistics.\nD. Descriptive linguistics and prescriptive linguistics are both concerned with how language is actually used.\n\nAnswer: B\n\nQuestion 2:\nWhat is the purpose of grammar in linguistics?\nA. To provide a set of rules that all speakers must follow.\nB. To describe the implicit rules that are shared among a community of speakers.\nC. To limit possibilities in language production.\nD. To give us expressivity in language.\n\nAnswer: B\n\nQuestion 3:\nWhat is a probe in NLP?\nA. A small, supervised model trained to extract linguistic information from another model\u2019s output.\nB. A set of rules that tell a model how to generate language.\nC. An algorithm that allows us to test a model\u2019s latent space.\nD. A type of neural network used to generate language.\n\nAnswer: A\n\nQuestion 4:\nWhat is the role of meaning in linguistic structure?\nA. Meaning has no role in linguistic structure.\nB. Meaning is only relevant for idioms and metaphors.\nC. Meaning plays a role in forming and applying the rules of language.\nD. Meaning can sometimes override syntactic rules.\n\nAnswer: C \n\nQuestion 5:\nWhat is the \u201cwho did what to whom\u201d meaning in English syntax?\nA. The patient is the do-er.\nB. The subject is the do-er.\nC. The object is the do-er.\nD. The verb is the do-er.\n\nAnswer: B \n\nQuestion 6:\nWhat is structural generalization in language?\nA. Novel words in old structures.\nB. Novel combinations of old structures.\nC. Distinct words and structures in different roles.\nD. The syntactic way of dealing with objects in many languages.\n\nAnswer: B \n\nQuestion 7:\nWhat is differential object marking?\nA. A way of dealing with objects in many languages.\nB. A pervasive feature of grammar.\nC. An example of compositional meaning.\nD. A special syntactic way of dealing with objects in many languages.\n\nAnswer: D \n\nQuestion 8:\nWhat is the limitation of using rules to capture the meaning of words in language?\nA. Rules cannot capture idioms and metaphors.\nB. Rules are too rigid to capture the subtleties of meaning.\nC. Rules cannot account for the fact that meaning is influenced by context.\nD. All of the above.\n\nAnswer: D \n\nQuestion 9:\nWhat is the advantage of testing a model\u2019s latent space?\nA. It allows us to introduce new words into the model.\nB. It allows us to test a model\u2019s sensitivity to structural information.\nC. It allows us to see if a model encodes syntactic structure.\nD. It allows us to see if a model can generate useful utterances.\n\nAnswer: C \n\nQuestion 10:\nWhy are grammaticality rules important in language?\nA. They allow us to generate useless utterances.\nB. They block out perfectly communicative utterances.\nC. They give us expressivity.\nD. All of the above.\n\nAnswer: C",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685440139,
+  "id": "chatcmpl-7LqGJ8kiOLk4t5V66lJxAsJhw2AFM",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 703,
+    "prompt_tokens": 996,
+    "total_tokens": 1699
+  }
+}

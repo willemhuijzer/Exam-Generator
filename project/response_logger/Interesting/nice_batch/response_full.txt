@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is Natural Language Processing (NLP)?\nA. The branch of computer science concerned with giving computers the ability to understand images and videos.\nB. The branch of artificial intelligence concerned with giving computers the ability to perform complex mathematical computations.\nC. The branch of computer science concerned with giving computers the ability to understand text and spoken words in much the same way human beings can.\nD. The branch of computer science concerned with developing algorithms that can learn from data.\n\nAnswer: C\n\nQuestion 2:\nWhat are the different technologies combined in NLP?\nA. Computational linguistics, machine learning, and deep learning models.\nB. Robotics, computer vision, and natural language modeling.\nC. Computer graphics, computer vision, and machine learning models.\nD. None of the above.\n\nAnswer: A\n\nQuestion 3:\nWhat is meant by the compositional property of natural language?\nA. The choice of words to describe someone is quite arbitrary.\nB. The meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together.\nC. New words are created all the time.\nD. None of the above.\n\nAnswer: B\n\nQuestion 4:\nWhat is meant by the displaced property of natural language?\nA. The ability to talk about things that are not here or do not exist.\nB. The choice of words to describe someone is quite arbitrary.\nC. New words are created all the time.\nD. None of the above.\n\nAnswer: A\n\nQuestion 5:\nWhat is meant by the ambiguity property of natural language?\nA. Certain words can mean a lot of things.\nB. The choice of words to describe someone is quite arbitrary.\nC. New words are created all the time.\nD. None of the above.\n\nAnswer: A\n\nQuestion 6:\nWhat is Zipf's law?\nA. The rank-frequency distribution of words is an inverse relation.\nB. The frequency of a word is directly proportional to the rank of that word.\nC. All words follow a normal distribution.\nD. None of the above.\n\nAnswer: A\n\nQuestion 7:\nWhy is handling variation in language difficult for NLP?\nA. Because one form can have different meanings.\nB. Because the same meaning can be expressed with different forms.\nC. Because different types of language use require different models.\nD. All of the above.\n\nAnswer: D\n\nQuestion 8:\nWhat is the context-dependence property of natural language?\nA. The correct interpretation is context-dependent and often requires world knowledge.\nB. The frequency of a word is directly proportional to the rank of that word.\nC. All words follow a normal distribution.\nD. None of the above.\n\nAnswer: A\n\nQuestion 9:\nWhat is one issue with natural language being often spoken and grounded?\nA. It is too easy for computers to understand spoken language.\nB. It requires a lot of computing resources to understand spoken language.\nC. It is difficult to represent spoken language in a computational system.\nD. None of the above.\n\nAnswer: C\n\nQuestion 10:\nWhat technologies enable computers to process human language in the form of text and voice data?\nA. Computational linguistics, machine learning, and deep learning models.\nB. Robotics, computer vision, and natural language modeling.\nC. Computer graphics, computer vision, and machine learning models.\nD. None of the above.\n\nAnswer: A",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685546530,
+  "id": "chatcmpl-7MHwIYqiYRZZdsgsmn9dbdBdmwxp5",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 694,
+    "prompt_tokens": 817,
+    "total_tokens": 1511
+  }
+}

@@ -1,0 +1,89 @@
+Question 1:
+What is descriptive linguistics?
+A. The study of how language should be used
+B. The study of how language is actually used
+C. The study of how language has evolved over time
+D. The study of how language is learned by children
+
+Answer: B
+
+Question 2:
+What is the purpose of grammar rules?
+A. To limit the possibilities of language
+B. To make language more complex
+C. To give us expressivity in language
+D. To make language more difficult to learn
+
+Answer: C
+
+Question 3:
+What are probes in NLP?
+A. Small, supervised models trained to extract linguistic information from another model’s output
+B. Models of neural networks used in NLP
+C. Data structures used to represent linguistic information
+D. Algorithms for computing syntactic and semantic structure
+
+Answer: A
+
+Question 4:
+What is structural generalization?
+A. Novel combinations of old structures
+B. A special syntactic way of dealing with objects in language
+C. The use of idioms and metaphors in language
+D. A feature of grammar that marks less plausible things more prominently
+
+Answer: A
+
+Question 5:
+What is differential object marking?
+A. A feature of grammar that marks less plausible things more prominently
+B. A special syntactic way of dealing with objects in language
+C. A method for testing a model’s latent space to see if it encodes structural information
+D. A way of representing syntax trees in NLP models’ latent space
+
+Answer: B
+
+Question 6:
+Which of the following is an example of non-compositional meaning in language?
+A. “Don’t count your chickens before they hatch”
+B. “He won’t X, let alone Y”
+C. “The chef chopped the onion”
+D. “The mother gave the daughter the candle”
+
+Answer: A
+
+Question 7:
+What is the role of meaning in linguistic structure?
+A. Meaning has no role in linguistic structure
+B. Meaning plays a small role in linguistic structure
+C. Meaning plays a very large role in linguistic structure
+D. Meaning plays a role only in certain languages
+
+Answer: C
+
+Question 8:
+What are the three types of phrases in language structure?
+A. Noun, verb, and pronoun phrases
+B. Prepositional, adverbial, and adjectival phrases
+C. Noun, verbal, and prepositional phrases
+D. Subject, verb, and object phrases
+
+Answer: C
+
+Question 9:
+What is the difference between descriptive and prescriptive linguistics?
+A. Descriptive linguistics describes how language should be used, while prescriptive linguistics describes how language is actually used
+B. Descriptive linguistics describes how language is actually used, while prescriptive linguistics describes how language should be used
+C. Descriptive linguistics studies only the syntax of language, while prescriptive linguistics studies only the meaning of language
+D. Descriptive linguistics studies the origin of language, while prescriptive linguistics studies the evolution of language over time
+
+Answer: B
+
+Question 10:
+What is the advantage of testing a model’s latent space in NLP?
+A. It can be used to introduce new words to the model
+B. It provides a way to simplify models of neural networks
+C. It allows us to precisely control the values of model parameters
+D. It helps us understand whether the model encodes structural information
+
+Answer: D

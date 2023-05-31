@@ -1,0 +1,44 @@
+Question 1:
+What is syntax in linguistics?
+A. How the meaning of words combine to form the meaning of sentences.
+B. How words are organized into phrases and sentences.
+C. How language should be used.
+D. How a language is actually used.
+
+Answer: B
+
+Question 2:
+What is the difference between descriptive and prescriptive linguistics?
+A. Descriptive linguistics focuses on how language should be used, while prescriptive linguistics focuses on how a language is actually used.
+B. Descriptive linguistics focuses on how a language is actually used, while prescriptive linguistics focuses on how language should be used.
+C. Descriptive linguistics focuses on language acquisition, while prescriptive linguistics focuses on language production.
+D. Descriptive linguistics focuses on language production, while prescriptive linguistics focuses on language acquisition.
+
+Answer: B
+
+Question 3:
+What is a probe in natural language processing (NLP)?
+A. A small, supervised model trained to extract linguistic information from another model's output.
+B. A type of word order in English that gives the "who did what to whom" meaning.
+C. A syntactic way of dealing with objects in certain languages.
+D. The compositional meaning of a word.
+
+Answer: A
+
+Question 4:
+What is differential object marking?
+A. A syntactic way of dealing with objects in certain languages.
+B. A type of testing for NLP models that measures structural generalization.
+C. A type of testing for NLP models that measures lexical generalization.
+D. A type of grammar rule that specifies which words can be used together.
+
+Answer: A
+
+Question 5:
+What is the main advantage of self-adaptive parameter control in evolutionary algorithms?
+A. Increased user control
+B. Reduction in required computing resources
+C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
+D. Improved predictability of parameter values
+
+Answer: C

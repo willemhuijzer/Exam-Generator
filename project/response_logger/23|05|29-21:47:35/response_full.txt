@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is Natural Language Processing (NLP)?\nA. The branch of computer science concerned with building robots\nB. The branch of computer science concerned with giving computers the ability to understand text and spoken words\nC. The branch of computer science concerned with developing social media platforms\nD. The branch of computer science concerned with designing computer games\n\nAnswer: B\n\nQuestion 2:\nWhat is compositional in natural language?\nA. The way we use language to express ourselves\nB. The fact that language is always changing\nC. The way in which meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together\nD. The arbitrariness of the choice words to describe someone\n\nAnswer: C\n\nQuestion 3:\nWhat is the main reason why NLP is hard?\nA. Ambiguity\nB. Non-probabilistic methods\nC. Zipf's law\nD. Variation\n\nAnswer: A\n\nQuestion 4:\nWhy is estimating probabilities difficult in NLP?\nA. There is sparse data due to Zipf's law\nB. The language use varies across different domains\nC. Expressivity of forms\nD. Context dependence\n\nAnswer: A\n\nQuestion 5:\nWhat is the main challenge for representing natural language?\nA. The fact that language is always changing\nB. The context dependence of language use\nC. The fact that language is often spoken and grounded\nD. The unknown representation of natural language\n\nAnswer: C",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685389656,
+  "id": "chatcmpl-7Ld84lekA85WJkb7zGVirGxIHiL1H",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 311,
+    "prompt_tokens": 817,
+    "total_tokens": 1128
+  }
+}

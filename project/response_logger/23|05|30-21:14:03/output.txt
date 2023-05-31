@@ -1,0 +1,89 @@
+Question 1:
+What is the main goal of text normalization?
+A. To increase randomness in human language
+B. To reduce the dimensionality of input for structures like BOW
+C. To create more variability in words in the raw text
+D. To avoid false positives in natural language processing
+
+Answer: B
+
+Question 2:
+What is the difference between stemming and lemmatization?
+A. Stemming reduces words to base word, while lemmatization reduces words to word stem or root form.
+B. Stemming ensures that related words share a stem, while lemmatization reduces inflectional morphology but preserves context.
+C. Stemming is a more advanced technique than lemmatization.
+D. Stemming and lemmatization are synonyms for the same process.
+
+Answer: B
+
+Question 3:
+What is the intuition behind n-gram language models?
+A. To estimate the probability of a sentence by combining the probabilities of smaller parts of the sentence
+B. To estimate the probability of a word sequence by using training data, even if the sequence has never occurred before
+C. To distinguish between grammatical and ungrammatical sentences
+D. To measure the performance of a classification function on a downstream application
+
+Answer: A
+
+Question 4:
+What are synsets in WordNet?
+A. The numerical values assigned to each word in a vocabulary
+B. The basic units of organization in WordNet that represent different senses of a word
+C. The context words that appear nearby a given word in a text
+D. The distributional semantics of a word based on its surrounding words
+
+Answer: B
+
+Question 5:
+What are the problems with resources like WordNet?
+A. They are objective and based on hard data
+B. They are reliable and up-to-date
+C. They are subjective and missing nuance
+D. They can accurately compute word similarity
+
+Answer: C
+
+Question 6:
+What is the intuition behind dense word embeddings?
+A. To capture semantic and syntactic relationships between words
+B. To separate words based on their discrete symbols
+C. To use co-occurrence counts to define context vectors
+D. To train a neural network to predict surrounding words
+
+Answer: A
+
+Question 7:
+What is the objective function in Word2Vec?
+A. To minimize the likelihood of the center word given the context words
+B. To maximize the likelihood of the center word given the context words
+C. To minimize the squared differences between center words and context words
+D. To maximize the cosine similarity between center words and context words
+
+Answer: B
+
+Question 8:
+What is the benefit of using cosine similarity over Euclidean distance in vector space semantics?
+A. It can handle extreme values better
+B. It is more sensitive to word frequency
+C. It is better at capturing synonymy
+D. It is less computationally expensive
+
+Answer: D
+
+Question 9:
+What is skip-gram algorithm in Word2Vec?
+A. A method of randomly initializing word vectors in a fixed vocabulary
+B. A technique for identifying the context words for each center word in a text
+C. An objective function that tries to minimize the negative log likelihood
+D. A process of adjusting word vectors to maximize the probability of context words given a center word
+
+Answer: D
+
+Question 10:
+What is the purpose of intrinsic evaluation measures in natural language processing?
+A. To evaluate the performance of a classification function on a downstream application
+B. To design a measure that is inherent to the current task
+C. To evaluate the performance of a language model based on the uncertainty or disorder of words
+D. To compute the probabilities of words in a large corpus given a fixed vocabulary and dataset
+
+Answer: B
