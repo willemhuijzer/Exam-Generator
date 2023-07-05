@@ -1,0 +1,89 @@
+Question 1:
+What does NLP stand for?
+A. Nonlinear Programming
+B. Natural Language Processing
+C. Network Layer Protocol
+D. Nonlinear Processes
+
+Answer: B
+
+Question 2:
+What is computational linguistics?
+A. The branch of AI concerned with giving computers the ability to understand text and spoken words
+B. The study of human language and patterns
+C. The process of teaching computers how to communicate with humans
+D. The science of developing algorithms for language translation
+
+Answer: B
+
+Question 3:
+What technology enables computers to process human language in the form of text or voice data?
+A. Machine learning
+B. Deep learning
+C. Statistical algorithms
+D. All of the above
+
+Answer: D
+
+Question 4:
+What are some characteristics of natural language?
+A. Compositional
+B. Arbitrary 
+C. Creative
+D. All of the above
+
+Answer: D
+
+Question 5:
+What is Zipf's law?
+A. A law that stipulates that rare words have a much lower rank than common words in language
+B. A law that stipulates words that are at the beginning of a sentence are more likely to be important
+C. A law that describes the frequency of words being used in a language based on cultural context
+D. A law that states that words in a language are equally distributed in frequency
+
+Answer: A
+
+Question 6:
+Why is ambiguity a challenge in NLP?
+A. Certain words can mean a lot of things 
+B. Non-probabilistic methods return all possible analyses 
+C. Relevant statistics and probabilities are learned from data 
+D. Sparse data due to Zipf's law 
+
+Answer: A
+
+Question 7:
+What is expressivity in natural language?
+A. The idea that different forms can have the same meaning
+B. The fact that words can have multiple meanings 
+C. The need for world knowledge in language interpretation
+D. Both A and B
+
+Answer: D
+
+Question 8:
+Why is sparse data a challenge in NLP?
+A. It makes it difficult to estimate probabilities for things that have rarely or never been seen 
+B. It affects the quality of probabilistic models and algorithms 
+C. It increases the need for domain-specific data 
+D. Both A and B
+
+Answer: D
+
+Question 9:
+What is context dependence in natural language?
+A. The need for world knowledge in language interpretation 
+B. The fact that correct interpretation is context-dependent 
+C. The variation in language use across different domains 
+D. The ability of language to express the same meaning in different forms
+
+Answer: B
+
+Question 10:
+What is one of the challenges with natural language being spoken and grounded?
+A. It makes it difficult to capture the correct interpretation 
+B. It limits the expressivity of natural language 
+C. It increases the complexity of algorithms used 
+D. It requires more computing resources
+
+Answer: A

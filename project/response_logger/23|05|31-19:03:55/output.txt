@@ -1,0 +1,89 @@
+Question 1:
+What is Natural Language Processing (NLP)?
+A. The study of natural environments
+B. A branch of linguistics focused on natural language
+C. The use of artificial intelligence to understand text and spoken words
+D. The study of computer programming languages
+
+Answer: C
+
+Question 2:
+What types of models are combined in NLP?
+A. Biological and neurological models
+B. Statistical and machine learning models
+C. Social and economic models
+D. Linguistic and syntactic models
+
+Answer: B
+
+Question 3:
+What does the arbitrariness of natural language refer to?
+A. The way language is ordered
+B. The randomness of word choice
+C. The constant change of language
+D. The ability to talk about imaginary things
+
+Answer: B
+
+Question 4:
+What is ambiguity in NLP?
+A. The ability to understand multiple meanings of a word or phrase
+B. The ability to understand context-dependent meaning
+C. The inability to understand natural language
+D. The ability to understand only one meaning of a word or phrase
+
+Answer: A
+
+Question 5:
+What is Zipf's law?
+A. The law of language evolution
+B. The law of universal grammar
+C. The law of optimal communication
+D. The law of word frequency distribution
+
+Answer: D
+
+Question 6:
+Why is variation a challenge in NLP?
+A. Because linguistics is always changing
+B. Because there are different forms of expression for the same meaning
+C. Because there are different rules for different types of language
+D. Because different languages have different syntax
+
+Answer: B
+
+Question 7:
+What is context dependence in NLP?
+A. The ability to understand language in multiple contexts
+B. The inability to understand language in multiple contexts
+C. The ability to understand language without context
+D. The inability to understand language without context
+
+Answer: A
+
+Question 8:
+Why is world knowledge a challenge in NLP?
+A. Because world knowledge is constantly changing
+B. Because world knowledge is difficult to capture
+C. Because world knowledge is irrelevant to language understanding
+D. Because world knowledge is not necessary for language understanding
+
+Answer: B
+
+Question 9:
+What is unknown representation in NLP?
+A. The inability to represent unknown words or phrases
+B. The inability to represent language spoken in an unfamiliar accent
+C. The inability to represent language without context
+D. The inability to represent language in a visual form
+
+Answer: A
+
+Question 10:
+What is the main advantage of probabilistic models and algorithms in NLP?
+A. They are more robust than earlier rule-based methods
+B. They require less data to analyze language
+C. They return all possible analyses, not just the best analysis
+D. They do not require probabilities or statistics for analysis
+
+Answer: A

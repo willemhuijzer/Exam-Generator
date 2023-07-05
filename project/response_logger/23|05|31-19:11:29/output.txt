@@ -1,0 +1,89 @@
+Question 1:
+What is the difference between syntax and semantics?
+A. Syntax is how words combine to form meaning, and semantics is how words are organized into phrases and sentences.
+B. Syntax is how words are organized into phrases and sentences, and semantics is how the meaning of words combine to form the meaning of sentences.
+C. Both syntax and semantics refer to the same concept.
+D. Neither syntax nor semantics has anything to do with language.
+
+Answer: B
+
+Question 2:
+What is the purpose of descriptive linguistics?
+A. To describe how a language should be used
+B. To prescribe how a language should be used
+C. To describe how a language is actually used
+D. To create new rules for a language
+
+Answer: C
+
+Question 3:
+What is an idiolect?
+A. A dialect spoken in a particular region
+B. A variety of language used in a particular social group
+C. The language spoken by an individual
+D. The language spoken by a group of speakers
+
+Answer: C
+
+Question 4:
+What do grammaticality rules do?
+A. They accept useless utterances and block out perfectly communicative ones.
+B. They block out useless utterances and accept perfectly communicative ones.
+C. They are not useful in understanding language.
+D. They limit the expressivity of language.
+
+Answer: B
+
+Question 5:
+What is a probe in NLP?
+A. A language model trained to extract linguistic information
+B. A small, supervised model trained to extract linguistic information
+C. A type of grammar rule
+D. A type of word in a language
+
+Answer: B
+
+Question 6:
+What is the purpose of testing a model's latent space?
+A. To see if it encodes structural information
+B. To see if it can generate new words
+C. To compare it to other language models
+D. To test its speed and efficiency
+
+Answer: A
+
+Question 7:
+What does the syntax of English word order give us?
+A. The subject of a sentence
+B. The verb of a sentence
+C. The object of a sentence
+D. The meaning of a sentence
+
+Answer: C
+
+Question 8:
+What is structural generalization?
+A. Novel combinations of old structures
+B. Distinct words and structures in different roles
+C. A way of dealing with differential object marking
+D. The ability to interpret idioms and metaphors
+
+Answer: A
+
+Question 9:
+What is the main advantage of high-dimensional spaces in capturing specificities and subtleties of language meaning?
+A. They are more rigid than rules
+B. They are less sensitive to context
+C. They are better at capturing complexities than rules
+D. They are more predictable than rules
+
+Answer: C
+
+Question 10:
+What is the difference between syntax and semantics in language?
+A. Semantics is concerned with grammar structure, while syntax is concerned with word meaning
+B. Semantics is concerned with word meaning, while syntax is concerned with grammar structure
+C. Both syntax and semantics refer to the same concept
+D. Neither syntax nor semantics has anything to do with language
+
+Answer: B

@@ -1,0 +1,79 @@
+Question 1: What branch of computer science is concerned with giving computers the ability to understand text and spoken words in much the same way human beings can?
+A. Artificial intelligence
+B. Computer graphics
+C. Database management
+D. Robotics
+
+Answer: A 
+
+Question 2: What is the main goal of Natural Language Processing (NLP)?
+A. To give computers the ability to write text
+B. To give humans the ability to understand computer language
+C. To give computers the ability to read text
+D. To give computers the ability to understand human language
+
+Answer: D 
+
+Question 3: What technologies does NLP combine to process human language?
+A. Computational linguistics and machine learning
+B. Computational linguistics and data analysis
+C. Machine learning and deep learning
+D. All of the above
+
+Answer: A 
+
+Question 4: Which characteristics apply to natural language?
+A. Compositional, arbitrary, creative, and displaced 
+B. Analytic, predictable, monotonous, and uniform
+C. Logical, sequential, consistent, and unchanging 
+D. Simple, direct, unambiguous, and consistent 
+
+Answer: A 
+
+Question 5: Which of the following is a challenge in NLP due to ambiguity?
+A. Sparse data 
+B. Variation 
+C. Expressivity 
+D. Context dependence 
+
+Answer: A 
+
+Question 6: What is Zipf’s law?
+A. A law that prohibits the use of zero-frequency words in NLP
+B. A law that states the more frequent a word is in a corpus, the less frequent its rank 
+C. A law that states the more frequent a word is in a corpus, the more frequent its rank
+D. A law that states the more frequent a word is in a corpus, the more similar its forms 
+
+Answer: B 
+
+Question 7: Which type of method returns all possible analyses in NLP?
+A. Non-probabilistic methods 
+B. Probabilistic models 
+C. Machine learning algorithms 
+D. Rule-based models 
+
+Answer: A 
+
+Question 8: What is the challenge in NLP due to context dependence?
+A. It requires lots of data about any particular phenomenon
+B. It often requires world knowledge that is difficult to capture 
+C. It returns all possible analyses instead of the best possible analysis 
+D. It requires finding clever ways to estimate probabilities for things we have rarely or never seen 
+
+Answer: B 
+
+Question 9: What is the challenge in NLP due to expressivity?
+A. One form can have different meanings, but the same meaning can also be expressed with different forms
+B. It requires finding clever ways to estimate probabilities for things we have rarely or never seen 
+C. The language use is way too different across different platforms 
+D. It typically requires more computing resources than non-NLP algorithms 
+
+Answer: A 
+
+Question 10: What is the challenge in NLP due to variation?
+A. It often requires world knowledge that is difficult to capture 
+B. One form can have different meanings, but the same meaning can also be expressed with different forms
+C. The choice of words to describe someone is arbitrary 
+D. Correct interpretation is context-dependent 
+
+Answer: B

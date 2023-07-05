@@ -21,94 +21,94 @@ Answer: C
 
 SIMULATED_RESPONSE = '''
 Question 1:
-What is Natural Language Processing (NLP)?
-A. The branch of computer science concerned with giving computers the ability to understand images and videos.
-B. The branch of artificial intelligence concerned with giving computers the ability to perform complex mathematical computations.
-C. The branch of computer science concerned with giving computers the ability to understand text and spoken words in much the same way human beings can.
-D. The branch of computer science concerned with developing algorithms that can learn from data.
+What is the purpose of text normalization?
+A. To reduce the effectiveness of NLP models
+B. To increase the number of input variables for NLP models
+C. To reduce the dimensionality of the input for NLP models
+D. To introduce more variations in the words used in the raw text
 
 Answer: C
 
 Question 2:
-What are the different technologies combined in NLP?
-A. Computational linguistics, machine learning, and deep learning models.
-B. Robotics, computer vision, and natural language modeling.
-C. Computer graphics, computer vision, and machine learning models.
-D. None of the above.
-
-Answer: A
-
-Question 3:
-What is meant by the compositional property of natural language?
-A. The choice of words to describe someone is quite arbitrary.
-B. The meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together.
-C. New words are created all the time.
-D. None of the above.
+Which of the following is a component of text normalization?
+A. Punctuation addition
+B. Contractions reduction
+C. Tokenization expansion
+D. Stemming removal
 
 Answer: B
 
+Question 3:
+What is the advantage of reducing the vocabulary size in NLP?
+A. To make the language more difficult to understand
+B. To make it easier to identify word variations
+C. To minimize the number of features for NLP models
+D. To increase the dimensionality of input for NLP models
+
+Answer: C
+
 Question 4:
-What is meant by the displaced property of natural language?
-A. The ability to talk about things that are not here or do not exist.
-B. The choice of words to describe someone is quite arbitrary.
-C. New words are created all the time.
-D. None of the above.
+What is the difference between stemming and lemmatization?
+A. Stemming reduces words to their root form, while lemmatization reduces words to base words
+B. Stemming and lemmatization are the same thing
+C. Stemming reduces words to base words, while lemmatization reduces words to their root form
+D. Stemming and lemmatization reduce words to synonyms
 
 Answer: A
 
 Question 5:
-What is meant by the ambiguity property of natural language?
-A. Certain words can mean a lot of things.
-B. The choice of words to describe someone is quite arbitrary.
-C. New words are created all the time.
-D. None of the above.
+Which of the following is an example of a hypernymy relation?
+A. Car is a kind of vehicle
+B. An air bag is part of a car
+C. A tomato is a type of vegetable
+D. A book is related to an author
 
 Answer: A
 
 Question 6:
-What is Zipf's law?
-A. The rank-frequency distribution of words is an inverse relation.
-B. The frequency of a word is directly proportional to the rank of that word.
-C. All words follow a normal distribution.
-D. None of the above.
+What is entropy in intrinsic evaluation measures of language models?
+A. A measure of uncertainty
+B. A measure of similarity
+C. A measure of frequency
+D. A measure of perplexity
 
 Answer: A
 
 Question 7:
-Why is handling variation in language difficult for NLP?
-A. Because one form can have different meanings.
-B. Because the same meaning can be expressed with different forms.
-C. Because different types of language use require different models.
-D. All of the above.
+Which of the following is a way to measure the performance of n-gram language models in predicting the probabilities of sentences?
+A. Intrinsic evaluation measures
+B. Extrinsic evaluation measures
+C. Stemming-based evaluation measures
+D. Tokenization-based evaluation measures
 
-Answer: C
+Answer: A
 
 Question 8:
-What is the context-dependence property of natural language?
-A. The correct interpretation is context-dependent and often requires world knowledge.
-B. The frequency of a word is directly proportional to the rank of that word.
-C. All words follow a normal distribution.
-D. None of the above.
+What is the purpose of WordNet in lexical semantics?
+A. To solve word sense ambiguity
+B. To remove offensive words
+C. To provide a list of synonyms for each word
+D. To classify relationships between words
 
-Answer: A
+Answer: D
 
 Question 9:
-What is one issue with natural language being often spoken and grounded?
-A. It is too easy for computers to understand spoken language.
-B. It requires a lot of computing resources to understand spoken language.
-C. It is difficult to represent spoken language in a computational system.
-D. None of the above.
+What is the main advantage of dense word embeddings?
+A. They have fewer parameters
+B. They are better at capturing synonymy
+C. They are easier to include as features in machine learning systems
+D. All of the above
 
-Answer: C
+Answer: D
 
 Question 10:
-What technologies enable computers to process human language in the form of text and voice data?
-A. Computational linguistics, machine learning, and deep learning models.
-B. Robotics, computer vision, and natural language modeling.
-C. Computer graphics, computer vision, and machine learning models.
-D. None of the above.
+What is the objective function in Word2Vec?
+A. To maximize the likelihood of the center word given the context words
+B. To maximize the entropy of the center word
+C. To minimize the sum of squared errors
+D. To minimize the log likelihood of the context words given the center word
 
-Answer: A
+Answer: D
 '''
 
 def prompt_preface(content_nature:str='slides'):

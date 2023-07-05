@@ -8,9 +8,12 @@ from configuration import * # doe weg
 app = Flask(__name__)
 
 
-DO_SIMULATE = False        # set to True to simulate the response (skip the open ai API call)
-LOG_RESPONSE = True     # set to True to store the prompt, output and response object
-USE_TEXT_ONLY = True    # set to True to skip the pdf input and use the text input instead (to paste text)
+# set to True to simulate the response (skip the open ai API call)
+DO_SIMULATE = True        
+# set to True to store the prompt, output and response object
+LOG_RESPONSE = False if DO_SIMULATE else True
+# set to True to skip the pdf input and use the text input instead (to paste text)
+USE_TEXT_ONLY = True    
 
 @app.route("/")
 def index():

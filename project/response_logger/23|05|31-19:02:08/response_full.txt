@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1: What branch of computer science is concerned with giving computers the ability to understand text and spoken words in much the same way human beings can?\nA. Artificial intelligence\nB. Computer graphics\nC. Database management\nD. Robotics\n\nAnswer: A \n\nQuestion 2: What is the main goal of Natural Language Processing (NLP)?\nA. To give computers the ability to write text\nB. To give humans the ability to understand computer language\nC. To give computers the ability to read text\nD. To give computers the ability to understand human language\n\nAnswer: D \n\nQuestion 3: What technologies does NLP combine to process human language?\nA. Computational linguistics and machine learning\nB. Computational linguistics and data analysis\nC. Machine learning and deep learning\nD. All of the above\n\nAnswer: A \n\nQuestion 4: Which characteristics apply to natural language?\nA. Compositional, arbitrary, creative, and displaced \nB. Analytic, predictable, monotonous, and uniform\nC. Logical, sequential, consistent, and unchanging \nD. Simple, direct, unambiguous, and consistent \n\nAnswer: A \n\nQuestion 5: Which of the following is a challenge in NLP due to ambiguity?\nA. Sparse data \nB. Variation \nC. Expressivity \nD. Context dependence \n\nAnswer: A \n\nQuestion 6: What is Zipf\u2019s law?\nA. A law that prohibits the use of zero-frequency words in NLP\nB. A law that states the more frequent a word is in a corpus, the less frequent its rank \nC. A law that states the more frequent a word is in a corpus, the more frequent its rank\nD. A law that states the more frequent a word is in a corpus, the more similar its forms \n\nAnswer: B \n\nQuestion 7: Which type of method returns all possible analyses in NLP?\nA. Non-probabilistic methods \nB. Probabilistic models \nC. Machine learning algorithms \nD. Rule-based models \n\nAnswer: A \n\nQuestion 8: What is the challenge in NLP due to context dependence?\nA. It requires lots of data about any particular phenomenon\nB. It often requires world knowledge that is difficult to capture \nC. It returns all possible analyses instead of the best possible analysis \nD. It requires finding clever ways to estimate probabilities for things we have rarely or never seen \n\nAnswer: B \n\nQuestion 9: What is the challenge in NLP due to expressivity?\nA. One form can have different meanings, but the same meaning can also be expressed with different forms\nB. It requires finding clever ways to estimate probabilities for things we have rarely or never seen \nC. The language use is way too different across different platforms \nD. It typically requires more computing resources than non-NLP algorithms \n\nAnswer: A \n\nQuestion 10: What is the challenge in NLP due to variation?\nA. It often requires world knowledge that is difficult to capture \nB. One form can have different meanings, but the same meaning can also be expressed with different forms\nC. The choice of words to describe someone is arbitrary \nD. Correct interpretation is context-dependent \n\nAnswer: B",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1685552528,
+  "id": "chatcmpl-7MJV2iNCYtW6V51Z3llEyGVM6U3Ka",
+  "model": "gpt-3.5-turbo-0301",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 662,
+    "prompt_tokens": 818,
+    "total_tokens": 1480
+  }
+}
