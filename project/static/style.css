@@ -5,14 +5,17 @@
 }
 
 :root {
-  --main_background: #ffffff;
-  --second_background: #ffffff;
-  --extra_background: #333333;
+  --main_background: #262829;
+  --second_background: #262829;
+  --extra_background: #343839;
+
+  --textfield_background: #262829;
+  --textfield_border: #4d5355;
 
   --test: red;
-  --main_letter_color: #333;
-  --second_letter_color: #fff;
-  --second_letter_color_hover: #c2c2c2;
+  --main_letter_color: #dcd7ce;
+  --second_letter_color: #fdfbf8;
+  --second_letter_color_hover: #d5cfc7;
 
   --accent: #4CAF50;
   --accent_hover: #45a049;
@@ -24,7 +27,9 @@
   font-size: 16px;
   padding: 10px;
   margin-top: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--textfield_border);
+  background-color: var(--textfield_background);
+
 }
 
 body {

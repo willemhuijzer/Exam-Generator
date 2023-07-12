@@ -1,0 +1,87 @@
+Question 1:
+What is the main motivation for finding good parameter values in an Evolutionary Algorithm (EA)?
+A. To increase the number of iterations
+B. To reduce the computational complexity
+C. To facilitate good performance
+D. To improve the selection mechanism
+
+Answer: C
+
+Question 2:
+True or False: EA parameters are flexible and can vary during a run.
+A. True
+B. False
+
+Answer: B
+
+Question 3:
+Which of the following is not an EA strategy parameter?
+A. Mutation rate
+B. Crossover operator
+C. Population size
+D. Objective function
+
+Answer: D
+
+Question 4:
+Which option for varying mutation step size involves assigning a personal step size to each individual?
+A. Option 1
+B. Option 2
+C. Option 3
+D. Option 4
+
+Answer: C
+
+Question 5:
+Which option for varying penalties involves replacing the constant weight by a function that depends on the current generation number?
+A. Option 1
+B. Option 2
+C. Option 3
+D. Option 4
+
+Answer: A
+
+Question 6:
+What type of parameter control is based on feedback from the search progress?
+A. Deterministic control
+B. Adaptive control
+C. Self-adaptive control
+D. Absolute evidence control
+
+Answer: B
+
+Question 7:
+How are changes in parameter values informed in absolute evidence control?
+A. Through predefined event triggers
+B. Through comparison of values through solutions created with them
+C. Through time or number of evaluations
+D. Through population statistics
+
+Answer: A
+
+Question 8:
+In which scope/level does the parameter have an effect on the population?
+A. Environment
+B. Individual
+C. Sub-individual
+D. None of the above
+
+Answer: D
+
+Question 9:
+Which type of evidence is based on comparing values through solutions created with different parameter values?
+A. Absolute evidence
+B. Relative evidence
+C. Deterministic evidence
+D. Adaptive evidence
+
+Answer: B
+
+Question 10:
+What is the primary advantage of adaptive and self-adaptive parameter control in Evolutionary Algorithms?
+A. Increased user control
+B. Reduction in required computing resources
+C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
+D. Improved predictability of parameter values
+
+Answer: C
