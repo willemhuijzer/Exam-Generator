@@ -1,0 +1,555 @@
+<script>
+  window.exam_questions = [{"answer": "C", "options": ["A. The branch of computer science concerned with giving computers the ability to understand images and videos.", "B. The branch of artificial intelligence concerned with giving computers the ability to perform complex mathematical computations.", "C. The branch of computer science concerned with giving computers the ability to understand text and spoken words in much the same way human beings can.", "D. The branch of computer science concerned with developing algorithms that can learn from data."], "question": "What is Natural Language Processing (NLP)?", "question_id": 0}, {"answer": "A", "options": ["A. Computational linguistics, machine learning, and deep learning models.", "B. Robotics, computer vision, and natural language modeling.", "C. Computer graphics, computer vision, and machine learning models.", "D. None of the above."], "question": "What are the different technologies combined in NLP?", "question_id": 1}, {"answer": "B", "options": ["A. The choice of words to describe someone is quite arbitrary.", "B. The meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together.", "C. New words are created all the time.", "D. None of the above."], "question": "What is meant by the compositional property of natural language?", "question_id": 2}, {"answer": "A", "options": ["A. The ability to talk about things that are not here or do not exist.", "B. The choice of words to describe someone is quite arbitrary.", "C. New words are created all the time.", "D. None of the above."], "question": "What is meant by the displaced property of natural language?", "question_id": 3}, {"answer": "A", "options": ["A. Certain words can mean a lot of things.", "B. The choice of words to describe someone is quite arbitrary.", "C. New words are created all the time.", "D. None of the above."], "question": "What is meant by the ambiguity property of natural language?", "question_id": 4}, {"answer": "A", "options": ["A. The rank-frequency distribution of words is an inverse relation.", "B. The frequency of a word is directly proportional to the rank of that word.", "C. All words follow a normal distribution.", "D. None of the above."], "question": "What is Zipf\u0027s law?", "question_id": 5}, {"answer": "D", "options": ["A. Because one form can have different meanings.", "B. Because the same meaning can be expressed with different forms.", "C. Because different types of language use require different models.", "D. All of the above."], "question": "Why is handling variation in language difficult for NLP?", "question_id": 6}, {"answer": "A", "options": ["A. The correct interpretation is context-dependent and often requires world knowledge.", "B. The frequency of a word is directly proportional to the rank of that word.", "C. All words follow a normal distribution.", "D. None of the above."], "question": "What is the context-dependence property of natural language?", "question_id": 7}, {"answer": "C", "options": ["A. It is too easy for computers to understand spoken language.", "B. It requires a lot of computing resources to understand spoken language.", "C. It is difficult to represent spoken language in a computational system.", "D. None of the above."], "question": "What is one issue with natural language being often spoken and grounded?", "question_id": 8}, {"answer": "A", "options": ["A. Computational linguistics, machine learning, and deep learning models.", "B. Robotics, computer vision, and natural language modeling.", "C. Computer graphics, computer vision, and machine learning models.", "D. None of the above."], "question": "What technologies enable computers to process human language in the form of text and voice data?", "question_id": 9}];
+
+  // console.log('log: window.exam_questions: ', window.exam_questions);
+  // console.log('log: window.exam_questions[0]: ', window.exam_questions[0]);
+  // console.log('log: window.exam_questions[0].question: ', window.exam_questions[0].question);
+  // console.log('log: window.exam_questions[0].options: ', window.exam_questions[0].options);
+
+  function submitAnswers() {
+    var selectedAnswers = [];
+    var correctAnswers = 0;
+
+    // Get all the radio buttons and correct answers for each question
+    var questions = document.querySelectorAll("#questions li");
+    for (var i = 0; i < questions.length; i++) {
+      var question = questions[i];
+      var radios = question.querySelectorAll("input[type='radio']");
+      var correctAnswer = exam_questions[i]["answer"];
+
+      // Check if any radio button is selected for the current question
+      var selectedRadio = null;
+      for (var j = 0; j < radios.length; j++) {
+        if (radios[j].checked) {
+          selectedRadio = radios[j];
+          break;
+        }
+      }
+
+      // If a radio button is selected, compare its value with the correct answer and modify its color
+      if (selectedRadio) {
+        var selectedAnswer = selectedRadio.value[0];
+        selectedAnswers.push(selectedAnswer);
+        if (selectedAnswer === correctAnswer) {
+          selectedRadio.nextElementSibling.style.color = "green";
+          correctAnswers++;
+        } else {
+          selectedRadio.nextElementSibling.style.color = "red";
+          // Modify the color of the correct option
+          for (var j = 0; j < radios.length; j++) {
+            // console.log("log: radios[j].value: ", radios[j].value);
+            if (radios[j].value[0] === correctAnswer) {
+              radios[j].nextElementSibling.style.color = "green";
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    // Display the score and correct answers
+    var score = Math.round((correctAnswers / exam_questions.length) * 100);
+    var scoreSection = document.getElementById("score-section");
+    scoreSection.innerHTML = "<p>" + score + "% (" + correctAnswers + " out of " + exam_questions.length + ") </p>" ;
+    scoreSection.style.display = "block";
+
+    // Show the answer section
+    var answerSection = document.getElementById("answer-section");
+    answerSection.style.display = "block";
+
+    // Store the selected answers in localStorage
+    for (var i = 0; i < selectedAnswers.length; i++) {
+      localStorage.setItem("selectedAnswer_" + i, selectedAnswers[i]);
+    }
+  }
+</script>
+
+<!-- this is base.html -->
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <title>chatGPTeacher</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+  </head>
+  <body>
+    <div class="everything">
+
+      <img id="header-icon" src="/static/icon.png" alt="Website Icon">
+      <h1>GPTeacher</h1>
+
+      <div class="content">
+        <nav class="not_main_nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Summarizer">Summarizer</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <main>
+          
+  <h2>Generated Questions</h2>
+  <form id="exam-form" class="exam-form" onsubmit="submitAnswers(); return false;">
+    <div id="questions" class="questions">  
+      <ol>
+
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is Natural Language Processing (NLP)?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="A. The branch of computer science concerned with giving computers the ability to understand images and videos." />
+                    <label for="q1">A. The branch of computer science concerned with giving computers the ability to understand images and videos.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="B. The branch of artificial intelligence concerned with giving computers the ability to perform complex mathematical computations." />
+                    <label for="q1">B. The branch of artificial intelligence concerned with giving computers the ability to perform complex mathematical computations.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="C. The branch of computer science concerned with giving computers the ability to understand text and spoken words in much the same way human beings can." />
+                    <label for="q1">C. The branch of computer science concerned with giving computers the ability to understand text and spoken words in much the same way human beings can.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="D. The branch of computer science concerned with developing algorithms that can learn from data." />
+                    <label for="q1">D. The branch of computer science concerned with developing algorithms that can learn from data.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What are the different technologies combined in NLP?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="A. Computational linguistics, machine learning, and deep learning models." />
+                    <label for="q2">A. Computational linguistics, machine learning, and deep learning models.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="B. Robotics, computer vision, and natural language modeling." />
+                    <label for="q2">B. Robotics, computer vision, and natural language modeling.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="C. Computer graphics, computer vision, and machine learning models." />
+                    <label for="q2">C. Computer graphics, computer vision, and machine learning models.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="D. None of the above." />
+                    <label for="q2">D. None of the above.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is meant by the compositional property of natural language?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="A. The choice of words to describe someone is quite arbitrary." />
+                    <label for="q3">A. The choice of words to describe someone is quite arbitrary.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="B. The meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together." />
+                    <label for="q3">B. The meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="C. New words are created all the time." />
+                    <label for="q3">C. New words are created all the time.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="D. None of the above." />
+                    <label for="q3">D. None of the above.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is meant by the displaced property of natural language?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="A. The ability to talk about things that are not here or do not exist." />
+                    <label for="q4">A. The ability to talk about things that are not here or do not exist.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="B. The choice of words to describe someone is quite arbitrary." />
+                    <label for="q4">B. The choice of words to describe someone is quite arbitrary.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="C. New words are created all the time." />
+                    <label for="q4">C. New words are created all the time.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="D. None of the above." />
+                    <label for="q4">D. None of the above.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is meant by the ambiguity property of natural language?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="A. Certain words can mean a lot of things." />
+                    <label for="q5">A. Certain words can mean a lot of things.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="B. The choice of words to describe someone is quite arbitrary." />
+                    <label for="q5">B. The choice of words to describe someone is quite arbitrary.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="C. New words are created all the time." />
+                    <label for="q5">C. New words are created all the time.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="D. None of the above." />
+                    <label for="q5">D. None of the above.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is Zipf's law?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="A. The rank-frequency distribution of words is an inverse relation." />
+                    <label for="q6">A. The rank-frequency distribution of words is an inverse relation.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="B. The frequency of a word is directly proportional to the rank of that word." />
+                    <label for="q6">B. The frequency of a word is directly proportional to the rank of that word.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="C. All words follow a normal distribution." />
+                    <label for="q6">C. All words follow a normal distribution.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="D. None of the above." />
+                    <label for="q6">D. None of the above.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">Why is handling variation in language difficult for NLP?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="A. Because one form can have different meanings." />
+                    <label for="q7">A. Because one form can have different meanings.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="B. Because the same meaning can be expressed with different forms." />
+                    <label for="q7">B. Because the same meaning can be expressed with different forms.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="C. Because different types of language use require different models." />
+                    <label for="q7">C. Because different types of language use require different models.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="D. All of the above." />
+                    <label for="q7">D. All of the above.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the context-dependence property of natural language?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="A. The correct interpretation is context-dependent and often requires world knowledge." />
+                    <label for="q8">A. The correct interpretation is context-dependent and often requires world knowledge.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="B. The frequency of a word is directly proportional to the rank of that word." />
+                    <label for="q8">B. The frequency of a word is directly proportional to the rank of that word.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="C. All words follow a normal distribution." />
+                    <label for="q8">C. All words follow a normal distribution.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="D. None of the above." />
+                    <label for="q8">D. None of the above.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is one issue with natural language being often spoken and grounded?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="A. It is too easy for computers to understand spoken language." />
+                    <label for="q9">A. It is too easy for computers to understand spoken language.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="B. It requires a lot of computing resources to understand spoken language." />
+                    <label for="q9">B. It requires a lot of computing resources to understand spoken language.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="C. It is difficult to represent spoken language in a computational system." />
+                    <label for="q9">C. It is difficult to represent spoken language in a computational system.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="D. None of the above." />
+                    <label for="q9">D. None of the above.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What technologies enable computers to process human language in the form of text and voice data?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="A. Computational linguistics, machine learning, and deep learning models." />
+                    <label for="q10">A. Computational linguistics, machine learning, and deep learning models.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="B. Robotics, computer vision, and natural language modeling." />
+                    <label for="q10">B. Robotics, computer vision, and natural language modeling.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="C. Computer graphics, computer vision, and machine learning models." />
+                    <label for="q10">C. Computer graphics, computer vision, and machine learning models.</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="D. None of the above." />
+                    <label for="q10">D. None of the above.</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+      </ol>
+    </div>
+
+    <button id="submit-button" class="submit-button" type="submit">Submit Answers</button>
+  </form>
+
+  <div id="answer-section">
+    <h2>Your score:</h2>
+    <!-- <ol>
+      
+        <li>
+          <div class="question">What is Natural Language Processing (NLP)?</div>
+          <div class="'options"> [&#39;A. The branch of computer science concerned with giving computers the ability to understand images and videos.&#39;, &#39;B. The branch of artificial intelligence concerned with giving computers the ability to perform complex mathematical computations.&#39;, &#39;C. The branch of computer science concerned with giving computers the ability to understand text and spoken words in much the same way human beings can.&#39;, &#39;D. The branch of computer science concerned with developing algorithms that can learn from data.&#39;]</div>
+          <div class="answer">Answer: C</div>
+          <div id="selected-answer-0"></div>
+        </li>
+      
+        <li>
+          <div class="question">What are the different technologies combined in NLP?</div>
+          <div class="'options"> [&#39;A. Computational linguistics, machine learning, and deep learning models.&#39;, &#39;B. Robotics, computer vision, and natural language modeling.&#39;, &#39;C. Computer graphics, computer vision, and machine learning models.&#39;, &#39;D. None of the above.&#39;]</div>
+          <div class="answer">Answer: A</div>
+          <div id="selected-answer-1"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is meant by the compositional property of natural language?</div>
+          <div class="'options"> [&#39;A. The choice of words to describe someone is quite arbitrary.&#39;, &#39;B. The meaning of a whole expression is a function of the meaning of its parts and the manner in which they are put together.&#39;, &#39;C. New words are created all the time.&#39;, &#39;D. None of the above.&#39;]</div>
+          <div class="answer">Answer: B</div>
+          <div id="selected-answer-2"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is meant by the displaced property of natural language?</div>
+          <div class="'options"> [&#39;A. The ability to talk about things that are not here or do not exist.&#39;, &#39;B. The choice of words to describe someone is quite arbitrary.&#39;, &#39;C. New words are created all the time.&#39;, &#39;D. None of the above.&#39;]</div>
+          <div class="answer">Answer: A</div>
+          <div id="selected-answer-3"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is meant by the ambiguity property of natural language?</div>
+          <div class="'options"> [&#39;A. Certain words can mean a lot of things.&#39;, &#39;B. The choice of words to describe someone is quite arbitrary.&#39;, &#39;C. New words are created all the time.&#39;, &#39;D. None of the above.&#39;]</div>
+          <div class="answer">Answer: A</div>
+          <div id="selected-answer-4"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is Zipf's law?</div>
+          <div class="'options"> [&#39;A. The rank-frequency distribution of words is an inverse relation.&#39;, &#39;B. The frequency of a word is directly proportional to the rank of that word.&#39;, &#39;C. All words follow a normal distribution.&#39;, &#39;D. None of the above.&#39;]</div>
+          <div class="answer">Answer: A</div>
+          <div id="selected-answer-5"></div>
+        </li>
+      
+        <li>
+          <div class="question">Why is handling variation in language difficult for NLP?</div>
+          <div class="'options"> [&#39;A. Because one form can have different meanings.&#39;, &#39;B. Because the same meaning can be expressed with different forms.&#39;, &#39;C. Because different types of language use require different models.&#39;, &#39;D. All of the above.&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-6"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the context-dependence property of natural language?</div>
+          <div class="'options"> [&#39;A. The correct interpretation is context-dependent and often requires world knowledge.&#39;, &#39;B. The frequency of a word is directly proportional to the rank of that word.&#39;, &#39;C. All words follow a normal distribution.&#39;, &#39;D. None of the above.&#39;]</div>
+          <div class="answer">Answer: A</div>
+          <div id="selected-answer-7"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is one issue with natural language being often spoken and grounded?</div>
+          <div class="'options"> [&#39;A. It is too easy for computers to understand spoken language.&#39;, &#39;B. It requires a lot of computing resources to understand spoken language.&#39;, &#39;C. It is difficult to represent spoken language in a computational system.&#39;, &#39;D. None of the above.&#39;]</div>
+          <div class="answer">Answer: C</div>
+          <div id="selected-answer-8"></div>
+        </li>
+      
+        <li>
+          <div class="question">What technologies enable computers to process human language in the form of text and voice data?</div>
+          <div class="'options"> [&#39;A. Computational linguistics, machine learning, and deep learning models.&#39;, &#39;B. Robotics, computer vision, and natural language modeling.&#39;, &#39;C. Computer graphics, computer vision, and machine learning models.&#39;, &#39;D. None of the above.&#39;]</div>
+          <div class="answer">Answer: A</div>
+          <div id="selected-answer-9"></div>
+        </li>
+      
+    </ol> -->
+    <div class="score-section" id="score-section"></div>
+  </div>
+
+        </main>
+        <footer>
+          <p>&copy; 2023 NLP Smart Application</p>
+        </footer>
+      </div>  
+    </div>
+  </body>
+</html>
+
+<script>
+  document.getElementById("answer-section").style.display = "none";
+
+</script>
+<!-- 
+
+  function showScore(score, totalQuestions) {
+    var scorePercent = (score / totalQuestions) * 100;
+    var scoreDisplay = "Score: " + score + "/" + totalQuestions + " (" + scorePercent.toFixed(2) + "%)";
+    var scoreDiv = document.getElementById("score-section");
+    scoreDiv.innerHTML = scoreDisplay;
+
+    var form = document.getElementById("exam-form");
+    form.style.display = "none";
+
+    var answerSection = document.getElementById("answer-section");
+    answerSection.style.display = "block";
+
+    var submitButton = document.getElementById("submit-button");
+    submitButton.style.display = "none";
+  }
+
+  function submitAnswers(exam_questions) {
+
+    console.log('log: submitAnswers() called');
+    console.log('log: exam_questions: ', exam_questions);
+    console.log('log: window.exam_questions: ', window.exam_questions);
+        
+    var totalQuestions = exam_questions.length;
+    var correctAnswers = 0;
+
+    // Loop through all the questions
+    for (var i = 0; i < totalQuestions; i++) {
+      var selectedAnswer = document.querySelector('input[name="q'+ i +'"]:checked');
+      var selectedAnswerIndex = exam_questions[i]['options'].indexOf(selectedAnswer.value);
+      var correctAnswerIndex = exam_questions[i]['options'].indexOf(exam_questions[i]['answer']);
+
+      // Store the selected answer in local storage
+      localStorage.setItem('selectedAnswer_' + i, selectedAnswer.value);
+
+      // Highlight the correct answer in green
+      var correctAnswerLabel = document.querySelector('label[for="q'+ i +'_'+ correctAnswerIndex +'"]');
+      correctAnswerLabel.style.color = 'green';
+
+      // If the selected answer is correct, increment the score and highlight the selected answer in green
+      if (selectedAnswerIndex === correctAnswerIndex) {
+        correctAnswers++;
+        selectedAnswer.parentElement.style.color = 'green';
+      }
+      // If the selected answer is incorrect, highlight the selected answer in red
+      else {
+        selectedAnswer.parentElement.style.color = 'red';
+      }
+    }
+
+    // Calculate and show the score
+    var score = (correctAnswers / totalQuestions) * 100;
+    showScore(score, totalQuestions);
+
+    // Prevent the default form submission behavior
+    event.preventDefault();
+  }
+
+
+</script> -->

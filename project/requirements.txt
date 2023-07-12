@@ -1,4 +1,0 @@
-openai
-flask
-regex
-pdfplumber

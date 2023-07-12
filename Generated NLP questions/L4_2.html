@@ -1,0 +1,555 @@
+<script>
+  window.exam_questions = [{"answer": "C", "options": ["A. To increase the variations of a word in the raw text", "B. To decrease the efficiency of the model", "C. To reduce the dimensionality of the input", "D. To increase false negatives in the model"], "question": "Why is text normalization important in natural language processing?", "question_id": 0}, {"answer": "C", "options": ["A. Sentence structure", "B. Punctuation", "C. Word sense ambiguity", "D. Tokenization"], "question": "Which of the following is NOT a component of text normalization?", "question_id": 1}, {"answer": "B", "options": ["A. To reduce words to base word (lemma)", "B. To reduce words to word stem or root form", "C. To segment running text into words and sequences", "D. To remove all punctuation"], "question": "What is the purpose of stemming in text normalization?", "question_id": 2}, {"answer": "B", "options": ["A. Measuring performance on a downstream application", "B. Entropy", "C. Cross-entropy", "D. Learning to encode similarity in the vectors"], "question": "Which of the following is an intrinsic evaluation measure for language models?", "question_id": 3}, {"answer": "D", "options": ["A. WordNet encodes word meanings based on the context they appear in, while distributional semantics uses a lexicon of synonyms", "B. WordNet is subjective, while distributional semantics is objective", "C. WordNet is used for word analytics, while distributional semantics focuses on sentence structure", "D. WordNet is based on a database of word relationships, while distributional semantics uses co-occurrence based context vectors"], "question": "What is the difference between WordNet and distributional semantics?", "question_id": 4}, {"answer": "C", "options": ["A. To maximize the likelihood of the center word given the context words", "B. To minimize the distance between co-occurrence based context vectors", "C. To maximize the probability of the context words given the center word", "D. To minimize the entropy of the vocabulary"], "question": "What is the objective function in Word2Vec?", "question_id": 5}, {"answer": "C", "options": ["A. They have many parameters, which improves generalization", "B. They have a large vocabulary, which improves semantic similarity", "C. They can be easily included as features in machine learning systems", "D. They are better at capturing context than co-occurrence based context vectors"], "question": "What is the main advantage of dense word embeddings?", "question_id": 6}, {"answer": "A", "options": ["A. Stemming reduces words to their root form, while lemmatization reduces words to base words", "B. Stemming and lemmatization are the same thing", "C. Stemming reduces words to base words, while lemmatization reduces words to their root form", "D. Stemming and lemmatization reduce words to synonyms"], "question": "What is the difference between stemming and lemmatization?", "question_id": 7}, {"answer": "A", "options": ["A. Car is a kind of vehicle", "B. An air bag is part of a car", "C. A tomato is a type of fruit", "D. A book is related to an author"], "question": "Which of the following is an example of a hypernymy relation?", "question_id": 8}, {"answer": "D", "options": ["A. It is based on a large corpus of general English text", "B. It assumes that anything that hasn\u0027t occurred will never occur", "C. It assigns zero probability to any sentence that has never occurred in a corpus", "D. It uses the count of a sentence in a large dataset to estimate its probability"], "question": "Why can MLE not distinguish between grammatical and ungrammatical sentences in estimating the probability of a sentence in English?", "question_id": 9}];
+
+  // console.log('log: window.exam_questions: ', window.exam_questions);
+  // console.log('log: window.exam_questions[0]: ', window.exam_questions[0]);
+  // console.log('log: window.exam_questions[0].question: ', window.exam_questions[0].question);
+  // console.log('log: window.exam_questions[0].options: ', window.exam_questions[0].options);
+
+  function submitAnswers() {
+    var selectedAnswers = [];
+    var correctAnswers = 0;
+
+    // Get all the radio buttons and correct answers for each question
+    var questions = document.querySelectorAll("#questions li");
+    for (var i = 0; i < questions.length; i++) {
+      var question = questions[i];
+      var radios = question.querySelectorAll("input[type='radio']");
+      var correctAnswer = exam_questions[i]["answer"];
+
+      // Check if any radio button is selected for the current question
+      var selectedRadio = null;
+      for (var j = 0; j < radios.length; j++) {
+        if (radios[j].checked) {
+          selectedRadio = radios[j];
+          break;
+        }
+      }
+
+      // If a radio button is selected, compare its value with the correct answer and modify its color
+      if (selectedRadio) {
+        var selectedAnswer = selectedRadio.value[0];
+        selectedAnswers.push(selectedAnswer);
+        if (selectedAnswer === correctAnswer) {
+          selectedRadio.nextElementSibling.style.color = "green";
+          correctAnswers++;
+        } else {
+          selectedRadio.nextElementSibling.style.color = "red";
+          // Modify the color of the correct option
+          for (var j = 0; j < radios.length; j++) {
+            // console.log("log: radios[j].value: ", radios[j].value);
+            if (radios[j].value[0] === correctAnswer) {
+              radios[j].nextElementSibling.style.color = "green";
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    // Display the score and correct answers
+    var score = Math.round((correctAnswers / exam_questions.length) * 100);
+    var scoreSection = document.getElementById("score-section");
+    scoreSection.innerHTML = "<p>" + score + "% (" + correctAnswers + " out of " + exam_questions.length + ") </p>" ;
+    scoreSection.style.display = "block";
+
+    // Show the answer section
+    var answerSection = document.getElementById("answer-section");
+    answerSection.style.display = "block";
+
+    // Store the selected answers in localStorage
+    for (var i = 0; i < selectedAnswers.length; i++) {
+      localStorage.setItem("selectedAnswer_" + i, selectedAnswers[i]);
+    }
+  }
+</script>
+
+<!-- this is base.html -->
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <title>chatGPTeacher</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+  </head>
+  <body>
+    <div class="everything">
+
+      <img id="header-icon" src="/static/icon.png" alt="Website Icon">
+      <h1>GPTeacher</h1>
+
+      <div class="content">
+        <nav class="not_main_nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Summarizer">Summarizer</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <main>
+          
+  <h2>Generated Questions</h2>
+  <form id="exam-form" class="exam-form" onsubmit="submitAnswers(); return false;">
+    <div id="questions" class="questions">  
+      <ol>
+
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">Why is text normalization important in natural language processing?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="A. To increase the variations of a word in the raw text" />
+                    <label for="q1">A. To increase the variations of a word in the raw text</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="B. To decrease the efficiency of the model" />
+                    <label for="q1">B. To decrease the efficiency of the model</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="C. To reduce the dimensionality of the input" />
+                    <label for="q1">C. To reduce the dimensionality of the input</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="D. To increase false negatives in the model" />
+                    <label for="q1">D. To increase false negatives in the model</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">Which of the following is NOT a component of text normalization?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="A. Sentence structure" />
+                    <label for="q2">A. Sentence structure</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="B. Punctuation" />
+                    <label for="q2">B. Punctuation</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="C. Word sense ambiguity" />
+                    <label for="q2">C. Word sense ambiguity</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="D. Tokenization" />
+                    <label for="q2">D. Tokenization</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the purpose of stemming in text normalization?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="A. To reduce words to base word (lemma)" />
+                    <label for="q3">A. To reduce words to base word (lemma)</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="B. To reduce words to word stem or root form" />
+                    <label for="q3">B. To reduce words to word stem or root form</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="C. To segment running text into words and sequences" />
+                    <label for="q3">C. To segment running text into words and sequences</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="D. To remove all punctuation" />
+                    <label for="q3">D. To remove all punctuation</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">Which of the following is an intrinsic evaluation measure for language models?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="A. Measuring performance on a downstream application" />
+                    <label for="q4">A. Measuring performance on a downstream application</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="B. Entropy" />
+                    <label for="q4">B. Entropy</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="C. Cross-entropy" />
+                    <label for="q4">C. Cross-entropy</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="D. Learning to encode similarity in the vectors" />
+                    <label for="q4">D. Learning to encode similarity in the vectors</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the difference between WordNet and distributional semantics?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="A. WordNet encodes word meanings based on the context they appear in, while distributional semantics uses a lexicon of synonyms" />
+                    <label for="q5">A. WordNet encodes word meanings based on the context they appear in, while distributional semantics uses a lexicon of synonyms</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="B. WordNet is subjective, while distributional semantics is objective" />
+                    <label for="q5">B. WordNet is subjective, while distributional semantics is objective</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="C. WordNet is used for word analytics, while distributional semantics focuses on sentence structure" />
+                    <label for="q5">C. WordNet is used for word analytics, while distributional semantics focuses on sentence structure</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="D. WordNet is based on a database of word relationships, while distributional semantics uses co-occurrence based context vectors" />
+                    <label for="q5">D. WordNet is based on a database of word relationships, while distributional semantics uses co-occurrence based context vectors</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the objective function in Word2Vec?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="A. To maximize the likelihood of the center word given the context words" />
+                    <label for="q6">A. To maximize the likelihood of the center word given the context words</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="B. To minimize the distance between co-occurrence based context vectors" />
+                    <label for="q6">B. To minimize the distance between co-occurrence based context vectors</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="C. To maximize the probability of the context words given the center word" />
+                    <label for="q6">C. To maximize the probability of the context words given the center word</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="D. To minimize the entropy of the vocabulary" />
+                    <label for="q6">D. To minimize the entropy of the vocabulary</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the main advantage of dense word embeddings?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="A. They have many parameters, which improves generalization" />
+                    <label for="q7">A. They have many parameters, which improves generalization</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="B. They have a large vocabulary, which improves semantic similarity" />
+                    <label for="q7">B. They have a large vocabulary, which improves semantic similarity</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="C. They can be easily included as features in machine learning systems" />
+                    <label for="q7">C. They can be easily included as features in machine learning systems</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="D. They are better at capturing context than co-occurrence based context vectors" />
+                    <label for="q7">D. They are better at capturing context than co-occurrence based context vectors</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the difference between stemming and lemmatization?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="A. Stemming reduces words to their root form, while lemmatization reduces words to base words" />
+                    <label for="q8">A. Stemming reduces words to their root form, while lemmatization reduces words to base words</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="B. Stemming and lemmatization are the same thing" />
+                    <label for="q8">B. Stemming and lemmatization are the same thing</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="C. Stemming reduces words to base words, while lemmatization reduces words to their root form" />
+                    <label for="q8">C. Stemming reduces words to base words, while lemmatization reduces words to their root form</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="D. Stemming and lemmatization reduce words to synonyms" />
+                    <label for="q8">D. Stemming and lemmatization reduce words to synonyms</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">Which of the following is an example of a hypernymy relation?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="A. Car is a kind of vehicle" />
+                    <label for="q9">A. Car is a kind of vehicle</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="B. An air bag is part of a car" />
+                    <label for="q9">B. An air bag is part of a car</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="C. A tomato is a type of fruit" />
+                    <label for="q9">C. A tomato is a type of fruit</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="D. A book is related to an author" />
+                    <label for="q9">D. A book is related to an author</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">Why can MLE not distinguish between grammatical and ungrammatical sentences in estimating the probability of a sentence in English?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="A. It is based on a large corpus of general English text" />
+                    <label for="q10">A. It is based on a large corpus of general English text</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="B. It assumes that anything that hasn&#39;t occurred will never occur" />
+                    <label for="q10">B. It assumes that anything that hasn&#39;t occurred will never occur</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="C. It assigns zero probability to any sentence that has never occurred in a corpus" />
+                    <label for="q10">C. It assigns zero probability to any sentence that has never occurred in a corpus</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="D. It uses the count of a sentence in a large dataset to estimate its probability" />
+                    <label for="q10">D. It uses the count of a sentence in a large dataset to estimate its probability</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+      </ol>
+    </div>
+
+    <button id="submit-button" class="submit-button" type="submit">Submit Answers</button>
+  </form>
+
+  <div id="answer-section">
+    <h2>Your score:</h2>
+    <!-- <ol>
+      
+        <li>
+          <div class="question">Why is text normalization important in natural language processing?</div>
+          <div class="'options"> [&#39;A. To increase the variations of a word in the raw text&#39;, &#39;B. To decrease the efficiency of the model&#39;, &#39;C. To reduce the dimensionality of the input&#39;, &#39;D. To increase false negatives in the model&#39;]</div>
+          <div class="answer">Answer: C</div>
+          <div id="selected-answer-0"></div>
+        </li>
+      
+        <li>
+          <div class="question">Which of the following is NOT a component of text normalization?</div>
+          <div class="'options"> [&#39;A. Sentence structure&#39;, &#39;B. Punctuation&#39;, &#39;C. Word sense ambiguity&#39;, &#39;D. Tokenization&#39;]</div>
+          <div class="answer">Answer: C</div>
+          <div id="selected-answer-1"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the purpose of stemming in text normalization?</div>
+          <div class="'options"> [&#39;A. To reduce words to base word (lemma)&#39;, &#39;B. To reduce words to word stem or root form&#39;, &#39;C. To segment running text into words and sequences&#39;, &#39;D. To remove all punctuation&#39;]</div>
+          <div class="answer">Answer: B</div>
+          <div id="selected-answer-2"></div>
+        </li>
+      
+        <li>
+          <div class="question">Which of the following is an intrinsic evaluation measure for language models?</div>
+          <div class="'options"> [&#39;A. Measuring performance on a downstream application&#39;, &#39;B. Entropy&#39;, &#39;C. Cross-entropy&#39;, &#39;D. Learning to encode similarity in the vectors&#39;]</div>
+          <div class="answer">Answer: B</div>
+          <div id="selected-answer-3"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the difference between WordNet and distributional semantics?</div>
+          <div class="'options"> [&#39;A. WordNet encodes word meanings based on the context they appear in, while distributional semantics uses a lexicon of synonyms&#39;, &#39;B. WordNet is subjective, while distributional semantics is objective&#39;, &#39;C. WordNet is used for word analytics, while distributional semantics focuses on sentence structure&#39;, &#39;D. WordNet is based on a database of word relationships, while distributional semantics uses co-occurrence based context vectors&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-4"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the objective function in Word2Vec?</div>
+          <div class="'options"> [&#39;A. To maximize the likelihood of the center word given the context words&#39;, &#39;B. To minimize the distance between co-occurrence based context vectors&#39;, &#39;C. To maximize the probability of the context words given the center word&#39;, &#39;D. To minimize the entropy of the vocabulary&#39;]</div>
+          <div class="answer">Answer: C</div>
+          <div id="selected-answer-5"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the main advantage of dense word embeddings?</div>
+          <div class="'options"> [&#39;A. They have many parameters, which improves generalization&#39;, &#39;B. They have a large vocabulary, which improves semantic similarity&#39;, &#39;C. They can be easily included as features in machine learning systems&#39;, &#39;D. They are better at capturing context than co-occurrence based context vectors&#39;]</div>
+          <div class="answer">Answer: C</div>
+          <div id="selected-answer-6"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the difference between stemming and lemmatization?</div>
+          <div class="'options"> [&#39;A. Stemming reduces words to their root form, while lemmatization reduces words to base words&#39;, &#39;B. Stemming and lemmatization are the same thing&#39;, &#39;C. Stemming reduces words to base words, while lemmatization reduces words to their root form&#39;, &#39;D. Stemming and lemmatization reduce words to synonyms&#39;]</div>
+          <div class="answer">Answer: A</div>
+          <div id="selected-answer-7"></div>
+        </li>
+      
+        <li>
+          <div class="question">Which of the following is an example of a hypernymy relation?</div>
+          <div class="'options"> [&#39;A. Car is a kind of vehicle&#39;, &#39;B. An air bag is part of a car&#39;, &#39;C. A tomato is a type of fruit&#39;, &#39;D. A book is related to an author&#39;]</div>
+          <div class="answer">Answer: A</div>
+          <div id="selected-answer-8"></div>
+        </li>
+      
+        <li>
+          <div class="question">Why can MLE not distinguish between grammatical and ungrammatical sentences in estimating the probability of a sentence in English?</div>
+          <div class="'options"> [&#39;A. It is based on a large corpus of general English text&#39;, &#34;B. It assumes that anything that hasn&#39;t occurred will never occur&#34;, &#39;C. It assigns zero probability to any sentence that has never occurred in a corpus&#39;, &#39;D. It uses the count of a sentence in a large dataset to estimate its probability&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-9"></div>
+        </li>
+      
+    </ol> -->
+    <div class="score-section" id="score-section"></div>
+  </div>
+
+        </main>
+        <footer>
+          <p>&copy; 2023 NLP Smart Application</p>
+        </footer>
+      </div>  
+    </div>
+  </body>
+</html>
+
+<script>
+  document.getElementById("answer-section").style.display = "none";
+
+</script>
+<!-- 
+
+  function showScore(score, totalQuestions) {
+    var scorePercent = (score / totalQuestions) * 100;
+    var scoreDisplay = "Score: " + score + "/" + totalQuestions + " (" + scorePercent.toFixed(2) + "%)";
+    var scoreDiv = document.getElementById("score-section");
+    scoreDiv.innerHTML = scoreDisplay;
+
+    var form = document.getElementById("exam-form");
+    form.style.display = "none";
+
+    var answerSection = document.getElementById("answer-section");
+    answerSection.style.display = "block";
+
+    var submitButton = document.getElementById("submit-button");
+    submitButton.style.display = "none";
+  }
+
+  function submitAnswers(exam_questions) {
+
+    console.log('log: submitAnswers() called');
+    console.log('log: exam_questions: ', exam_questions);
+    console.log('log: window.exam_questions: ', window.exam_questions);
+        
+    var totalQuestions = exam_questions.length;
+    var correctAnswers = 0;
+
+    // Loop through all the questions
+    for (var i = 0; i < totalQuestions; i++) {
+      var selectedAnswer = document.querySelector('input[name="q'+ i +'"]:checked');
+      var selectedAnswerIndex = exam_questions[i]['options'].indexOf(selectedAnswer.value);
+      var correctAnswerIndex = exam_questions[i]['options'].indexOf(exam_questions[i]['answer']);
+
+      // Store the selected answer in local storage
+      localStorage.setItem('selectedAnswer_' + i, selectedAnswer.value);
+
+      // Highlight the correct answer in green
+      var correctAnswerLabel = document.querySelector('label[for="q'+ i +'_'+ correctAnswerIndex +'"]');
+      correctAnswerLabel.style.color = 'green';
+
+      // If the selected answer is correct, increment the score and highlight the selected answer in green
+      if (selectedAnswerIndex === correctAnswerIndex) {
+        correctAnswers++;
+        selectedAnswer.parentElement.style.color = 'green';
+      }
+      // If the selected answer is incorrect, highlight the selected answer in red
+      else {
+        selectedAnswer.parentElement.style.color = 'red';
+      }
+    }
+
+    // Calculate and show the score
+    var score = (correctAnswers / totalQuestions) * 100;
+    showScore(score, totalQuestions);
+
+    // Prevent the default form submission behavior
+    event.preventDefault();
+  }
+
+
+</script> -->

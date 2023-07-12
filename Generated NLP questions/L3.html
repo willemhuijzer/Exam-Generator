@@ -1,0 +1,555 @@
+<script>
+  window.exam_questions = [{"answer": "D", "options": ["A. To predict the author\u0027s identity", "B. To classify the language used in the text", "C. To determine the age of the author", "D. To predict the sentiment expressed in a piece of text"], "question": "What is the goal of sentiment analysis?", "question_id": 0}, {"answer": "D", "options": ["A. Sentiment is a measure of a speaker\u0027s invisible state", "B. Words are not always a good indicator of sentiment", "C. Sentiment requires contextual knowledge", "D. All of the above"], "question": "What are some challenges in sentiment analysis?", "question_id": 1}, {"answer": "B", "options": ["A. F1-measure", "B. Accuracy", "C. Precision", "D. Recall"], "question": "What is the simplest measure for evaluating a sentiment analyzer?", "question_id": 2}, {"answer": "D", "options": ["A. It requires controlled experimentation", "B. It provides good engineering benchmarks", "C. Our intuitions about typical inputs are often incorrect", "D. All of the above"], "question": "Why is data-driven evaluation important?", "question_id": 3}, {"answer": "D", "options": ["A. Sense ambiguity", "B. Irony and sarcasm", "C. Mention of opposing viewpoints", "D. All of the above"], "question": "What is the main problem with using a sentiment lexicon to count positive and negative words in sentiment analysis?", "question_id": 4}, {"answer": "D", "options": ["A. Only positive/negative words in MPQA", "B. Higher-order linguistic structure", "C. Only words in isolation (bag of words)", "D. Only adjectives and adverbs"], "question": "Which of the following is NOT a representation used for sentiment analysis?", "question_id": 5}, {"answer": "D", "options": ["A. It provides a true probability of an arbitrary sequence of words", "B. It allows for analysis of semantics and syntax", "C. It prevents sense ambiguity", "D. It combines the probability of smaller parts of a sentence, which will occur more frequently"], "question": "What is the main advantage of using an n-gram language model for predicting upcoming words?", "question_id": 6}, {"answer": "A", "options": ["A. The probability of a word only depends on the previous word", "B. The probability of a word only depends on a fixed number of previous words", "C. The probability of a word only depends on the next word", "D. The probability of a word only depends on the words surrounding it"], "question": "What is the independence assumption made in a bigram language model?", "question_id": 7}, {"answer": "D", "options": ["A. Rule-based systems rely on machine learning techniques", "B. Learning-based systems rely on databases and manual rules", "C. Rule-based systems rely on collecting statistics or patterns automatically from corpora", "D. Learning-based systems are governed solely by manual rules or databases"], "question": "What is the difference between rule-based and learning-based NLP systems?", "question_id": 8}, {"answer": "B", "options": ["A. Precision is how many of the ironic tweets are found, whereas recall is how often the prediction is correct", "B. Precision is how often the prediction is correct, whereas recall is how many of the ironic tweets are found", "C. Precision is how many true positives there are, whereas recall is how many false positives there are", "D. Precision is how many true positives there are, whereas recall is how many true negatives there are"], "question": "What is the difference between precision and recall in sentiment analysis evaluation?", "question_id": 9}];
+
+  // console.log('log: window.exam_questions: ', window.exam_questions);
+  // console.log('log: window.exam_questions[0]: ', window.exam_questions[0]);
+  // console.log('log: window.exam_questions[0].question: ', window.exam_questions[0].question);
+  // console.log('log: window.exam_questions[0].options: ', window.exam_questions[0].options);
+
+  function submitAnswers() {
+    var selectedAnswers = [];
+    var correctAnswers = 0;
+
+    // Get all the radio buttons and correct answers for each question
+    var questions = document.querySelectorAll("#questions li");
+    for (var i = 0; i < questions.length; i++) {
+      var question = questions[i];
+      var radios = question.querySelectorAll("input[type='radio']");
+      var correctAnswer = exam_questions[i]["answer"];
+
+      // Check if any radio button is selected for the current question
+      var selectedRadio = null;
+      for (var j = 0; j < radios.length; j++) {
+        if (radios[j].checked) {
+          selectedRadio = radios[j];
+          break;
+        }
+      }
+
+      // If a radio button is selected, compare its value with the correct answer and modify its color
+      if (selectedRadio) {
+        var selectedAnswer = selectedRadio.value[0];
+        selectedAnswers.push(selectedAnswer);
+        if (selectedAnswer === correctAnswer) {
+          selectedRadio.nextElementSibling.style.color = "green";
+          correctAnswers++;
+        } else {
+          selectedRadio.nextElementSibling.style.color = "red";
+          // Modify the color of the correct option
+          for (var j = 0; j < radios.length; j++) {
+            // console.log("log: radios[j].value: ", radios[j].value);
+            if (radios[j].value[0] === correctAnswer) {
+              radios[j].nextElementSibling.style.color = "green";
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    // Display the score and correct answers
+    var score = Math.round((correctAnswers / exam_questions.length) * 100);
+    var scoreSection = document.getElementById("score-section");
+    scoreSection.innerHTML = "<p>" + score + "% (" + correctAnswers + " out of " + exam_questions.length + ") </p>" ;
+    scoreSection.style.display = "block";
+
+    // Show the answer section
+    var answerSection = document.getElementById("answer-section");
+    answerSection.style.display = "block";
+
+    // Store the selected answers in localStorage
+    for (var i = 0; i < selectedAnswers.length; i++) {
+      localStorage.setItem("selectedAnswer_" + i, selectedAnswers[i]);
+    }
+  }
+</script>
+
+<!-- this is base.html -->
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <title>chatGPTeacher</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+  </head>
+  <body>
+    <div class="everything">
+
+      <img id="header-icon" src="/static/icon.png" alt="Website Icon">
+      <h1>GPTeacher</h1>
+
+      <div class="content">
+        <nav class="not_main_nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Summarizer">Summarizer</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <main>
+          
+  <h2>Generated Questions</h2>
+  <form id="exam-form" class="exam-form" onsubmit="submitAnswers(); return false;">
+    <div id="questions" class="questions">  
+      <ol>
+
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the goal of sentiment analysis?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="A. To predict the author&#39;s identity" />
+                    <label for="q1">A. To predict the author&#39;s identity</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="B. To classify the language used in the text" />
+                    <label for="q1">B. To classify the language used in the text</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="C. To determine the age of the author" />
+                    <label for="q1">C. To determine the age of the author</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q1" name="q1" value="D. To predict the sentiment expressed in a piece of text" />
+                    <label for="q1">D. To predict the sentiment expressed in a piece of text</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What are some challenges in sentiment analysis?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="A. Sentiment is a measure of a speaker&#39;s invisible state" />
+                    <label for="q2">A. Sentiment is a measure of a speaker&#39;s invisible state</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="B. Words are not always a good indicator of sentiment" />
+                    <label for="q2">B. Words are not always a good indicator of sentiment</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="C. Sentiment requires contextual knowledge" />
+                    <label for="q2">C. Sentiment requires contextual knowledge</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q2" name="q2" value="D. All of the above" />
+                    <label for="q2">D. All of the above</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the simplest measure for evaluating a sentiment analyzer?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="A. F1-measure" />
+                    <label for="q3">A. F1-measure</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="B. Accuracy" />
+                    <label for="q3">B. Accuracy</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="C. Precision" />
+                    <label for="q3">C. Precision</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q3" name="q3" value="D. Recall" />
+                    <label for="q3">D. Recall</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">Why is data-driven evaluation important?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="A. It requires controlled experimentation" />
+                    <label for="q4">A. It requires controlled experimentation</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="B. It provides good engineering benchmarks" />
+                    <label for="q4">B. It provides good engineering benchmarks</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="C. Our intuitions about typical inputs are often incorrect" />
+                    <label for="q4">C. Our intuitions about typical inputs are often incorrect</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q4" name="q4" value="D. All of the above" />
+                    <label for="q4">D. All of the above</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the main problem with using a sentiment lexicon to count positive and negative words in sentiment analysis?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="A. Sense ambiguity" />
+                    <label for="q5">A. Sense ambiguity</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="B. Irony and sarcasm" />
+                    <label for="q5">B. Irony and sarcasm</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="C. Mention of opposing viewpoints" />
+                    <label for="q5">C. Mention of opposing viewpoints</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q5" name="q5" value="D. All of the above" />
+                    <label for="q5">D. All of the above</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">Which of the following is NOT a representation used for sentiment analysis?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="A. Only positive/negative words in MPQA" />
+                    <label for="q6">A. Only positive/negative words in MPQA</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="B. Higher-order linguistic structure" />
+                    <label for="q6">B. Higher-order linguistic structure</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="C. Only words in isolation (bag of words)" />
+                    <label for="q6">C. Only words in isolation (bag of words)</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q6" name="q6" value="D. Only adjectives and adverbs" />
+                    <label for="q6">D. Only adjectives and adverbs</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the main advantage of using an n-gram language model for predicting upcoming words?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="A. It provides a true probability of an arbitrary sequence of words" />
+                    <label for="q7">A. It provides a true probability of an arbitrary sequence of words</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="B. It allows for analysis of semantics and syntax" />
+                    <label for="q7">B. It allows for analysis of semantics and syntax</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="C. It prevents sense ambiguity" />
+                    <label for="q7">C. It prevents sense ambiguity</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q7" name="q7" value="D. It combines the probability of smaller parts of a sentence, which will occur more frequently" />
+                    <label for="q7">D. It combines the probability of smaller parts of a sentence, which will occur more frequently</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the independence assumption made in a bigram language model?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="A. The probability of a word only depends on the previous word" />
+                    <label for="q8">A. The probability of a word only depends on the previous word</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="B. The probability of a word only depends on a fixed number of previous words" />
+                    <label for="q8">B. The probability of a word only depends on a fixed number of previous words</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="C. The probability of a word only depends on the next word" />
+                    <label for="q8">C. The probability of a word only depends on the next word</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q8" name="q8" value="D. The probability of a word only depends on the words surrounding it" />
+                    <label for="q8">D. The probability of a word only depends on the words surrounding it</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the difference between rule-based and learning-based NLP systems?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="A. Rule-based systems rely on machine learning techniques" />
+                    <label for="q9">A. Rule-based systems rely on machine learning techniques</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="B. Learning-based systems rely on databases and manual rules" />
+                    <label for="q9">B. Learning-based systems rely on databases and manual rules</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="C. Rule-based systems rely on collecting statistics or patterns automatically from corpora" />
+                    <label for="q9">C. Rule-based systems rely on collecting statistics or patterns automatically from corpora</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q9" name="q9" value="D. Learning-based systems are governed solely by manual rules or databases" />
+                    <label for="q9">D. Learning-based systems are governed solely by manual rules or databases</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+        
+          <li>
+            <div class="whole-question">
+              <div class="question">What is the difference between precision and recall in sentiment analysis evaluation?</div>
+              <div class="all-options">
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="A. Precision is how many of the ironic tweets are found, whereas recall is how often the prediction is correct" />
+                    <label for="q10">A. Precision is how many of the ironic tweets are found, whereas recall is how often the prediction is correct</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="B. Precision is how often the prediction is correct, whereas recall is how many of the ironic tweets are found" />
+                    <label for="q10">B. Precision is how often the prediction is correct, whereas recall is how many of the ironic tweets are found</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="C. Precision is how many true positives there are, whereas recall is how many false positives there are" />
+                    <label for="q10">C. Precision is how many true positives there are, whereas recall is how many false positives there are</label>
+                  </div>
+                
+                  <div class="option">
+                    <input type="radio" id="q10" name="q10" value="D. Precision is how many true positives there are, whereas recall is how many true negatives there are" />
+                    <label for="q10">D. Precision is how many true positives there are, whereas recall is how many true negatives there are</label>
+                  </div>
+                
+              </div>
+            </div>
+          </li>
+        
+      </ol>
+    </div>
+
+    <button id="submit-button" class="submit-button" type="submit">Submit Answers</button>
+  </form>
+
+  <div id="answer-section">
+    <h2>Your score:</h2>
+    <!-- <ol>
+      
+        <li>
+          <div class="question">What is the goal of sentiment analysis?</div>
+          <div class="'options"> [&#34;A. To predict the author&#39;s identity&#34;, &#39;B. To classify the language used in the text&#39;, &#39;C. To determine the age of the author&#39;, &#39;D. To predict the sentiment expressed in a piece of text&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-0"></div>
+        </li>
+      
+        <li>
+          <div class="question">What are some challenges in sentiment analysis?</div>
+          <div class="'options"> [&#34;A. Sentiment is a measure of a speaker&#39;s invisible state&#34;, &#39;B. Words are not always a good indicator of sentiment&#39;, &#39;C. Sentiment requires contextual knowledge&#39;, &#39;D. All of the above&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-1"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the simplest measure for evaluating a sentiment analyzer?</div>
+          <div class="'options"> [&#39;A. F1-measure&#39;, &#39;B. Accuracy&#39;, &#39;C. Precision&#39;, &#39;D. Recall&#39;]</div>
+          <div class="answer">Answer: B</div>
+          <div id="selected-answer-2"></div>
+        </li>
+      
+        <li>
+          <div class="question">Why is data-driven evaluation important?</div>
+          <div class="'options"> [&#39;A. It requires controlled experimentation&#39;, &#39;B. It provides good engineering benchmarks&#39;, &#39;C. Our intuitions about typical inputs are often incorrect&#39;, &#39;D. All of the above&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-3"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the main problem with using a sentiment lexicon to count positive and negative words in sentiment analysis?</div>
+          <div class="'options"> [&#39;A. Sense ambiguity&#39;, &#39;B. Irony and sarcasm&#39;, &#39;C. Mention of opposing viewpoints&#39;, &#39;D. All of the above&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-4"></div>
+        </li>
+      
+        <li>
+          <div class="question">Which of the following is NOT a representation used for sentiment analysis?</div>
+          <div class="'options"> [&#39;A. Only positive/negative words in MPQA&#39;, &#39;B. Higher-order linguistic structure&#39;, &#39;C. Only words in isolation (bag of words)&#39;, &#39;D. Only adjectives and adverbs&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-5"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the main advantage of using an n-gram language model for predicting upcoming words?</div>
+          <div class="'options"> [&#39;A. It provides a true probability of an arbitrary sequence of words&#39;, &#39;B. It allows for analysis of semantics and syntax&#39;, &#39;C. It prevents sense ambiguity&#39;, &#39;D. It combines the probability of smaller parts of a sentence, which will occur more frequently&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-6"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the independence assumption made in a bigram language model?</div>
+          <div class="'options"> [&#39;A. The probability of a word only depends on the previous word&#39;, &#39;B. The probability of a word only depends on a fixed number of previous words&#39;, &#39;C. The probability of a word only depends on the next word&#39;, &#39;D. The probability of a word only depends on the words surrounding it&#39;]</div>
+          <div class="answer">Answer: A</div>
+          <div id="selected-answer-7"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the difference between rule-based and learning-based NLP systems?</div>
+          <div class="'options"> [&#39;A. Rule-based systems rely on machine learning techniques&#39;, &#39;B. Learning-based systems rely on databases and manual rules&#39;, &#39;C. Rule-based systems rely on collecting statistics or patterns automatically from corpora&#39;, &#39;D. Learning-based systems are governed solely by manual rules or databases&#39;]</div>
+          <div class="answer">Answer: D</div>
+          <div id="selected-answer-8"></div>
+        </li>
+      
+        <li>
+          <div class="question">What is the difference between precision and recall in sentiment analysis evaluation?</div>
+          <div class="'options"> [&#39;A. Precision is how many of the ironic tweets are found, whereas recall is how often the prediction is correct&#39;, &#39;B. Precision is how often the prediction is correct, whereas recall is how many of the ironic tweets are found&#39;, &#39;C. Precision is how many true positives there are, whereas recall is how many false positives there are&#39;, &#39;D. Precision is how many true positives there are, whereas recall is how many true negatives there are&#39;]</div>
+          <div class="answer">Answer: B</div>
+          <div id="selected-answer-9"></div>
+        </li>
+      
+    </ol> -->
+    <div class="score-section" id="score-section"></div>
+  </div>
+
+        </main>
+        <footer>
+          <p>&copy; 2023 NLP Smart Application</p>
+        </footer>
+      </div>  
+    </div>
+  </body>
+</html>
+
+<script>
+  document.getElementById("answer-section").style.display = "none";
+
+</script>
+<!-- 
+
+  function showScore(score, totalQuestions) {
+    var scorePercent = (score / totalQuestions) * 100;
+    var scoreDisplay = "Score: " + score + "/" + totalQuestions + " (" + scorePercent.toFixed(2) + "%)";
+    var scoreDiv = document.getElementById("score-section");
+    scoreDiv.innerHTML = scoreDisplay;
+
+    var form = document.getElementById("exam-form");
+    form.style.display = "none";
+
+    var answerSection = document.getElementById("answer-section");
+    answerSection.style.display = "block";
+
+    var submitButton = document.getElementById("submit-button");
+    submitButton.style.display = "none";
+  }
+
+  function submitAnswers(exam_questions) {
+
+    console.log('log: submitAnswers() called');
+    console.log('log: exam_questions: ', exam_questions);
+    console.log('log: window.exam_questions: ', window.exam_questions);
+        
+    var totalQuestions = exam_questions.length;
+    var correctAnswers = 0;
+
+    // Loop through all the questions
+    for (var i = 0; i < totalQuestions; i++) {
+      var selectedAnswer = document.querySelector('input[name="q'+ i +'"]:checked');
+      var selectedAnswerIndex = exam_questions[i]['options'].indexOf(selectedAnswer.value);
+      var correctAnswerIndex = exam_questions[i]['options'].indexOf(exam_questions[i]['answer']);
+
+      // Store the selected answer in local storage
+      localStorage.setItem('selectedAnswer_' + i, selectedAnswer.value);
+
+      // Highlight the correct answer in green
+      var correctAnswerLabel = document.querySelector('label[for="q'+ i +'_'+ correctAnswerIndex +'"]');
+      correctAnswerLabel.style.color = 'green';
+
+      // If the selected answer is correct, increment the score and highlight the selected answer in green
+      if (selectedAnswerIndex === correctAnswerIndex) {
+        correctAnswers++;
+        selectedAnswer.parentElement.style.color = 'green';
+      }
+      // If the selected answer is incorrect, highlight the selected answer in red
+      else {
+        selectedAnswer.parentElement.style.color = 'red';
+      }
+    }
+
+    // Calculate and show the score
+    var score = (correctAnswers / totalQuestions) * 100;
+    showScore(score, totalQuestions);
+
+    // Prevent the default form submission behavior
+    event.preventDefault();
+  }
+
+
+</script> -->
