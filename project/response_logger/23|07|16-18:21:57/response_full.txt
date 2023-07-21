@@ -1,0 +1,21 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Question 1:\nWhat is the motivation behind parameter control in Evolutionary Algorithms?\nA. To find optimal parameter values\nB. To facilitate good performance\nC. To vary parameter values during a run\nD. To increase user control over parameter values\n\nAnswer: C\n\nQuestion 2:\nWhat component of an Evolutionary Algorithm can be parameterized and controlled on-the-fly?\nA. Representation\nB. Evaluation function\nC. Variation operators\nD. All of the above\n\nAnswer: D\n\nQuestion 3:\nWhich type of parameter control modifies strategy parameters without feedback from the search?\nA. Deterministic control\nB. Adaptive control\nC. Self-adaptive control\nD. None of the above\n\nAnswer: A\n\nQuestion 4:\nWhich evidence can be used to inform parameter changes in Evolutionary Algorithms?\nA. Time or number of evaluations\nB. Population statistics\nC. Progress made in the search\nD. All of the above\n\nAnswer: D\n\nQuestion 5:\nWhat is the scope/level of parameter control in Evolutionary Algorithms?\nA. Environment\nB. Population\nC. Individual\nD. All of the above\n\nAnswer: D\n\nQuestion 6:\nWhich form of parameter control in Evolutionary Algorithms is based on absolute evidence?\nA. Deterministic control\nB. Adaptive control\nC. Self-adaptive control\nD. None of the above\n\nAnswer: A\n\nQuestion 7:\nWhat is the main feature of self-adaptive parameter control?\nA. Strong user control over parameter values\nB. Changes in parameters based on feedback from the search progress\nC. Predictability of parameter values\nD. Altering the component being controlled\n\nAnswer: B\n\nQuestion 8:\nWhat is the main feature of adaptive parameter control?\nA. Independent changes in parameters from search progress\nB. Strong user control over parameter values\nC. Changes in parameters based on feedback from the search progress\nD. Predictability of parameter values\n\nAnswer: C\n\nQuestion 9:\nWhich component of Evolutionary Algorithms can be controlled at the individual level?\nA. Variation operators\nB. Selection operator\nC. Replacement operator\nD. All of the above\n\nAnswer: D\n\nQuestion 10:\nWhat is the main advantage of self-adaptive parameter control in Evolutionary Algorithms?\nA. Increased user control over parameter values\nB. Reduction in required computing resources\nC. Liberation from parameter tuning and delegating parameter setting to the evolutionary process\nD. Improved predictability of parameter values\n\nAnswer: C",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1689524517,
+  "id": "chatcmpl-7cynNoiB5wrCn8eaCdbROOsuFIuw5",
+  "model": "gpt-3.5-turbo-0613",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 513,
+    "prompt_tokens": 2173,
+    "total_tokens": 2686
+  }
+}

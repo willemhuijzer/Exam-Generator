@@ -1,0 +1,89 @@
+Question 1:
+What are the primary features used to distinguish different forms of parameter control in Evolutionary Algorithms?
+A) Time and population statistics
+B) Mutation rate and selection mechanism
+C) User control and search progress feedback
+D) Population size and diversity
+
+Answer: C
+
+Question 2:
+Which option for varying mutation step size involves assigning a personal step size to each individual?
+A) Option 1
+B) Option 2
+C) Option 3
+D) Option 4
+
+Answer: C
+
+Question 3:
+Which option for varying penalties involves replacing the constant penalty weight with a function updated in each generation?
+A) Option 1
+B) Option 2
+C) Option 3
+D) Option 4
+
+Answer: B
+
+Question 4:
+In parameter control, what type of evidence is based on population diversity falling below a threshold?
+A) Absolute evidence
+B) Relative evidence
+C) Deterministic evidence
+D) Adaptive evidence
+
+Answer: A
+
+Question 5:
+What is the main scope/level at which the parameter may take effect in parameter control?
+A) Environment
+B) Population
+C) Individual
+D) Sub-individual
+
+Answer: C
+
+Question 6:
+Which type of parameter control is based on a fixed rule without feedback from the search progress?
+A) Deterministic control
+B) Adaptive control
+C) Self-adaptive control
+D) Relative control
+
+Answer: A
+
+Question 7:
+In the context of parameter control, what component of the evolutionary algorithm is controlled as part of the variation operator?
+A) Representation
+B) Evaluation function
+C) Selection operator
+D) Replacement operator
+
+Answer: A
+
+Question 8:
+What type of evidence is based on the comparison of values through solutions created with different parameter values?
+A) Absolute evidence
+B) Relative evidence
+C) Deterministic evidence
+D) Adaptive evidence
+
+Answer: B
+
+Question 9:
+Which option for varying penalties involves assigning a personal penalty weight to each individual?
+A) Option 1
+B) Option 2
+C) Option 3
+D) Option 4
+
+Answer: C
+
+Question 10:
+What is the main advantage of adaptive and self-adaptive parameter control in Evolutionary Algorithms?
+A) Increased user control
+B) Reduction in required computing resources
+C) Liberation from parameter tuning and delegating parameter setting to the evolutionary process
+D) Improved predictability of parameter values
+
+Answer: C

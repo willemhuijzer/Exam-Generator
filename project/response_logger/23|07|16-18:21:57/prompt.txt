@@ -1,0 +1,255 @@
+CONTENT OF LECTURE SLIDES:
+Evolutionary Computing
+Chapter 8
+Parameter ControlParameter Control
+• Motivation
+• Parameter setting
+• Tuning
+• Control
+• Examples
+• Extended / refined taxonomy
+• Some figures about related workMotivation (1/2)
+An EA has many strategy parameters, e.g.
+• mutation operator and mutation rate
+• crossover operator and crossover rate
+• selection mechanism and selective pressure (e.g. tournament size)
+• population size
+Good parameter values facilitate good performance
+Q1 How to find good parameter values ?Motivation (2/2)
+EA parameters are rigid (values constant during a run)
+BUT
+an EA is a dynamic, adaptive process
+THUS
+optimal parameter values may vary during a run
+Q2: How to vary parameter values?Parameter SettingVarying mutation step size
+Task to solve:
+• min f(x ,…,x )
+1 n
+• L <= x <= U for i = 1,…,n bounds
+i i i
+• g (x) ≠ 0 for i = 1,…,q inequality constraints
+i
+• h (x) = 0 for i = q+1,…,m equality constraints
+i
+Algorithm:
+• EA with real-valued representation (x ,…,x )
+1 n
+• arithmetic averaging crossover
+• Gaussian mutation: x’ = x + N(0, σ)
+i i
+• standard deviation σ is called mutation step sizeVarying mutation step size, option 1
+Replace the constant σ by a function σ (t)
+t
+σ (t)= 1 - 0. 9 ×
+T
+0 < t <= T is the current generation number
+Features:
+• changes in σ are independent from the search progress
+• strong user control of σ by the above formula
+• σ is fully predictable
+• a given σ acts on all individuals of the populationVarying mutation step size, option 2
+Replace the constant σ by a function σ(t) updated after every n steps by the 1/5
+success rule, where p is the % of successful mutations:
+s
+ìs(t - n)/ c if p >0.2
+s
+ï
+s(t)= s(t - n)×c if p <0.2
+í
+s
+ï
+s(t - n) otherwise
+î
+Features:
+• changes in σ are based on feedback from the search progress
+• some user control of σ by the above formula
+• σ is not predictable
+• a given σ acts on all individuals of the populationVarying mutation step size, option 3
+• Assign a personal σ to each individual
+• Incorporate this σ into the chromosome: (x , …, x , σ)
+1 n
+• Apply variation operators to x ‘s and σ
+i
+N(0,σ)
+σ' =σ × e
+x ' = x + N(0,σ')
+i i
+Features:
+• changes in σ are results of natural selection
+• (almost) no user control of σ
+• σ is not predictable
+• a given σ acts on one individualVarying mutation step size, option 4
+• Assign a personal σ to each variable in each individual
+• Incorporate σ’s into the chromosomes: (x , …, x , σ , …, σ )
+1 n 1 n
+• Apply variation operators to x ‘s and σ ‘s
+i i
+N(0,τ)
+σ ' =σ × e
+i i
+x ' = x + N(0,σ ')
+i i i
+Features:
+• changes in σ are results of natural selection
+i
+• (almost) no user control of σ
+i
+• σ is not predictable
+i
+• a given σ acts on one gene of one individual
+iVarying penalties
+Constraints
+• g (x) ≠ 0 for i = 1,…,q inequality constraints
+i
+• h (x) = 0 for i = q+1,…,m equality constraints
+i
+are handled by penalties:
+eval(x) = f(x) + W × penalty(x)
+m ì1 for violated constraint
+å
+where penalty(x) = í
+0 for satisfied constraint
+î
+j=1Varying penalties, option 1
+Replace the constant W by a function W(t)
+α
+W(t) = ( C ´ t)
+0 < t <= T is the current generation number
+Features:
+• changes in W independently from the search progress
+• strong user control of W by the above formula
+• W is fully predictable
+• a given W acts on all individuals of the populationVarying penalties, option 2
+Replace the constant W by W(t) updated in each generation
+ì b´W(t) if last k champions all feasible
+ï
+W(t +1)= g´W(t) if last k champions all infeasible
+í
+ï
+W(t) otherwise
+î
+b < 1, g > 1, b ´ g ¹ 1, champion: best of its generation
+Features:
+• changes in W are based on feedback from the search progress
+• some user control of W by the above formula
+• W is not predictable
+• a given W acts on all individuals of the populationVarying penalties, option 3
+Assign a personal W to each individual
+Incorporate this W into the chromosome: (x , …, x , W)
+1 n
+Apply variation operators to x ‘s and W
+i
+Alert:
+eval ((x, W)) = f (x) + W × penalty(x)
+while for mutation step sizes we had
+eval ((x, σ)) = f (x)
+this option is thus sensitive “cheating” & makes no senseLessons learned (1/2)
+Various forms of parameter control can be distinguished by:
+• primary features:
+• what component of the EA is changed
+• how the change is made
+• secondary features:
+• evidence/data backing up changes
+• level/scope of changeWhat component is controlled
+Practically any EA component can be parameterized and thus controlled on-the-fly:
+• representation
+• evaluation function
+• variation operators
+• selection operator (parent or mating selection)
+• replacement operator (survival or environmental selection)
+• population (size, topology)How are parameters controlled
+Three major types of parameter control:
+• deterministic: some rule modifies strategy parameter without feedback from the
+search (based on some counter)
+• adaptive: feedback rule based on some measure monitoring search progress
+• self-adaptative: parameter values evolve along with solutions; encoded onto
+chromosomes they undergo variation and selectionGlobal taxonomy – now well-founded JEvidence: Informing the change (1/2)
+The parameter changes may be based on:
+• time or nr. of evaluations (deterministic control)
+• population statistics (adaptive control)
+• progress made
+• population diversity
+• gene distribution, etc.
+• relative fitness of individuals created with given values (adaptive or self-adaptive
+control)Evidence: Informing the change (2/2)
+• Absolute evidence: predefined event triggers change, e.g. increase p by 10% if
+m
+population diversity falls under threshold x
+• Direction and magnitude of change is fixed
+• Relative evidence: compare values through solutions created with them, e.g.
+increase p by x% if top x% offspring came by high mutation rates, decrease
+m
+otherwise
+• Direction and magnitude of change is not fixedEvidence: Refined taxonomy
+Combinations of types and evidences
+•
+Possible: +
+•
+Impossible: -
+•Scope/level
+The parameter may take effect on different levels:
+• environment (fitness function)
+• population
+• individual
+• sub-individual
+Note: given component (parameter) determines
+possibilities
+Thus: scope/level is a derived or secondary feature in the
+classification schemeLessons learned (2/2)
+Various forms of parameter control can be distinguished by:
+σ(t) = 1-0.9*t/T σ' = σ/c, (x 1, ..., x n, σ) (x 1, …, x n, σ 1, …, σ n) W(t) = (C*t)α W'=β*W, if b i∈F (x 1, ..., x n, W)
+if r > ⅕...
+What Step size Step size Step size Step size Penalty Penalty Penalty
+weight weight weight
+How Deterministic Adaptive Self- Self-adaptive Deterministic Adaptive Self-adaptive
+adaptive
+Evidence Time Successful (Fitness) (Fitness) Time Constraint (Fitness)
+mutations satisfaction
+rate history
+Scope Population Population Individual Gene Population Population IndividualEvaluation/Summary
+• Parameter control offers the possibility to use appropriate values in various stages of
+the search
+• Adaptive and self-adaptive parameter control
+• offer users “liberation” from parameter tuning
+• delegate parameter setting task to the evolutionary process
+• the latter implies a double task for an EA: problem solving + self-calibrating (overhead)Publications per category overview
+200
+population
+variation
+selection
+150 fitness
+distributed
+ensembles
+generic
+100
+}
+Variation
+operators
+50
+0
+1990 1995 2000 2005 2010
+G. Karafotias, M. Hoogendoorn, and A.E. Eiben, Parameter Control in Evolutionary Algorithms:
+Trends and Challenges, IEEE Transactions on Evolutionary Computation, 19(2):167-187, 2015
+
+SAMPLE QUESTIONS: Based on the slides that I provide in above, generate 10 multiple choice exam questions on challenging university level in the following format:
+
+Question 1:
+EA parameters are rigid (values constant during a run).
+A. True
+B. False
+
+Answer: B
+
+Question 2:
+What is the main advantage of adaptive and self-adaptive parameter control in Evolutionary Algorithms?
+A. Increased user control
+B. Reduction in required computing resources
+C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
+D. Improved predictability of parameter values
+
+Answer: C
+
+
+
+Generate 10 exam questions based on the provided CONTENT OF THE LECTURE SLIDES above in the format of the SAMPLE QUESTIONS:
+10 QUESTIONS: 

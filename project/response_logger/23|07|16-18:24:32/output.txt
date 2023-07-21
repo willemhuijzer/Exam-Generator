@@ -1,0 +1,85 @@
+Question 1:
+What is the motivation behind parameter control in Evolutionary Algorithms?
+A. To find optimal parameter values
+B. To increase user control over the algorithm
+C. To reduce the computing resources required
+D. To improve the predictability of parameter values
+
+Answer: A
+
+Question 2:
+Which of the following is not a strategy parameter in Evolutionary Algorithms?
+A. Mutation operator and mutation rate
+B. Crossover operator and crossover rate
+C. Selection mechanism and selective pressure
+D. Evaluation function and fitness value
+
+Answer: D
+
+Question 3:
+Which option for varying mutation step size allows for the most user control of the parameter?
+A. Option 1
+B. Option 2
+C. Option 3
+D. Option 4
+
+Answer: A
+
+Question 4:
+What is the primary feature that distinguishes various forms of parameter control in Evolutionary Algorithms?
+A. Evidence/data backing up the changes
+B. What component of the algorithm is changed
+C. Level/scope of the parameter change
+D. Progress made in the search process
+
+Answer: B
+
+Question 5:
+Which type of evidence for parameter change is based on comparing values through solutions created with different parameter values?
+A. Absolute evidence
+B. Relative evidence
+
+Answer: B
+
+Question 6:
+Which option for varying penalties provides the most user control over the parameter?
+A. Option 1
+B. Option 2
+C. Option 3
+
+Answer: A
+
+Question 7:
+Which level/scope of parameter change affects the fitness function in Evolutionary Algorithms?
+A. Environment
+B. Population
+C. Individual
+D. Sub-individual
+
+Answer: A
+
+Question 8:
+Which type of parameter control relies on predefined event triggers for parameter changes?
+A. Deterministic control
+B. Adaptive control
+C. Self-adaptive control
+
+Answer: A
+
+Question 9:
+What is the main advantage of self-adaptive parameter control in Evolutionary Algorithms?
+A. Increased user control
+B. Reduction in required computing resources
+C. Liberation from parameter tuning and delegating parameter setting to the evolutionary process
+D. Improved predictability of parameter values
+
+Answer: C
+
+Question 10:
+Which component of an Evolutionary Algorithm can be parameterized and controlled on-the-fly?
+A. Evaluation function
+B. Replacement operator
+C. Population size
+D. All of the above
+
+Answer: D

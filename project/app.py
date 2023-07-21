@@ -15,7 +15,7 @@ LOG_RESPONSE = False if DO_SIMULATE else True
 # set to True to skip the pdf input and use the text input instead (to paste text)
 USE_TEXT_ONLY = False    
 
-@app.route("/")
+@app.route("/") 
 def index():
     return render_template("index.html")
 
@@ -46,7 +46,7 @@ def generate():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html")  
 
 @app.route("/summarizer")
 def summarizer():
@@ -55,4 +55,4 @@ def summarizer():
 
 if __name__ == "__main__":
     app.run(debug=True)
-   
+    

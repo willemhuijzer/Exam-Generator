@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Nice Box Example</title>
-	<style>
-		.box {
-			padding: 10px;
-			background-color: #f1f1f1;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-			max-width: 500px;
-			margin: 0 auto;
-		}
-	</style>
-</head>
-<body>
-	<div class="box">
-		<h3>Really...</h3>
-        <p>More is coming...</p>
-	</div>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+  <section>
+    <h2>Who are we?</h2>
+    <!-- At LearnMore, we help students improve their academic performance by generating practice exams based on their lecture content. 
+      Students can upload their notes, slides, or recordings to our platform, and our algorithm will analyze the content to generate potential exam questions. 
+      Students can then customize their practice exams to fit their needs, and track their progress through detailed performance reports. 
+      Let us help you achieve your academic goals! -->
+    <p>We are a team of students from the Vrije Universiteit in Amsterdam who are motivated to make the lives of students just a little easier.
+      If you have any suggestions on how we can improve our platform, please let us know!
+    </p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p></p>
+  </section> 
+{% endblock %}
